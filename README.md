@@ -1,3 +1,26 @@
+# Team roles
+- Project Manager: Lucas
+- Mobile App Manager: David
+- Web App Manager: Alejandro
+- GitHub Manager: Alejandro 
+- Front-End (Using React)
+	- Alejandro
+	- Will
+	- Selena
+- Back-End (Using Express & NodeJS)
+	- Selena
+	- Alejandro
+	- Isaac
+- Database (Using MongoDB)
+	- David
+	- Courtney
+	- Lucy
+- Hosting (Using Azure)
+	- David
+	- Lucas
+- Documentation (Using Google Drive)
+	- Lucy
+
 # A compilation of useful web resources
 
 ## MERN Stack
@@ -14,7 +37,7 @@
 - [REST API with Node, Mongo, & Express](https://www.youtube.com/watch?v=o3ka5fYysBM)
 
 ## MongoDB
--[MongoDB in 30 minutes](https://www.youtube.com/watch?v=pWbMrx5rVBE)
+- [MongoDB in 30 minutes](https://www.youtube.com/watch?v=pWbMrx5rVBE)
 
 ## React
 - [Crash course](https://www.youtube.com/watch?v=sBws8MSXN7A)
