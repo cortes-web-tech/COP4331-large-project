@@ -54,4 +54,5 @@
 ## Mobile Dev
 - Cross Platform
 	- [React Native](https://facebook.github.io/react-native/)
+	- [React Native Flex Basics](https://www.youtube.com/watch?v=-xFF5KF-KpE)
 	- [Flutter](https://flutter.io/)
