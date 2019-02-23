@@ -12,19 +12,22 @@ function Header(){
 
 const linkStyle = {
   color: 'white',
-  textDecoration: 'none'
+  textDecoration: 'none',
+  fontSize: "20px",
 }
 
 const headerStyle = {
-  background: '#d6b9e8',
+  opacity: '1.0',
+  // background: '#f6c9e8',
   height: "100px",
   color: '#ffffff',
   textAlign: 'center',
   padding: '10px',
-
+  paddingBottom: "50px"
 }
 
 const fontStyle = {
+  fontSize: "40px",
   color: 'white'
 }
 
