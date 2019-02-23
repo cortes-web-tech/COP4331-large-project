@@ -1,4 +1,5 @@
 .App {
+  /* padding: 20px; */
   text-align: center;
   height: 100%;
   background: #f6c9ff;
@@ -11,7 +12,38 @@
   pointer-events: none;
 }
 
+.footerContainer{
+  display: flex;
+}
 
+.box1{
+  flex:3;
+  display: flex;
+  flex-direction: column;
+}
+
+.pageLinks{
+  display: flex;
+  align-items: flex-start;
+
+  justify-content: "center";
+
+}
+
+.box2{
+  flex:1;
+}
+
+.box3{
+  flex:1;
+  align-items: flex-start;
+
+}
+
+.footerContainer div{
+  /* border: 1px #ccc solid; */
+  padding:1px;
+}
 .App-link {
   color: #61dafb;
 }

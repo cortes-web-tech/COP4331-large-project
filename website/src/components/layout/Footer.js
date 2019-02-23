@@ -1,5 +1,7 @@
 import React from 'react';
+import './../../App.css';
 import { Container, Row, Col} from 'reactstrap';
+
 
 function Footer(){
   const col1 = ["About Us", "Contact", "Terms & Conditions"];
@@ -13,17 +15,18 @@ function Footer(){
     <li>{l_item2}</li>
   );
     return(
-      <Container>
-      <div style ={footerStyle} className="container">
 
-      <Row>
-        <Col>
+      // {/*
+
+      <div style ={footerStyle} className="footerContainer">
+        <div className="box1">
+          <div className="pageLinks">
           <ul style={linkStyle}>{listItems}</ul>
           <ul style={linkStyle}>{listItems2}</ul>
+          </div>
           <p>©️ Covian Consulting, Inc. All Rights Reserved.</p>
-        </Col>
-
-        <Col>
+        </div>
+        <div className="box2">
           <p>Subscrive to our newsletter</p>
           <form>
             <label>
@@ -31,34 +34,29 @@ function Footer(){
               <input type="submit" value="Submit"/>
             </label>
           </form>
-        </Col>
-
-        <Col>
-          <p>3259 Progress Drive <br/>
-            Orlando, FL, 32824</p>
-        </Col>
-      </Row>
         </div>
-        </Container>
+        <div className="box3">
+          <p>3259 Progress Drive</p>
+          <p>Orlando, FL, 32824</p>
+        </div>
+      </div>
 
+      // */}
   )
 
 }
 
 const linkStyle = {
-  color: '#ffffff',
   listStyle: 'none'
 }
 
 const footerStyle = {
+  borderRadius: '20px',
   textDecoration: 'none',
   opacity: '1.0',
-  background: "#3a53e0",
+  background: "#3a43b0",
   // height: "10%",
   color: '#ffffff',
-  fontSize: "36px",
-
-  padding: '10px',
-
+  fontSize: "26px",
 }
 export default Footer
