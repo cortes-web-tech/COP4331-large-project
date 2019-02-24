@@ -1,33 +1,72 @@
 .App {
-  /* padding: 20px; */
+  padding: 10px;
   text-align: center;
-  height: 100%;
+  /* height:1000px; */
+  width: 100%;
+  height: auto;
   background: #f6c9ff;
+  display: flex;
+  flex-direction: column;
+  flex:1;
 
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.displayPage{
+  height: 738px;
+  /* display: flex; */
+}
+
+.container{
+  background-color: "black";
+  opacity: "0.8";
+  /* flex:3; */
+  background: "black";
+  opacity: "0.8";
+  width: "90%";
+  margin: "5%";
+
+}
+
+.headerContainer{
+  display: flex;
+  color: #ffffff;
+  height: "20px";
+  align-items: flex-start;
 }
 
 .footerContainer{
   display: flex;
+
+
+}
+.headerLogo{
+  flex:1;
+
+}
+
+.headerLinks{
+  flex:4;
+  justify-content: space-around;
 }
 
 .box1{
   flex:3;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .pageLinks{
   display: flex;
-  align-items: flex-start;
+}
 
-  justify-content: "center";
+.pageLinks a{
+  color: white;
+  text-decoration: none;
+}
 
+.pageLinks a:hover{
+  color:red;
 }
 
 .box2{
@@ -37,15 +76,28 @@
 .box3{
   flex:1;
   align-items: flex-start;
-
 }
 
 .footerContainer div{
   /* border: 1px #ccc solid; */
-  padding:1px;
+  padding:2px;
 }
-.App-link {
-  color: #61dafb;
+
+
+
+
+.route hover{
+  color: red;
+}
+
+.headerDiv{
+  padding-Top: 0px;
+  height: 40px;
+  /* text-align: center; */
+}
+.footerDiv{
+  /* flex:2; */
+  /* background: black; */
 }
 
 @keyframes App-logo-spin {

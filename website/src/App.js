@@ -17,20 +17,24 @@ import { Container, Row, Col } from 'reactstrap';
 class App extends Component {
   render() {
     return (
-
-
       <Router>
-
-      <div style={pageStyle} className="App">
+      <div style={pageLayout} className="App">
+      <div className="headerDiv">
         <Header/>
-        <div style = {sectionStyle} className="container">
-          <Route exact path="/start" component={Start}/>
-          <Route exact path="/authors" component={Authors}/>
-          <Route exact path="/demo" component={Demo}/>
-          <Route exact path="/contact" component={Contact}/>
-        </div>
-        <Footer/>
+      </div>
+        <div style={pageStyle} className="displayPage">
 
+          <div style = {sectionStyle} className="container">
+            <Route exact path="/start" component={Start}/>
+            <Route exact path="/authors" component={Authors}/>
+            <Route exact path="/demo" component={Demo}/>
+            <Route exact path="/contact" component={Contact}/>
+          </div>
+        </div>
+
+        <div className="footerDiv">
+        <Footer/>
+        </div>
       </div>
 
 
@@ -40,17 +44,26 @@ class App extends Component {
   }
 }
 
-var pageStyle = {
-  background: "#f6c9ff",
-  height: "100%"
+var pageLayout = {
+  // height: "100%",
+  height: "auto",
+  // background: "black",
 }
 
+var hStyle ={
+
+}
 var sectionStyle = {
-  flex: '1',
+
+
+}
+
+var pageStyle = {
+  // flex: '1',
   width: "100%",
   color: "#f00fff",
   fontSize: "50px",
-  height: "738px",
+  // height: "900px",
   backgroundImage: "url(" + Background +")",
   borderRadius: "50px"
 }

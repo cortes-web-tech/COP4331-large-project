@@ -8,11 +8,11 @@ function Footer(){
 
   const col2 = ["Facebook", "Twitter", "Instagram"];
   const listItems = col1.map((l_item) =>
-    <li>{l_item}</li>
+    <li><a href="">{l_item}</a></li>
   );
 
   const listItems2 = col2.map((l_item2) =>
-    <li>{l_item2}</li>
+    <li><a href="">{l_item2}</a></li>
   );
     return(
 
@@ -47,16 +47,16 @@ function Footer(){
 }
 
 const linkStyle = {
-  listStyle: 'none'
+  listStyle: 'none',
+  textAlign: 'left'
 }
 
 const footerStyle = {
   borderRadius: '20px',
-  textDecoration: 'none',
   opacity: '1.0',
   background: "#3a43b0",
   // height: "10%",
   color: '#ffffff',
-  fontSize: "26px",
+  fontSize: "20px",
 }
 export default Footer
