@@ -22,16 +22,6 @@ const linkStyle = {
 }
 
 
-const links = {
-  // flex: 4
-}
-
-const title = {
-  // flex: 1
-}
-
-
-
 const h1Style = {
   fontSize: "20px",
   color: 'black'

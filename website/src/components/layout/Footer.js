@@ -52,10 +52,9 @@ const linkStyle = {
 }
 
 const footerStyle = {
-  borderRadius: '20px',
   opacity: '1.0',
   background: "#3a43b0",
-  // height: "10%",
+  height: "250px",
   color: '#ffffff',
   fontSize: "20px",
 }
