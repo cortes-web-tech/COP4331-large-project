@@ -24,12 +24,12 @@ class App extends Component {
       </div>
         <div style={pageStyle} className="displayPage">
 
-          <div style = {sectionStyle} className="container">
+          
             <Route exact path="/start" component={Start}/>
             <Route exact path="/authors" component={Authors}/>
             <Route exact path="/demo" component={Demo}/>
             <Route exact path="/contact" component={Contact}/>
-          </div>
+
         </div>
 
         <div className="footerDiv">
@@ -63,9 +63,11 @@ var pageStyle = {
   width: "100%",
   color: "#f00fff",
   fontSize: "50px",
+  marginLeft: "auto",
+  marginRight: "auto",
   // height: "900px",
   backgroundImage: "url(" + Background +")",
-  borderRadius: "50px"
+
 }
 
 export default App;
