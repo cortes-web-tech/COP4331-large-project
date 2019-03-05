@@ -1,6 +1,6 @@
 import React from 'react';
 import './../../App.css';
-import { Container, Row, Col} from 'reactstrap';
+import { Container, Row, Col, Button,  InputGroup, Input,} from 'reactstrap';
 
 
 function Footer(){
@@ -20,33 +20,61 @@ function Footer(){
 
       <div style ={footerStyle} className="footerContainer">
         <div className="box1">
+        < br/>
+        < br/>
+
           <div className="pageLinks">
           <ul style={linkStyle}>{listItems}</ul>
           <ul style={linkStyle}>{listItems2}</ul>
           </div>
-          <p>©️ Covian Consulting, Inc. All Rights Reserved.</p>
+          <p>©️ 2019 Covian Consulting, Inc. All Rights Reserved.</p>
         </div>
         <div className="box2">
-          <p>Subscrive to our newsletter</p>
+        < br/>
+        < br/>
+
+          <p>Subscribe to our newsletter</p>
           <form>
             <label>
-              <input placeholder="Enter your email" type="text" name="name" />
-              <input type="submit" value="Submit"/>
+              <InputGroup>
+                <Input id="emailInputStyle" style={emailInputStyle} placeholder="Email Address"/>
+                <Button style={buttonStyle}>OK</Button>
+              </InputGroup>
             </label>
+            
           </form>
         </div>
         <div className="box3">
-          <p>3259 Progress Drive</p>
-          <p>Orlando, FL, 32824</p>
+        < br/>
+        < br/>
+          <ul style={addressStyle}>
+          <li>3259 Progress Drive</li>
+          <li>Orlando, FL 32824</li>
+          </ul>
+
         </div>
-      </div>
+        </div>
 
       // */}
   )
 
 }
+const addressStyle = {
+  listStyleType:'none',
+}
+const emailInputStyle = {
+  backgroundColor:"#3a43b0",
+  borderColor:"#EDA85F",
+  color:'white',
 
+}
+
+const buttonStyle = {
+  backgroundColor:'#EDA85F',
+  position:'relative',
+}
 const linkStyle = {
+  
   listStyle: 'none',
   textAlign: 'left'
 }
@@ -54,8 +82,10 @@ const linkStyle = {
 const footerStyle = {
   opacity: '1.0',
   background: "#3a43b0",
-  height: "250px",
+  height: "190px",
   color: '#ffffff',
-  fontSize: "20px",
+  fontSize:'10pt'
 }
+
+
 export default Footer

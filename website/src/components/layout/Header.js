@@ -4,8 +4,8 @@ import './../../App.css';
 
 function Header(){
   return(
-    <header className="headerContainer">
-      <div className="headerLogo">
+    <header className="headerContainer" style={headerStyle}>
+      <div className="headerLogo" style={logoStyle}>
         <Link style={h1Style} to="/">Keepu.</Link>
       </div>
       <div className="headerLinks">
@@ -24,9 +24,16 @@ const linkStyle = {
 
 const h1Style = {
   fontSize: "20px",
-  color: 'black'
+  color: 'black',
+  textDecoration: 'none'
 }
 
-
-
+const headerStyle = {
+  display: "block",
+  paddingTop: '2px'
+}
+const logoStyle = {
+  float: 'left',
+  paddingLeft: '20px',
+}
 export default Header
