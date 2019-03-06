@@ -4,6 +4,10 @@ import './App.css';
 import Background from './background.png';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
+import NextLevelOrg from './components/layout/NextLevelOrg';
+import WhyKeepu from './components/layout/WhyKeepu';
+import Knots from './components/layout/Knots';
+import Services from './components/layout/Services';
 
 // Linked pages
 import Authors from './components/pages/Authors';
@@ -22,24 +26,30 @@ class App extends Component {
       <div className="headerDiv">
         <Header/>
       </div>
+
         <div style={pageStyle} className="displayPage">
 
-            
+
             <Route exact path="/start" component={Start}/>
             <Route exact path="/authors" component={Authors}/>
             <Route exact path="/demo" component={Demo}/>
             <Route exact path="/contact" component={Contact}/>
 
         </div>
-        
+        <div>
+          <NextLevelOrg/>
+          <WhyKeepu/>
+          <Knots/>
+          <Services/>
+        </div>
         <div className="footerDiv">
         <Footer/>
         </div>
       </div>
-
-
-
       </Router>
+
+
+
     );
   }
 }

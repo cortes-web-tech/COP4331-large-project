@@ -16,7 +16,7 @@ function Header(){
 }
 
 const linkStyle = {
-  color: 'black',
+  color: 'white',
   textDecoration: 'none',
   fontSize: "20px",
 }
@@ -24,7 +24,7 @@ const linkStyle = {
 
 const h1Style = {
   fontSize: "20px",
-  color: 'black',
+  color: 'white',
   textDecoration: 'none'
 }
 
