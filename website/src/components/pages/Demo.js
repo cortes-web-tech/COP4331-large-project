@@ -16,8 +16,8 @@ class Demo extends Component {
             <h1> <b>{'Keepu can help you'}</b></h1>
           </div>
 
-          <div style={btn}>
-            <Button color="primary">Schedule a visit</Button>
+          <div>
+          <button type="button" style ={btn}>Schedule a visit</button>
           </div>
 
 
@@ -42,8 +42,14 @@ const demoContainer = {
 }
 
 const btn = {
-  textAlign: 'center',
-  paddingLeft: "50%"
+    background: '#ffffff',
+    color: '#807bbd',
+    width:' 200px',
+    height:'50px',
+    borderRadius: '25px',
+    fontSize: '45%',
+    float: 'right',
+    marginRight: '18%'
 }
 
 const video = {
