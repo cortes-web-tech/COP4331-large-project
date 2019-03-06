@@ -41,7 +41,7 @@ function Footer(){
                 <Button style={buttonStyle}>OK</Button>
               </InputGroup>
             </label>
-            
+
           </form>
         </div>
         <div className="box3">
@@ -74,7 +74,7 @@ const buttonStyle = {
   position:'relative',
 }
 const linkStyle = {
-  
+
   listStyle: 'none',
   textAlign: 'left'
 }
@@ -84,7 +84,11 @@ const footerStyle = {
   background: "#3a43b0",
   height: "190px",
   color: '#ffffff',
-  fontSize:'10pt'
+  fontSize:'10pt',
+  position: 'relative',
+  bottom: 0,
+  left: 0,
+  right: 0
 }
 
 

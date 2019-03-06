@@ -1,18 +1,40 @@
-import React from 'react'
+import React , { Component } from 'react';
+import Background from '../../background.png';
 
-export default function Start(){
-  return(
-  <React.Fragment>
-    <div style={style}>
-      <h1 >Start</h1>
-      <p>This is coming from Start.js</p>
-    </div>
-  </React.Fragment>
-  )
+class Start extends Component {
+  render() {
+    return (
+      <React.Fragment>
+        <div style={body}>
+        <div style={tagline}>
+          <h1> <b>{'Program evaluation'}</b></h1>
+          <h1> <b>{'made simple'}</b></h1>
+        </div>
+        </div>
+      </React.Fragment>
+    );
+  }
 }
 
-const style = {
-  // background: '#d6b9e8',
+export default Start;
+
+const body = {
+  backgroundImage: "url(" + Background +")",
+  width: "100%",
+  color: "#f00fff",
+  fontSize: "50px",
+  marginLeft: "auto",
+  marginRight: "auto",
+   height: "100%",
+
+  backgroundSize: "cover"
+}
+
+const tagline = {
   color: '#ffffff',
-  textAlign: 'center',
+  textAlign: 'left',
+  fontWeight: '200',
+  padding: '1em',
+  position: 'absolute',
+  bottom: '4em'
 }

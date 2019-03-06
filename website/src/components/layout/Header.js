@@ -24,7 +24,7 @@ const linkStyle = {
 
 const h1Style = {
   fontSize: "20px",
-  color: 'black',
+  color: '#ffffff',
   textDecoration: 'none'
 }
 
