@@ -1,60 +1,51 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
+import './Demo.css';
 
 class Demo extends Component {
   render() {
     return (
       <React.Fragment>
-        <div style={demoContainer}>
-        <div style={video}>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/0Ssjp43a528" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div style = {demo}>
+          <div class = "demoContainer">
+
+            <div class = "demoBox1">
+              <div class="ratio">
+                <iframe class = "frame" width="640" height="390" src="https://www.youtube.com/embed/0Ssjp43a528" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class = "demoBox2">
+              <h1 style ={h1}> <b>{'Speak with one of our'}</b></h1>
+              <h1 style={h1}> <b>{'experts on how'}</b></h1>
+              <h1 style={h1}> <b>{'Keepu can help you'}</b></h1>
+              <button type="button" style ={btn}>Schedule a visit</button>
+            </div>
+          </div>
         </div>
 
-          <div style={tagline}>
-            <h1> <b>{'Speak with one of our'}</b></h1>
-            <h1> <b>{'experts on how'}</b></h1>
-            <h1> <b>{'Keepu can help you'}</b></h1>
-          </div>
-
-          <div>
-          <button type="button" style ={btn}>Schedule a visit</button>
-          </div>
-
-
-        </div>
       </React.Fragment>
     );
   }
 }
 export default Demo;
 
-const tagline = {
-  // fontSize: '20px',
-  color: '#ffffff',
-  textAlign: 'right',
-  display: 'inline-block',
-}
 
-const demoContainer = {
+const demo = {
   // opacity: '0.8',
    background: '#807bbd',
-   minHeight: '100%'
+   height: '100%'
 }
 
 const btn = {
-    background: '#ffffff',
+  background: '#ffffff',
     color: '#807bbd',
     width:' 200px',
     height:'50px',
     borderRadius: '25px',
     fontSize: '45%',
-    float: 'right',
-    marginRight: '18%'
 }
 
-const video = {
-  textAlign: 'center',
-  display: 'inline-block',
-  paddingTop: '10%',
-  paddingRight: '20%',
+const h1 = {
+  fontSize: '110%'
 }

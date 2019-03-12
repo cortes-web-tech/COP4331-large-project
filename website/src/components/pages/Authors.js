@@ -8,11 +8,11 @@ class Authors extends Component {
     return (
       <React.Fragment>
         <div style={authors}>
-          <div class='container1'>
-            <div class='box1'>
+          <div class='authorContainer1'>
+            <div class='authorBox1'>
               <img src = {maritza} />
             </div>
-            <div class ='box2'>
+            <div class ='authorBox2'>
               <h1 style={h1}>Maritza Concha, PHD</h1>
               <p>Maritza Concha holds a PhD in Public Affairs with a Concentration
               in Public Administration from University of Central Florida, a Master’s
@@ -26,8 +26,8 @@ class Authors extends Component {
             </div>
           </div>
 
-          <div class='container2'>
-            <div class ='box3'>
+          <div class='authorContainer2'>
+            <div class ='authorBox3'>
               <h1 style={h1}>Maria Elena Villar</h1>
               <p>Maria Elena Villar holds a Ph.D. in Communication and a Master in
               Public Health from University of Miami, and a Bachelor’s degree in
@@ -39,7 +39,7 @@ class Authors extends Component {
               Scientist at the Institute for Child Health Policy at Nova Southeastern University.
               A published researcher, Dr. Villar is an associate professor at Florida International University.</p>
             </div>
-            <div class='box4'>
+            <div class='authorBox4'>
               <img src = {maria} />
             </div>
           </div>

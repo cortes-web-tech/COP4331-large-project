@@ -14,4 +14,7 @@ export default function Contact(){
 const style = {
   color: '#ffffff',
   textAlign: 'center',
+  cover: '100%',
+  background: "#aaaaaa",
+  backgroundSize: 'cover'
 }

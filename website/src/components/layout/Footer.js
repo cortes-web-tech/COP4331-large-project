@@ -85,10 +85,7 @@ const footerStyle = {
   height: "190px",
   color: '#ffffff',
   fontSize:'10pt',
-  position: 'relative',
-  bottom: 0,
-  left: 0,
-  right: 0
+
 }
 
 

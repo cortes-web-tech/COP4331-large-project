@@ -10,6 +10,7 @@ import Authors from './components/pages/Authors';
 import Demo from './components/pages/Demo';
 import Contact from './components/pages/Contact';
 import Start from './components/pages/Start';
+import Login from './components/pages/Login';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { Container, Row, Col } from 'reactstrap';
@@ -19,22 +20,23 @@ class App extends Component {
     return (
       <Router>
       <div style={pageLayout} className="App">
-      <div className="headerDiv">
-        <Header/>
-      </div>
-        <div style={pageStyle} className="displayPage">
+        <div className="headerDiv">
+          <Header/>
+          </div>
+          <div style={pageStyle} className="displayPage">
 
 
             <Route exact path="/start" component={Start}/>
             <Route exact path="/authors" component={Authors}/>
             <Route exact path="/demo" component={Demo}/>
             <Route exact path="/contact" component={Contact}/>
+            <Route exact path="/login" component={Login}/>
 
-        </div>
+          </div>
 
-        <div className="footerDiv">
-        <Footer/>
-        </div>
+          <div className="footerDiv">
+            <Footer/>
+          </div>
       </div>
 
 
@@ -48,6 +50,9 @@ var pageLayout = {
   // height: "100%",
   height: "auto",
   // background: "black",
+
+
+
 }
 
 var hStyle ={
@@ -65,7 +70,7 @@ var pageStyle = {
   fontSize: "50px",
   marginLeft: "auto",
   marginRight: "auto",
-  // height: "900px",
+
 
   backgroundSize: "cover"
 }
