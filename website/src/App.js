@@ -29,7 +29,7 @@ class App extends Component {
 
         <div style={pageStyle} className="displayPage">
 
-
+            <Route exact path="/"/>
             <Route exact path="/start" component={Start}/>
             <Route exact path="/authors" component={Authors}/>
             <Route exact path="/demo" component={Demo}/>
@@ -76,7 +76,6 @@ var pageStyle = {
   marginLeft: "auto",
   marginRight: "auto",
   // height: "900px",
-  backgroundImage: "url(" + Background +")",
   backgroundSize: "cover"
 }
 
