@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Background from './background.png';
+
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import NextLevelOrg from './components/layout/NextLevelOrg';
@@ -14,6 +14,7 @@ import Authors from './components/pages/Authors';
 import Demo from './components/pages/Demo';
 import Contact from './components/pages/Contact';
 import Start from './components/pages/Start';
+import Keepu from './components/pages/Keepu';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { Container, Row, Col } from 'reactstrap';
@@ -21,15 +22,13 @@ import { Container, Row, Col } from 'reactstrap';
 class App extends Component {
   render() {
     return (
+      <div>
+
       <Router>
-      <div style={pageLayout} className="App">
-      <div className="headerDiv">
-        <Header/>
-      </div>
+      <div  className="App">
 
-        <div style={pageStyle} className="displayPage">
-
-
+        <div style={pageStyle}>
+            <Route exact path="/" component={Keepu}/>
             <Route exact path="/start" component={Start}/>
             <Route exact path="/authors" component={Authors}/>
             <Route exact path="/demo" component={Demo}/>
@@ -47,7 +46,7 @@ class App extends Component {
         </div>
       </div>
       </Router>
-
+      </div>
 
 
     );
@@ -56,7 +55,7 @@ class App extends Component {
 
 var pageLayout = {
   // height: "100%",
-  height: "auto",
+  // height: "auto",
   // background: "black",
 }
 
@@ -69,15 +68,14 @@ var sectionStyle = {
 }
 
 var pageStyle = {
-  // flex: '1',
+  flex: '1',
   width: "100%",
   color: "#f00fff",
   fontSize: "50px",
   marginLeft: "auto",
   marginRight: "auto",
   // height: "900px",
-  backgroundImage: "url(" + Background +")",
-  backgroundSize: "cover"
+  // backgroundSize: "cover"
 }
 
 

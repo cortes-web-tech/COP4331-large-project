@@ -2,20 +2,45 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './../../App.css';
 
-function Header(){
+export default function Header(){
   return(
-    <header className="headerContainer" style={headerStyle}>
-      <div className="headerLogo" style={logoStyle}>
-        <Link style={h1Style} to="/">Keepu.</Link>
+    <header style={headerStyle}>
+      <div style={logoStyle}>
+        <Link style={h1Style} to="/">Keepu</Link>
       </div>
-      <div className="headerLinks">
-        <Link style={linkStyle} to="/start">Get Started</Link> | <Link style={linkStyle} to="/authors">Our Authors</Link> | <Link style={linkStyle} to="/demo">Schedule A Demo</Link> | <Link style={linkStyle} to="/contact">Contact Us</Link>
+      <div style={linksStyle}>
+        <div><Link style={linkStyle} to="/start">Get Started </Link></div>
+        <div><Link style={linkStyle} to="/authors">Our Authors </Link></div>
+        <div><Link style={linkStyle} to="/demo">Schedule A Demo </Link></div>
+        <div><Link style={linkStyle} to="/contact">Contact Us </Link></div>
       </div>
     </header>
   )
 }
 
+// Styling stuff
+const headerStyle = {
+  display: 'flex',
+  flexDirection: 'row',
+  color: '#ffffff',
+  paddingTop: '2px'
+}
+
+const logoStyle = {
+  flex: 2,
+  paddingLeft: '20px',
+}
+
+const linksStyle = {
+  display: 'flex',
+  flexDirection: 'row',
+  flex: 2,
+  justifyContent: 'space-around',
+  paddingRight: '20px'
+}
+
 const linkStyle = {
+
   color: 'white',
   textDecoration: 'none',
   fontSize: "20px",
@@ -25,15 +50,6 @@ const linkStyle = {
 const h1Style = {
   fontSize: "20px",
   color: 'white',
-  textDecoration: 'none'
+  // textDecoration: 'none',
+  color: "white"
 }
-
-const headerStyle = {
-  display: "block",
-  paddingTop: '2px'
-}
-const logoStyle = {
-  float: 'left',
-  paddingLeft: '20px',
-}
-export default Header
