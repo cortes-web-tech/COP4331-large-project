@@ -1,0 +1,57 @@
+.demoContainer {
+  display: flex;
+  /*border: 1px #ccc solid;*/
+  padding-top: 5%;
+  flex-flow: row wrap;
+}
+
+.demoContainer div {
+  /*border: 1px #ccc solid;*/
+  margin: 20px;
+}
+
+.demoBox1 {
+
+  min-width: 40%;
+     max-width: 600px;
+     height: 100%;
+     margin:  10px 10px;
+     flex: 2;
+}
+
+.demoBox1 div {
+  border: 10px #4D5CA2 solid;
+  background-color: transparent;
+  margin-left: 8%;
+}
+
+@media only screen and (max-width: 500px) {
+  .demoBox1 {
+    min-width: 360px;
+  }
+}
+
+
+.ratio{
+  position: relative;
+     padding-top: 56.25%;
+}
+
+
+.frame {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.demoBox2 {
+
+  flex: 1;
+  color: #ffffff;
+  text-align: left;
+  padding-left: 8%;
+
+}
