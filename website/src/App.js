@@ -23,29 +23,20 @@ class App extends Component {
   render() {
     return (
       <div>
-
-      <Router>
-      <div  className="App">
-
-        <div style={pageStyle}>
-            <Route exact path="/" component={Keepu}/>
-            <Route exact path="/start" component={Start}/>
-            <Route exact path="/authors" component={Authors}/>
-            <Route exact path="/demo" component={Demo}/>
-            <Route exact path="/contact" component={Contact}/>
-
-        </div>
-        <div>
-          <NextLevelOrg/>
-          <WhyKeepu/>
-          <Knots/>
-          <Services/>
-        </div>
-        <div className="footerDiv">
-        <Footer/>
-        </div>
-      </div>
-      </Router>
+        <Router>
+          <div className="App">
+            <div style={pageStyle}>
+                <Route exact path="/" component={Keepu}/>
+                <Route exact path="/start" component={Start}/>
+                <Route exact path="/authors" component={Authors}/>
+                <Route exact path="/demo" component={Demo}/>
+                <Route exact path="/contact" component={Contact}/>
+            </div>
+            <div className="footerDiv">
+              <Footer/>
+            </div>
+          </div>
+        </Router>
       </div>
 
 
@@ -53,29 +44,12 @@ class App extends Component {
   }
 }
 
-var pageLayout = {
-  // height: "100%",
-  // height: "auto",
-  // background: "black",
-}
-
-var hStyle ={
-
-}
-var sectionStyle = {
-
-
-}
-
 var pageStyle = {
   flex: '1',
   width: "100%",
-  color: "#f00fff",
-  fontSize: "50px",
+  // color: "#f00fff",
   marginLeft: "auto",
   marginRight: "auto",
-  // height: "900px",
-  // backgroundSize: "cover"
 }
 
 

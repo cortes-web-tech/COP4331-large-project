@@ -2,10 +2,6 @@ import React from 'react'
 import './../../App.css';
 import Header from './../../components/layout/Header';
 import Background from './../../background.png';
-// import NextLevelOrg from './../layout/NextLevelOrg';
-// import WhyKeepu from './../layout/WhyKeepu';
-// import Knots from './../layout/Knots';
-// import Services from './../layout/Services';
 
 import NextLevelOrg from './../layout/NextLevelOrg';
 import WhyKeepu from './../layout/WhyKeepu';
@@ -14,7 +10,7 @@ import Services from './../layout/Services';
 
 export default function Keepu(){
   return(
-  <div style={keepuContainer}>
+  <div style={keepuContainer} className="App">
     <Header/>
     <div style={boxLayout}>
 
@@ -37,12 +33,15 @@ export default function Keepu(){
       </div>
     </div>
     <div style = {pageStyle}>
-      
+
     </div>
     <React.Fragment>
       <div>
         <div style={style}>
-
+          <NextLevelOrg/>
+          <WhyKeepu/>
+          <Knots/>
+          <Services/>
         </div>
       </div>
     </React.Fragment>
@@ -54,11 +53,12 @@ const style = {
   // fontSize: '20px',
   color: '#ffffff',
   textAlign: 'center',
+  fontSize: '20px'
 }
 
 const keepuContainer = {
   backgroundImage: "url(" + Background + ")",
-  backgroundSize: 'cover',
+  // backgroundSize: 'cover',
   fontSize: '42px',
   textAlign: 'left',
 
@@ -106,5 +106,5 @@ var pageStyle = {
   color: "#f00fff",
   fontSize: "50px",
   marginLeft: "auto",
-  marginRight: "auto",
+  marginRight: "auto"
 }

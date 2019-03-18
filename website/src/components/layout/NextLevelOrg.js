@@ -5,7 +5,7 @@ import StayFocused from './../../stayFocused.png';
 
 function NextLevelOrg(){
   return(
-    <header className="nextLevelOrgContainer" style={nextLevelStyle}>
+    <header style={nextLevelStyle}>
       <div style={boxStyle}>
         <h1 style={h1Style}>Take your <br/>oganization to <br/>the next level</h1>
         <p style={pStyle}>We are dedicated to help organizations like <br/>yours streamline all evaluation needs <br/>through one simple application for your <br/>program evaluation plans, logic model, data <br/>collection, and more.</p>

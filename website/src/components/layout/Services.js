@@ -6,26 +6,26 @@ function Services(){
   return(
     <div style={servicesContainer}>
       <h1 style={h1Style}>Choose the serices that best fits your needs</h1>
-      <p>With Keepu, evaluate your prgoram on a wide range of topics to increase efficiency and
+      <p style = {pStyle}>With Keepu, evaluate your prgoram on a wide range of topics to increase efficiency and
       <br/>accountability by choosing a plan that best fits your organization and budget.</p>
       <div style={serviceStyle}>
         <div style={boxStyle}>
           <h3 style={h3Style}>One Trial</h3>
-          <p> One free limited
+          <p style={pStyle}> One free limited
           <br/>program evaluation.
           <br/>Gain limited access to <br/>KEEPU</p>
           <button type="button" style={btnStyle}>Select</button>
         </div>
         <div style={boxStyle}>
           <h3 style={h3Style}>Per month</h3>
-          <p> Evaluate up to three
+          <p style={pStyle}> Evaluate up to three
           <br/>programs. Gain full
           <br/>access to all four knots.<br/><br/></p>
           <button type="button" style={btnStyle}>Select</button>
         </div>
         <div style={boxStyle}>
           <h3 style={h3Style}>Per Month</h3>
-          <p> Evaluate up to six
+          <p style={pStyle}> Evaluate up to six
           <br/>programs. Gain full
           <br/>access to all four knots.<br/><br/></p>
           <button type="button" style={btnStyle}>Select</button>
@@ -37,7 +37,8 @@ function Services(){
 
 const servicesContainer = {
   backgroundColor: '#EEF1FF',
-  textAlign: 'center'
+  textAlign: 'center',
+  color: "black"
 }
 
 const serviceStyle = {
@@ -62,6 +63,10 @@ const h1Style = {
 const h3Style = {
   color: '#517EBD',
 
+}
+
+const pStyle = {
+  fontSize: '18px'
 }
 
 const btnStyle = {
