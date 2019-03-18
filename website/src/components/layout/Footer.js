@@ -63,7 +63,7 @@ const addressStyle = {
   listStyleType:'none',
 }
 const emailInputStyle = {
-  backgroundColor:"#3a43b0",
+  backgroundColor:"#4D5CA2",
   borderColor:"#EDA85F",
   color:'white',
 
@@ -81,7 +81,7 @@ const linkStyle = {
 
 const footerStyle = {
   opacity: '1.0',
-  background: "#3a43b0",
+  background: "#4D5CA2",
   height: "190px",
   color: '#ffffff',
   fontSize:'10pt',

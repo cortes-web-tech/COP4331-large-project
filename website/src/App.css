@@ -4,7 +4,7 @@
   /* height:1000px; */
   width: 100%;
   height: auto;
-  background: #f6c9ff;
+  /* background: #cfdcf9; */
   display: flex;
   flex-direction: column;
   flex:1;
@@ -12,7 +12,7 @@
 }
 
 .displayPage{
-  height: 711px;
+  /* height: 711px; */
   /* display: flex; */
 }
 

@@ -24,11 +24,13 @@ const linkStyle = {
 
 const h1Style = {
   fontSize: "20px",
-  color: '#ffffff',
-  textDecoration: 'none'
+  color: 'white',
+  textDecoration: 'none',
+  color: "black"
 }
 
 const headerStyle = {
+
   display: "block",
   paddingTop: '2px'
 }
