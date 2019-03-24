@@ -1,40 +1,26 @@
-import React , { Component } from 'react';
-import Background from '../../background.png';
+import React from 'react'
+import Header from './../../components/layout/Header';
 
-class Start extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <div style={body}>
-        <div style={tagline}>
-          <h1> <b>{'Program evaluation'}</b></h1>
-          <h1> <b>{'made simple'}</b></h1>
-        </div>
-        </div>
-      </React.Fragment>
-    );
-  }
+export default function Start(){
+  return(
+  <div style={getStartedContainer}>
+    <Header/>
+    <React.Fragment>
+      <div style={style}>
+        <h1 >Start</h1>
+        <p>This is coming from Start.js</p>
+      </div>
+    </React.Fragment>
+  </div>
+  )
 }
 
-export default Start;
-
-const body = {
-  backgroundImage: "url(" + Background +")",
-  width: "100%",
-  color: "#f00fff",
-  fontSize: "50px",
-  marginLeft: "auto",
-  marginRight: "auto",
-   height: "100%",
-
-  backgroundSize: "cover"
-}
-
-const tagline = {
+const style = {
+  // background: '#d6b9e8',
   color: '#ffffff',
-  textAlign: 'left',
-  fontWeight: '200',
-  padding: '1em',
-  position: 'absolute',
-  bottom: '4em'
+  textAlign: 'center',
+}
+
+const getStartedContainer = {
+
 }

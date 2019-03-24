@@ -89,11 +89,14 @@ const h1Style = {
 }
 
 const h2Style = {
-  fontSize: 24
+  fontSize: 24,
+  textDecoration: 'underline'
 }
 
 const listStyle = {
-  listStyle: 'none'
+  textAlign: 'left',
+  listStyle: 'none',
+  fontSize: '18px'
 }
 
 export default Knots

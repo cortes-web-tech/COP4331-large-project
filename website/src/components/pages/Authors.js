@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import maritza from '../../Pictures/maritza.png';
 import maria from '../../Pictures/maria.png';
-import './Authors.css'
+import './Authors.css';
+import Header from './../../components/layout/Header';
 
 class Authors extends Component {
   render () {
     return (
+      <div style={authorsPage}>
+      <Header/>
       <React.Fragment>
         <div style={authors}>
           <div class='authorContainer1'>
@@ -47,10 +50,15 @@ class Authors extends Component {
         </div>
 
       </React.Fragment>
+      </div>
     );
   }
 }
 export default Authors;
+
+const authorsPage = {
+  background: "#f8dabc",
+}
 
 const authors = {
     background: "#f8dabc",

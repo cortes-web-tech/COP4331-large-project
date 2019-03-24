@@ -4,7 +4,7 @@
   /* height:1000px; */
   width: 100%;
   height: auto;
-  /* background: #cfdcf9; */
+  background: #11cfaf;
   display: flex;
   flex-direction: column;
   flex:1;
@@ -28,22 +28,11 @@
 
 }
 
-.headerContainer{
-  display: flex;
-  color: #ffffff;
-  height: "20px";
-  align-items: flex-start;
-}
 
 .footerContainer{
   display: flex;
-
-
 }
-.headerLogo{
-  flex:1;
 
-}
 
 .headerLinks{
   flex:4;
@@ -81,7 +70,7 @@
 
 .footerContainer div{
   /* border: 1px #ccc solid; */
-  padding:2px;
+  /* padding:2px; */
 }
 
 
@@ -92,9 +81,7 @@
 }
 
 .headerDiv{
-  padding-Top: 0px;
-  height: 40px;
-  /* text-align: center; */
+  /* padding-Top: 0px; */
 }
 .footerDiv{
   /* flex:2; */
