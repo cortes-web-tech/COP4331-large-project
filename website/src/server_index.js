@@ -8,74 +8,113 @@ const port = process.env.PORT || 3001;
 
 app.use(express.json());
 
-app.post('/users', (req, res) => {
+app.post('/users', async (req, res) => {
   const user = new User(req.body);
 
-  user.save().then(() => {
+  try {
+    await user.save();
     res.status(201).send(user);
-  }).catch((e) => {
+  } catch (e) {
     res.status(400).send(e);
-  });
+  }
 });
 
-app.get('/users', (req, res) => {
-  User.find({}).then((users) => {
+app.get('/users', async (req, res) => {
+  try {
+    const users = await User.find({});
     res.send(users);
-  }).catch((e) => {
+  } catch (e) {
     res.status(500).send();
-  });
+  }
 });
 
-app.get('/users/:id', (req, res) => {
+app.get('/users/:id', async (req, res) => {
   const _id = req.params.id;
 
-  User.findById(_id).then((user) => {
-    if (!user) {
-      return res.status(404).send(); // incorrectly returning 500 when wrong id
+  try {
+    const user = await User.findById(_id);
+
+    if(!user) {
+      return res.status(404).send();
     }
 
     res.send(user);
-  }).catch((e) => {
+  } catch (e) {
     res.status(500).send();
-  });
+  }
 });
 
-app.post('/knot1', (req, res) => {
+app.post('/knot1', async (req, res) => {
   const knot1 = new Knot1(req.body);
 
-  knot1.save().then(() => {
+  try {
+    await knot1.save();
     res.status(201).send(knot1);
-  }).catch((e) => {
+  } catch (e) {
     res.status(400).send(e);
-  });
+  }
 });
 
-app.get('/knot1', (req, res) => {
-  Knot1.find({}).then((knot1) => {
-    res.send(knot1)
-  }).catch((e) => {
+app.get('/knot1', async (req, res) => {
+  try {
+    const knot1s = await Knot1.find({});
+    res.send(knot1s);
+  } catch (e) {
     res.status(500).send();
-  });
+  }
 });
 
-app.get('/knot1/:id', (req, res) => {
+app.get('/knot1/:id', async (req, res) => {
   const _id = req.params.id;
 
-  Knot1.findById(_id).then((knot1) => {
+  try {
+    const knot1 = await Knot1.findById(_id);
+
     if(!knot1) {
       return res.status(404).send(); // incorrectly returning 500 when wrong id
     }
 
     res.send(knot1);
-  }).catch((e) => {
+  } catch (e) {
     res.status(500).send();
-  })
-
+  }
 });
 
+app.patch('/users/:id', async (req, res) => {
+  const updates = Object.keys(req.body);
+  const allowedUpdates = ['password', 'tier'];
+  const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
 
+  if (!isValidOperation) {
+    return res.status(400).send({ error : 'Invalid updates'});
+  }
 
+  try {
+    const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
 
+    if (!user) {
+      return res.status(404).send();
+    }
+
+    res.send(user);
+  } catch (e) {
+    res.status(400).send(e);
+  }
+});
+
+app.patch('/knot1/:id', async (req, res) => {
+  try {
+    const knot1 = await Knot1.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true});
+
+    if(!knot1) {
+      return res.status(404).send();
+    }
+
+    res.send(knot1);
+  } catch (e) {
+    res.status(400).send(e);
+  }
+})
 
 
 
