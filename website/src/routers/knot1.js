@@ -40,8 +40,20 @@ router.get('/knot1/:id', async (req, res) => {
 
 
 router.patch('/knot1/:id', async (req, res) => {
+  const updates = Object.keys(req.body);
+  const allowedUpdates = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10', 'q11', 'q12', 'q13', 'q14'];
+  const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
+
+  if (!isValidOperation) {
+    return res.status(400).send({error : 'Invalid operation'});
+  }
+
   try {
-    const knot1 = await Knot1.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true});
+    const knot1 = await Knot1.findById(req.params.id);
+
+    updates.forEach((update) => knot1[update] = req.body[update]);
+    await knot1.save();
+
 
     if(!knot1) {
       return res.status(404).send();
