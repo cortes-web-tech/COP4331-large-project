@@ -1,0 +1,107 @@
+//////////////////////////////////////
+POST /users -- create an account
+
+{
+	"email": "test@gmail.com",
+	"password": "testpass1",
+  "tier": "2"
+}
+
+email and password are required, tier can be left off. if left off
+the default is 3 (basic user).
+
+email is checked to be an actual Email
+
+an email that already has an account cant be used again
+
+password cannot contain the word 'password', must be at least 8 chars
+an authentication token is generated on account creation so user doesnt have to login
+
+/////////////////////////////////////
+POST /users/login -- login
+
+{
+	"email": "test@gmail.com",
+	"password": "testpass1",
+}
+
+if credentials are correct an authentication token is generated
+
+//////////////// Everything below needs auth token to work, see notes at end////////////////
+POST /users/logout
+
+removes current token for logged in user
+
+////////////////////////////////////////////
+POST /users/logoutAll
+
+removes all tokens for logged in user
+(so if a user clicks login 3 times they have 3 tokens, you want to remove
+the, all to completely log them out)
+
+
+///////////////////////////////////////////////
+GET /users/me
+
+shows users profile
+(hashed password is hidden for security purpose but it is there)
+
+
+////////////////////////////////////////////////
+PATCH /users/me
+
+{
+	"password": "testpass1",
+  "tier": "2"
+}
+
+email cannot be updated
+password and tier can be updated, you can update one or both
+
+
+
+/////////////////////////////////////////////////////
+(will be changing soon to connect to user)
+POST /knot1
+{
+	"q1": [false, false, true, true, true, false],
+  "q3": "Covian"
+	"q10": 30,
+}
+
+one, many, or all question answers can be added
+//////////////////////////////////////////////////
+GET /knot1 (probably going to remove)
+
+shows all knot1s
+
+///////////////////////////////////////////////////
+GET /knot1/:id (going to update soon)
+shows knot1 answers for a specific knot
+
+
+/////////////////////////////////////////////////////
+PATCH /knot1/:id (going to update soon)
+
+{
+	"q1": [false, false, true, true, true, false],
+  "q3": "Covian"
+	"q10": 30,
+}
+
+one, many, or all question answers can be updated
+
+//////////////////////////////////////////////////
+NOTES: 
+when a user logs in they are generated an authentication token
+this token lets them use the other routes like view knot1, edit knot1, etc
+without it they cant access those
+
+To test in POSTMAN, login with a user. Get the current token generated either from the
+POSTMAN output or the database. In POSTMAN make a collection of all Keepu routes,
+click ... and edit, then under Authorization and a Bearer Token and set it to the token
+you got from the logged in user. When this token is added the other routes will work.
+Create user and Login are the only routes that dont need authentication.
+
+Checkboxes are arrays of true or false for each box,
+ex. knot 1 question 1 has 6 checkboxes, [true, true, true, false, false, true]
