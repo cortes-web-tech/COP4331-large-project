@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 import './../../App.css';
 import Header from './../../components/layout/Header';
 import Background from './../../background.png';
@@ -28,7 +29,11 @@ export default function Keepu(){
         </div>
 
         <div style = {rightBox}>
-          <button type="button" style={buttonStyle}>Get Started</button>
+          <div>
+            <Link to="/start">
+              <button type="button" style={buttonStyle}>Get Started</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
