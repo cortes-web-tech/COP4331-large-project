@@ -59,9 +59,11 @@ email cannot be updated
 password and tier can be updated, you can update one or both
 
 
-
 /////////////////////////////////////////////////////
-(will be changing soon to connect to user)
+DELETE /users/me
+
+deletes the logged in user and their knot1 answer
+/////////////////////////////////////////////////////
 POST /knot1
 {
 	"q1": [false, false, true, true, true, false],
@@ -70,15 +72,18 @@ POST /knot1
 }
 
 one, many, or all question answers can be added
+this knot1 is added to the currently logged in user
 //////////////////////////////////////////////////
-GET /knot1 (probably going to remove)
+GET /knot1
 
-shows all knot1s
+shows all knot1s for the logged in user
+(will only be using this /knot1 for this project bc only 1 topic)
 
 ///////////////////////////////////////////////////
-GET /knot1/:id (going to update soon)
-shows knot1 answers for a specific knot
-
+GET /knot1/:id
+shows knot1 answers with a specific id for the logged in user,
+for example if looking at knot1 answers for a specific topic
+(will only be using /knot1 for this project bc only 1 topic)
 
 /////////////////////////////////////////////////////
 PATCH /knot1/:id (going to update soon)
@@ -92,7 +97,7 @@ PATCH /knot1/:id (going to update soon)
 one, many, or all question answers can be updated
 
 //////////////////////////////////////////////////
-NOTES: 
+NOTES:
 when a user logs in they are generated an authentication token
 this token lets them use the other routes like view knot1, edit knot1, etc
 without it they cant access those

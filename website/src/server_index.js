@@ -44,3 +44,20 @@ app.use(knot1Router);
 app.listen(port, () => {
   console.log('Server is up on port ' + port);
 });
+
+const Knot1 = require('./models/knot1');
+const User = require('./models/user');
+
+const main = async () => {
+  // const knot1 = await Knot1.findById('5c9fa95e0d27d62f70f8bf1b');
+  // await knot1.populate('owner').execPopulate();
+  // console.log(knot1.owner);
+
+  const user = await User.findById('5c9fa9240d27d62f70f8bf19');
+  await user.populate('knot1').execPopulate();
+  console.log(user.knot1);
+
+
+}
+
+main();
