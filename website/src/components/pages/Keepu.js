@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
 import './../../App.css';
 import Header from './../../components/layout/Header';
 import Background from './../../background.png';
@@ -9,7 +8,16 @@ import WhyKeepu from './../layout/WhyKeepu';
 import Knots from './../layout/Knots';
 import Services from './../layout/Services';
 
-export default function Keepu(){
+import Modal from 'react-bootstrap/Modal';
+import ModalDialog from 'react-bootstrap/ModalDialog';
+import ModalHeader from 'react-bootstrap/ModalHeader';
+import ModalTitle from 'react-bootstrap/ModalTitle';
+import ModalBody from 'react-bootstrap/ModalBody';
+import ModalFooter from 'react-bootstrap/ModalFooter';
+
+
+class Keepu extends React.Component {
+render() {
   return(
   <div style={keepuContainer} className="App">
     <Header/>
@@ -19,21 +27,17 @@ export default function Keepu(){
         <div style = {leftBox}>
         </div>
         <div style = {rightBox}>
-        Connect the<br/>knots and<br/>achieve results
+        <b>Connect the<br/>knots and<br/>achieve results</b>
         </div>
       </div>
 
       <div style={lowerBox}>
         <div style = {leftBox}>
-          Program evaluation<br/>made simple
+          <b>Program evaluation<br/>made simple</b>
         </div>
 
         <div style = {rightBox}>
-          <div>
-            <Link to="/start">
-              <button type="button" style={buttonStyle}>Get Started</button>
-            </Link>
-          </div>
+          <button type="button" style={buttonStyle}>Get Started</button>
         </div>
       </div>
     </div>
@@ -53,6 +57,8 @@ export default function Keepu(){
   </div>
   )
 }
+}
+export default Keepu;
 
 const style = {
   // fontSize: '20px',
@@ -78,7 +84,7 @@ const boxLayout = {
 }
 const upperBox = {
   paddingTop: '50px',
-  paddingBottom: '220px',
+  paddingBottom: '100px',
   display: 'flex',
   flexDirection: 'row'
 }
@@ -95,14 +101,29 @@ const leftBox = {
 }
 
 const rightBox = {
-  flex: 1
+  flex: 1,
+  fontSize: '150%'
 }
 
 const buttonStyle = {
   background: '#ffffff',
-  width:' 300px',
-  fontSize: '32px',
-  borderRadius: '25px'
+  width:' 270px',
+  height: '50px',
+  fontSize: '50%',
+  borderRadius: '50px',
+  border: 'none',
+  color: '#707CB4'
+}
+
+const demoBtn1 = {
+  background: '#ffffff',
+    color: '#807bbd',
+      width:' 115px',
+      height:'35px',
+      borderRadius: '50px',
+      fontSize: '100%',
+      border: 'none',
+      cursor: 'pointer'
 }
 
 var pageStyle = {

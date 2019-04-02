@@ -84,7 +84,8 @@ const footerStyle = {
   background: "#4D5CA2",
   height: "190px",
   color: '#ffffff',
-  fontSize:'10pt'
+  fontSize:'10pt',
+
 }
 
 
