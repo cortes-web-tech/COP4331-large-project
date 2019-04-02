@@ -2,6 +2,9 @@ const express = require('express');
 const Knot1 = require('../models/knot1');
 const auth = require('../middleware/auth');
 const router = new express.Router();
+const cors = require('cors');
+
+router.use(cors());
 
 router.post('/knot1', auth, async (req, res) => {
   const knot1 = new Knot1({

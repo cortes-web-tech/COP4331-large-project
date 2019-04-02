@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/keepu_api', {
+mongoose.connect(process.env.MONGODB_URL, {
   userNewUrlParser: true,
   useCreateIndex: true
 });
