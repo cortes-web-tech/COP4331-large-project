@@ -1,0 +1,60 @@
+.loginContainer {
+  display: flex;
+  /*border: 1px black solid;*/
+  padding-top: 5%;
+  justify-content: center;
+}
+
+.loginBox1 {
+  flex: 1;
+  /*border: 1px black solid;*/
+    text-align: left;
+}
+
+.loginBox2 {
+  flex: 1.5;
+  /*border: 1px black solid;*/
+}
+
+.loginBox3 {
+  flex: 1;
+  /*border: 1px black solid;*/
+}
+
+#greet {
+  color: #888888;
+  font-size: 100%;
+}
+
+
+.loginLinks:hover {
+  color: #888888;
+}
+
+
+.loginBox1 form .label{
+  display:block;
+  margin-bottom:10px;
+  width:10em;
+  color: #888888;
+  font-size: 40%;
+}
+.loginBox1 form .label .field{
+  display:block;
+}
+
+.loginBox1 form .label input{
+  padding:10px;
+  font-size: 70%;
+  border:1px solid #CCC;
+}
+.loginBox1 form .label .pass{
+  width:225px;
+}
+
+.loginBox1 form .loginLinks {
+  float:left;
+  margin:15px auto;
+  font-size: 80%;
+  color: #AAAAAA;
+}

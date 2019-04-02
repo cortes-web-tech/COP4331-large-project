@@ -13,6 +13,7 @@ export default function Header(){
         <div><Link style={linkStyle} to="/authors">Our Authors </Link></div>
         <div><Link style={linkStyle} to="/demo">Schedule A Demo </Link></div>
         <div><Link style={linkStyle} to="/contact">Contact Us </Link></div>
+        <div><Link style={linkStyle} to="/login">Login</Link></div>
       </div>
     </header>
   )
@@ -45,7 +46,6 @@ const linkStyle = {
   textDecoration: 'none',
   fontSize: "20px",
 }
-
 
 const h1Style = {
   fontSize: "20px",
