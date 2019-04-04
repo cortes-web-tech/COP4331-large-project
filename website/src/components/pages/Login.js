@@ -31,21 +31,24 @@ class Start extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    // console.log(`Submitted`);
-    // console.log(`Email: ${this.state.emailInput}`);
-    // console.log(`Password: ${this.state.passwordInput}`);
+    console.log(`Submitted`);
+    console.log(`Email: ${this.state.emailInput}`);
+    console.log(`Password: ${this.state.passwordInput}`);
 
-    const newUser = {
-      emailInput: this.state.emailInput,
-      passwordInput: this.state.passwordInput
+    const userLogin = {
+      email: this.state.emailInput,
+      password: this.state.passwordInput
     };
 
-    axios.post('http://localhost:3001/users', newUser).then(res => console.log(res.data));
+    //axios.post('http://localhost:3001/users', newUser).then(res => console.log(res.data));
+    axios.post('http://localhost:3001/users/login', userLogin).then(res => console.log(res.data));
 
     this.setState({
             emailInput: '',
             passwordInput: '',
     });
+
+    
   }
   render() {
     return (
