@@ -1,14 +1,16 @@
+
 import React, { Component } from 'react';
-import Header from './../../components/layout/Header';
 import { Button } from 'reactstrap';
 import './Demo.css';
+import Header from './../../components/layout/Header';
 
 class Demo extends Component {
   render() {
     return (
+      <div style={demo}>
+      <Header/>
       <React.Fragment>
         <div style = {demo}>
-        <Header/>
           <div class = "demoContainer">
 
             <div class = "demoBox1">
@@ -21,12 +23,13 @@ class Demo extends Component {
               <h1 style ={h1}> <b>{'Speak with one of our'}</b></h1>
               <h1 style={h1}> <b>{'experts on how'}</b></h1>
               <h1 style={h1}> <b>{'Keepu can help you'}</b></h1>
-              <button type="button" style ={btn}>Schedule a visit</button>
+              <button type="button" style ={demoBtn}>Schedule a visit</button>
             </div>
           </div>
         </div>
 
       </React.Fragment>
+      </div>
     );
   }
 }
@@ -39,15 +42,19 @@ const demo = {
    height: '100%'
 }
 
-const btn = {
+const demoBtn = {
   background: '#ffffff',
     color: '#807bbd',
     width:' 200px',
     height:'50px',
     borderRadius: '25px',
-    fontSize: '45%',
+    fontSize: '120%',
+    border: 'none',
+    marginTop: '75px',
+    marginLeft: '85px'
 }
 
+
 const h1 = {
-  fontSize: '110%'
+  fontSize: '280%'
 }

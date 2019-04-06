@@ -6,12 +6,12 @@ const Knot1 = mongoose.model('Knot1', {
   },
   q2: {
     type: Boolean,
-    default: false
+    default: null
   },
   q3: {
     type: String,
     trim: true,
-    default: ""
+    default: null
   },
   q4: {
     type: Array
@@ -30,26 +30,31 @@ const Knot1 = mongoose.model('Knot1', {
   },
   q9: {
     type: Number,
-    default: ''
+    default: null
   },
   q10: {
     type: Number,
-    default: ''
+    default: null
   },
   q11: {
     type: Number,
-    default: ''
+    default: null
   },
   q12: {
     type: Number,
-    default: ''
+    default: null
   },
   q13: {
     type: Number,
-    default: ''
+    default: null
   },
   q14: {
     type: Array
+  },
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'User'
   }
 });
 

@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const Knot1 = require('./knot1');
 
 const userSchema = new mongoose.Schema({
     email: {
@@ -45,6 +46,14 @@ const userSchema = new mongoose.Schema({
     }]
 });
 
+userSchema.virtual('knot1', {
+  ref: 'Knot1',
+  localField: '_id',
+  foreignField: 'owner'
+});
+
+
+// hides hashed password and previous tokens
 userSchema.methods.toJSON = function () {
   const user = this;
   const userObject = user.toObject();
@@ -57,7 +66,7 @@ userSchema.methods.toJSON = function () {
 
 userSchema.methods.generateAuthToken = async function () {
   const user = this;
-  const token = jwt.sign({_id: user._id.toString()}, 'thisismynewcourse');
+  const token = jwt.sign({_id: user._id.toString()}, process.env.JWT_SECRET);
 
   user.tokens = user.tokens.concat({ token });
   await user.save();
@@ -90,6 +99,13 @@ userSchema.pre('save', async function (next) {
     user.password = await bcrypt.hash(user.password, 8);
   }
 
+  next();
+});
+
+// delete user knot1 if user is removed
+userSchema.pre('remove', async function (next) {
+  const user = this;
+  await Knot1.deleteOne({owner: user._id});
   next();
 });
 
