@@ -2,13 +2,18 @@ import React , { Component } from 'react';
 import Background from '../../background.png';
 import './Login.css';
 import axios from 'axios';
+import Program from './Program';
+import {Link} from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Redirect } from 'react-router';
 
 class Start extends Component {
   constructor(props) {
     super(props);
     this.state = {
       emailInput: '',
-      passwordInput: ''
+      passwordInput: '',
+      authenticated: false
     };
 
     this.onChangeEmail = this.onChangeEmail.bind(this);
@@ -41,7 +46,21 @@ class Start extends Component {
     };
 
     //axios.post('http://localhost:3001/users', newUser).then(res => console.log(res.data));
-    axios.post('http://localhost:3001/users/login', userLogin).then(res => console.log(res.data));
+    //axios.post('http://localhost:3001/users/login', userLogin).then(res => console.log(res.data));
+
+    axios.post('http://localhost:3001/users/login',
+      userLogin
+    ).then(res => {
+      if(res.status === 200) {
+    console.log('nice');
+        this.setState({
+          authenticated: true
+        });
+      } else {
+        console.log('not so nice :(');
+      }
+    });
+
 
     this.setState({
             emailInput: '',
@@ -50,7 +69,12 @@ class Start extends Component {
 
   }
   render() {
+    if(this.state.authenticated) {
+      return  <Redirect to ='/program' component={Program} />
+    }
+
     return (
+
       <React.Fragment>
         <div style={login}>
 
@@ -76,19 +100,11 @@ class Start extends Component {
 
               </form>
 
-
-
-
-              {/*<p class="loginForm"><b>Email address</b></p>
-              <input class="loginInput" type="email" id="email" placeholder="Your email address" maxlength="30" />
-              <p class="loginForm"><b>Password</b></p>
-              <input class="loginInput" type="password" id="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"/>
-              <a href="#" class="loginLinks"><br />Forgot password?Click here.<br /></a>
-              <button type="button" style={loginBtn}>Sign In</button>
-              <a href="#" class="loginLinks"><br />New to our Service?<br /></a>*/}
             </div>
             <div class="loginBox1"></div>
           </div>
+
+
         </div>
       </React.Fragment>
     );
