@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+
+import {Link} from 'react-router-dom';
+
 import './../../App.css';
 import Header from './../../components/layout/Header';
 import Background from './../../background.png';
@@ -7,6 +10,9 @@ import NextLevelOrg from './../layout/NextLevelOrg';
 import WhyKeepu from './../layout/WhyKeepu';
 import Knots from './../layout/Knots';
 import Services from './../layout/Services';
+
+import LoggedIn from './LoggedIn'
+
 
 import Modal from 'react-bootstrap/Modal';
 import ModalDialog from 'react-bootstrap/ModalDialog';
@@ -37,7 +43,12 @@ render() {
         </div>
 
         <div style = {rightBox}>
+
+          <Link to="/loggedIn">
           <button type="button" style={buttonStyle}>Get Started</button>
+
+          </Link>
+
         </div>
       </div>
     </div>

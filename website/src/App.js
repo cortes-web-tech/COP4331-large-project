@@ -16,6 +16,12 @@ import Contact from './components/pages/Contact';
 import Start from './components/pages/Start';
 import Keepu from './components/pages/Keepu';
 import Login from './components/pages/Login';
+
+import LoggedIn from './components/pages/LoggedIn';
+import Program from './components/pages/Program';
+import Knot1 from './components/knots/Knot1';
+import Knot1p2 from './components/knots/Knot1p2';
+
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { Container, Row, Col } from 'reactstrap';
@@ -33,6 +39,12 @@ class App extends Component {
                 <Route exact path="/demo" component={Demo}/>
                 <Route exact path="/contact" component={Contact}/>
                 <Route exact path="/login" component={Login}/>
+
+                <Route exact path="/loggedIn" component={LoggedIn}/>
+                <Route exact path="/program" component={Program}/>
+                <Route exact path="/knot1" component={Knot1}/>
+                <Route exact path="/knot1p2" component={Knot1p2}/>
+
             </div>
             <div className="footerDiv">
               <Footer/>

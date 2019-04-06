@@ -48,7 +48,6 @@ class Start extends Component {
             passwordInput: '',
     });
 
-    
   }
   render() {
     return (
