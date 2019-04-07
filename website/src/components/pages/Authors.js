@@ -3,6 +3,7 @@ import maritza from '../../Pictures/maritza.png';
 import maria from '../../Pictures/maria.png';
 import './Authors.css';
 import Header from './../../components/layout/Header';
+import Footer from './../../components/layout/Footer';
 
 class Authors extends Component {
   render () {
@@ -50,6 +51,7 @@ class Authors extends Component {
         </div>
 
       </React.Fragment>
+      <Footer/>
       </div>
     );
   }

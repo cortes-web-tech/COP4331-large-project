@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './../../components/layout/Header';
-
+import Footer from './../../components/layout/Footer';
 export default function Start(){
   return(
   <div style={getStartedContainer}>
@@ -11,6 +11,7 @@ export default function Start(){
         <p>This is coming from Start.js</p>
       </div>
     </React.Fragment>
+    <Footer/>
   </div>
   )
 }

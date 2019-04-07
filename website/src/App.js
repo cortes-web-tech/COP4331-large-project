@@ -18,6 +18,8 @@ import Keepu from './components/pages/Keepu';
 import Login from './components/pages/Login';
 import LoggedIn from './components/pages/LoggedIn';
 import Program from './components/pages/Program';
+import HelpCenter from './components/pages/HelpCenter';
+import Settings from './components/pages/Settings';
 import Knot1 from './components/knots/Knot1';
 import Knot1p2 from './components/knots/Knot1p2';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -41,9 +43,11 @@ class App extends Component {
                 <Route exact path="/program" component={Program}/>
                 <Route exact path="/knot1" component={Knot1}/>
                 <Route exact path="/knot1p2" component={Knot1p2}/>
+                <Route exact path="/helpCenter" component={HelpCenter}/>
+                <Route exact path="/settings" component={Settings}/>
             </div>
             <div className="footerDiv">
-              <Footer/>
+              <div></div>
             </div>
           </div>
         </Router>
