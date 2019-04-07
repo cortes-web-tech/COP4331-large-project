@@ -78,9 +78,3 @@ module.exports = Knot1;
 //   q13: 1,
 //   q14: [true, true, true, false]
 // });
-//
-// knot1.save().then(() => {
-//   console.log(knot1);
-// }).catch((error) => {
-//   console.log(error);
-// });

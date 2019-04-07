@@ -6,6 +6,10 @@ import Program from './Program';
 import {Link} from 'react-router-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Redirect } from 'react-router';
+import Knot1 from './../knots/Knot1';
+
+
+const UserContext = React.createContext('');
 
 class Start extends Component {
   constructor(props) {
@@ -13,7 +17,7 @@ class Start extends Component {
     this.state = {
       emailInput: '',
       passwordInput: '',
-      authenticated: false
+      authenticated: false,
     };
 
     this.onChangeEmail = this.onChangeEmail.bind(this);
@@ -52,10 +56,12 @@ class Start extends Component {
       userLogin
     ).then(res => {
       if(res.status === 200) {
-    console.log('nice');
         this.setState({
-          authenticated: true
+          authenticated: true,
+          userID: res.data._id
         });
+
+        window.id = res.data._id;
       } else {
         console.log('not so nice :(');
       }
@@ -95,6 +101,7 @@ class Start extends Component {
 
                   <a href="#" class="loginLinks"><br />Forgot password?<br /></a>
                   <input type="submit" style={loginBtn} value="Sign In" />
+
                   <a href="#" class="loginLinks"><br />New to our Service?<br />Sign up!<br /></a>
                 </div>
 
