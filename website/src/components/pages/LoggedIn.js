@@ -9,7 +9,7 @@ class Logged extends React.Component{
     return(
 
 
-      <div style={loggedInStyle}>
+      <div className="dashboard" style={loggedInStyle}>
         <DashNav />
         <React.Fragment>
             <div>
@@ -52,7 +52,7 @@ const loggedInStyle = {
   backgroundColor: "#cceeee",
   display: "flex",
   flexDirection: "row",
-  justifyContent: "space-between"
+  justifyContent: "space-between",
 }
 
 const boxLaout = {

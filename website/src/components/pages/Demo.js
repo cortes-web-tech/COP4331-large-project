@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import './Demo.css';
 import Header from './../../components/layout/Header';
+import Footer from './../../components/layout/Footer';
 
 class Demo extends Component {
   render() {
@@ -29,6 +30,7 @@ class Demo extends Component {
         </div>
 
       </React.Fragment>
+      <Footer/>
       </div>
     );
   }
