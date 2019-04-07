@@ -6,25 +6,28 @@ export default function DashNav(){
   return(
     <div>
       <div>
-        <ul style={linkStyle}>
-          <li style={bub}> Keepu</li>
-          <li style={bub}> Home</li>
-          <li style={bub}> Dashboard</li>
-          <li style={bub}> Program</li>
-          <li style={bub}> Help Center</li>
-          <li style={bub}> Settings</li>
+        <ul style={dashStyle}>
+          <p>Keepu</p>
+          <Link to="/start" style={bub}> Home</Link><br/>
+          <Link to="/loggedIn" style={bub}> Dashboard</Link><br/>
+          <Link to="/program" style={bub}> Program</Link><br/>
+          <Link to="/helpCenter" style={bub}> Help Center</Link><br/>
+          <Link to="/settings" style={bub}> Settings</Link>
         </ul>
       </div>
     </div>
   )
 }
 
-const linkStyle = {
-  textDecoration: "none",
+const dashStyle = {
+  background: "#1F2E75",
+  color: "white",
+  padding: "8px",
+  height: "400px"
 
 }
 
 const bub = {
-  background: "#007bff",
-  textDecoration: "none"
+  color: "white"
+
 }

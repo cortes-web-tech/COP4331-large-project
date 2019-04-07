@@ -7,39 +7,46 @@ import Program from './Program'
 class Logged extends React.Component{
   render(){
     return(
+
+
       <div style={loggedInStyle}>
         <DashNav />
         <React.Fragment>
-            <div style={col}>
-              <div> Refugees </div>
-              <div> Parenting </div>
-              <div> Domestic Violence/Sexual Assault </div>
-            </div>
+            <div>
+              <div>
+                <h1>Overview</h1>
+              </div>
+              <div style = {boxLaout}>
+                <div style={col}>
+                  <div style={disabled}> Refugees </div>
+                  <div style={enabled}> Parenting </div>
+                  <div style={disabled}> Domestic Violence/Sexual Assault </div>
+                </div>
 
-            <div style={col}>
-              <div> Early Child Development </div>
-              <div> Environmental Education </div>
-              <div> Abortion Support </div>
-            </div>
+                <div style={col}>
+                  <div style={disabled}> Early Child Development </div>
+                  <div style={disabled}> Environmental Education </div>
+                  <div style={disabled}> Abortion Support </div>
+                </div>
 
-            <div style={col}>
-              <div> <Link style={linkStyle} to="/program">Human Trafficking </Link></div>
-              <div> Social Change </div>
-              <div> Child Sexual Abuse </div>
+                <div style={col}>
+                  <div style={enabled}><Link style={textColor} to="/program">Human Trafficking </Link></div>
+                  <div style={disabled}> Social Change </div>
+                  <div style={disabled}> Child Sexual Abuse </div>
+                </div>
+                <div style={col}>
+                  <div style={disabled}> Fatherhood </div>
+                  <div style={disabled}> Teen Pregnancy </div>
+                  <div style={disabled}> Care Coordination </div>
+                </div>
+              </div>
             </div>
-            <div style={col}>
-              <div> Fatherhood </div>
-              <div> Teen Pregnancy </div>
-              <div> Care Coordination </div>
-            </div>
-
         <br/>
         </React.Fragment>
       </div>
     )
   }
 }
-
 
 const loggedInStyle = {
   backgroundColor: "#cceeee",
@@ -48,12 +55,39 @@ const loggedInStyle = {
   justifyContent: "space-between"
 }
 
-const col = {
-  flexDirection: "column"
+const boxLaout = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  flex: 3
 }
 
-const linkStyle = {
+const col = {
+  flexDirection: "column",
+  flex: 1,
 
+}
+
+const textColor = {
+  color:"white"
+}
+const enabled = {
+  backgroundColor: "#EDA85F",
+  borderRadius: "15px",
+  height: "100px",
+  margin: "10px",
+  color: "white",
+  textAlign: "center"
+}
+
+const disabled = {
+backgroundColor: "#4D5CA2",
+borderRadius: "15px",
+height: "100px",
+margin: "10px",
+color: "grey",
+display: "flex",
+textAlign: "center"
 }
 
 export default Logged;
