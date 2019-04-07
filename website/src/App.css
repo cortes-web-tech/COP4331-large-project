@@ -3,12 +3,16 @@
   text-align: center;
   /* height:1000px; */
   width: 100%;
-  height: auto;
+
   background: #11cfaf;
   display: flex;
   flex-direction: column;
   flex:1;
 
+}
+
+.dashboard{
+  height: 100vh;
 }
 
 .displayPage{

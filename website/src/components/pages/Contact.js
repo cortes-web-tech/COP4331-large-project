@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './../../components/layout/Header';
+import Footer from './../../components/layout/Footer';
 
 export default function Contact(){
   return(
@@ -11,6 +12,7 @@ export default function Contact(){
         <p>This is coming from the Contact.js</p>
       </div>
     </React.Fragment>
+    <Footer/>
   </div>
   )
 }

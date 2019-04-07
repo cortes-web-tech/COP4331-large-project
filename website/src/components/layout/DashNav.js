@@ -23,7 +23,10 @@ const dashStyle = {
   background: "#1F2E75",
   color: "white",
   padding: "8px",
-  height: "400px"
+  display: "flex",
+  flexDirection: "column",
+  height: "100vh"
+
 
 }
 

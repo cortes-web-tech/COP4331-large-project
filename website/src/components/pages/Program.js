@@ -32,10 +32,11 @@ class Program extends React.Component {
 }
 
 const programStyle = {
-  backgroundColor: "#cceeee",
+  backgroundColor: "#cceeff",
   display: "flex",
   flexDirection: "row",
   justifyContent: "space-between"
+
 }
 
 const navStyle = {
