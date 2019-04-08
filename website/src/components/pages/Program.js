@@ -8,12 +8,30 @@ export default class Program extends React.Component {
   constructor(){
     super()
     this.state = {
+      showKnot1: false,
+      showKnot2: false,
       show1: false,
       show2: false,
       show3: false,
       show4: false,
       show5: false
     }
+  }
+
+  toggleKnot1(){
+    this.setState({
+      ...this.state,
+      showKnot1: !this.state.showKnot1,
+      showKnot2: false
+    })
+  }
+
+  toggleKnot2(){
+    this.setState({
+      ...this.state,
+      showKnot1: false,
+      showKnot2: !this.state.showKnot2
+    })
   }
 
   toggle1(){
@@ -60,15 +78,15 @@ export default class Program extends React.Component {
         <React.Fragment>
         <div style={knotStyle}>
           <div style={dBox}>
-            <p>Human Trafficking</p>
+            <h1 style={titleStyle}>Human Trafficking</h1>
             </div>
 
           <div style={eBox}>
-            <Link to="/knot1" style = {enabled}>Knot 1 Understand your program </Link>
+            <button style = {enabled} onClick={()=>this.toggleKnot1()}>Knot 1 Understand your program </button>
           </div>
 
-          <div style={dBox}>
-            <p>Knot 2 Identify what to measure </p>
+          <div style={eBox}>
+            <button style = {enabled} onClick={()=>this.toggleKnot2()}>Knot 2 Identify what to measure </button>
           </div>
 
           <div style={dBox}>
@@ -79,6 +97,9 @@ export default class Program extends React.Component {
             <p>Knot 4 Resource library</p>
           </div>
         </div>
+        {
+          this.state.showKnot1?
+
         <div style={knotQ}>
           <div>
             <h1>Knot 1</h1>
@@ -87,7 +108,7 @@ export default class Program extends React.Component {
 
           <div style={formArea}>
             <div style={catArea}>
-            Program characteristics
+            <h2 style ={headStyle}>Program characteristics</h2>
             {
               this.state.show1?
               <form style={formStyle}>
@@ -146,7 +167,7 @@ export default class Program extends React.Component {
             How much will you need?
             {
               this.state.show3?
-              <div>
+              <div style={formStyle}>
                 <div style = {needBox}>
                   <h3>Technology</h3>
                   <form>
@@ -182,7 +203,7 @@ export default class Program extends React.Component {
             Activities
             {
               this.state.show4?
-              <div>
+              <div style={formStyle}>
                 <p>Click the activites your program will do (Mark all that apply)</p>
                 <form>
                   Identify Law enforcement agencies <input type="checkbox"/><br/>
@@ -287,9 +308,40 @@ export default class Program extends React.Component {
             <div>
               <button style ={plusButton} onClick={()=>this.toggle5()}>+</button>
             </div>
-          </div>
-        </div>
 
+          </div>
+
+        </div>
+        :null
+        }
+        {
+          this.state.showKnot2?
+          <div style={knotQ}>
+            <div>
+              <h1>Knot 2</h1>
+              <p>Identify what to measure</p>
+              <p>Based on what your program would do, now is the time to narrow it down by<br/>
+                defining your oututs and outcomes!</p>
+            </div>
+              <div style={programStyle}>
+                <div>
+                  <h3>Outputs</h3>
+                  <ul>
+                    <li>Sample output: 25 community outreach events will be provided to Latina women twice a month.</li>
+                    <button>Click here to create an output</button>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Outcomes</h3>
+                  <ul>
+                    <li>Sample outcome: 85% of applicants will increase their knowledge after completing the training</li>
+                    <li>Click here to create an outcome</li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+          :null
+        }
         </React.Fragment>
       </div>
     );
@@ -297,10 +349,10 @@ export default class Program extends React.Component {
 }
 
 const programStyle = {
-  backgroundColor: "#cceeff",
+
   display: "flex",
   flexDirection: "row",
-  justifyContent: "space-between",
+  justifyContent: "space-around",
   height: "100vh"
 
 }
@@ -325,6 +377,9 @@ const knotQ = {
 
 const enabled = {
   color: "#EDA85F",
+  backgroundColor: "#eeeeee",
+  border: "none",
+  fontSize: "36px"
 
 }
 
@@ -363,7 +418,7 @@ const plusButton = {
 }
 
 const formStyle = {
-
+  borderTop: "1px black solid"
 }
 
 const needBox = {
@@ -390,4 +445,12 @@ const reportBox = {
 
 const reportHead = {
   backgroundColor: "#A3ADDB"
+}
+
+const titleStyle = {
+  color: "#F7921C"
+}
+
+const headStyle = {
+  fontSize: "22px",
 }
