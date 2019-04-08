@@ -2,7 +2,7 @@ import React , { Component } from 'react';
 import Background from '../../background.png';
 import './Login.css';
 import axios from 'axios';
-import Program from './Program';
+import LoggedIn from './LoggedIn';
 import {Link} from 'react-router-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Redirect } from 'react-router';
@@ -76,7 +76,7 @@ class Start extends Component {
   }
   render() {
     if(this.state.authenticated) {
-      return  <Redirect to ='/program' component={Program} />
+      return  <Redirect to ='/loggedIn' component={LoggedIn} />
     }
 
     return (
