@@ -8,14 +8,46 @@ export default class Program extends React.Component {
   constructor(){
     super()
     this.state = {
-      showMe: false,
+      show1: false,
+      show2: false,
+      show3: false,
+      show4: false,
+      show5: false
     }
   }
 
-  operation(){
+  toggle1(){
     this.setState({
       ...this.state,
-      showMe: !this.state.showMe,
+      show1: !this.state.show1,
+    })
+  }
+
+  toggle2(){
+    this.setState({
+      ...this.state,
+      show2: !this.state.show2,
+    })
+  }
+
+  toggle3(){
+    this.setState({
+      ...this.state,
+      show3: !this.state.show3,
+    })
+  }
+
+  toggle4(){
+    this.setState({
+      ...this.state,
+      show4: !this.state.show4,
+    })
+  }
+
+  toggle5(){
+    this.setState({
+      ...this.state,
+      show5: !this.state.show5,
     })
   }
 
@@ -57,7 +89,7 @@ export default class Program extends React.Component {
             <div style={catArea}>
             Program characteristics
             {
-              this.state.showMe?
+              this.state.show1?
               <form style={formStyle}>
                 <input type="checkbox" /> Provide comprehensive short term services to victims of human trafficking <br/>
               	<input type="checkbox" /> Promote collaboration and coordination of services<br/>
@@ -70,7 +102,7 @@ export default class Program extends React.Component {
             }
             </div>
             <div>
-              <button style ={plusButton} onClick={()=>this.operation()}>+</button>
+              <button style ={plusButton} onClick={()=>this.toggle1()}>+</button>
 
             </div>
           </div>
@@ -78,7 +110,7 @@ export default class Program extends React.Component {
             <div style={catArea}>
             Program Resources
             {
-              this.state.showMe?
+              this.state.show2?
               <form style={formStyle}>
                 Technology <br/>
                 <input type="checkbox" /> Computers <input type="checkbox" /> Tablets <input type="checkbox" /> Office phones<br/>
@@ -105,7 +137,7 @@ export default class Program extends React.Component {
             }
             </div>
             <div>
-              <button style ={plusButton} onClick={()=>this.operation()}>+</button>
+              <button style ={plusButton} onClick={()=>this.toggle2()}>+</button>
 
             </div>
           </div>
@@ -113,7 +145,7 @@ export default class Program extends React.Component {
             <div style={catArea}>
             How much will you need?
             {
-              this.state.showMe?
+              this.state.show3?
               <div>
                 <div style = {needBox}>
                   <h3>Technology</h3>
@@ -142,14 +174,14 @@ export default class Program extends React.Component {
             }
             </div>
             <div>
-              <button style ={plusButton} onClick={()=>this.operation()}>+</button>
+              <button style ={plusButton} onClick={()=>this.toggle3()}>+</button>
             </div>
           </div>
           <div style={formArea}>
             <div style={catArea}>
             Activities
             {
-              this.state.showMe?
+              this.state.show4?
               <div>
                 <p>Click the activites your program will do (Mark all that apply)</p>
                 <form>
@@ -163,14 +195,14 @@ export default class Program extends React.Component {
             }
             </div>
             <div>
-              <button style ={plusButton} onClick={()=>this.operation()}>+</button>
+              <button style ={plusButton} onClick={()=>this.toggle4()}>+</button>
             </div>
           </div>
           <div style={formArea}>
             <div style={catArea}>
             Report
             {
-              this.state.showMe?
+              this.state.show5?
               <div style = {reportStyle}>
                 <div style = {reportCat}>
                   <div style = {reportHead}>
@@ -253,7 +285,7 @@ export default class Program extends React.Component {
             }
             </div>
             <div>
-              <button style ={plusButton} onClick={()=>this.operation()}>+</button>
+              <button style ={plusButton} onClick={()=>this.toggle5()}>+</button>
             </div>
           </div>
         </div>
