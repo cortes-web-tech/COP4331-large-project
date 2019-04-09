@@ -34,7 +34,7 @@
     "dev": "env-cmd ./config/dev.env nodemon src/server.js",
     "start2": " concurrently \"npm run start\" \"npm run start1\"",
     "client1": "cd website",
-    "start": "env-cmd ./config/dev.env node server.js",
+    "start": "node server.js",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "eslintConfig": {

@@ -9,7 +9,8 @@ const knot1Router = require('./routers/knot1');
 const app = express();
 const port = process.env.PORT || 8000;
 
-require('dotenv').config();
+const dotenv = require('dotenv');
+dotenv.config();
 
 app.use(express.static(path.join(__dirname, 'client', 'build')));
 
