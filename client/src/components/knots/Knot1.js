@@ -41,7 +41,7 @@ class Knot1 extends Component{
     }
     //console.log(knot1q1);
 
-    var url = 'https://keepu.azurewebsites.net/api/knot1/';
+    var url = 'https://keepuapp.herokuapp.com/api/knot1/';
     //axios.get(url).then(res => console.log(res.data[0]._id));
 
     axios.get(url + window.id
