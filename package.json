@@ -10,6 +10,7 @@
     "concurrently": "^4.1.0",
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
+    "env-cmd": "^8.0.2",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.1.10",
