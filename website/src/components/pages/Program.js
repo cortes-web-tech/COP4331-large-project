@@ -8,6 +8,7 @@ export default class Program extends React.Component {
   constructor(){
     super()
     this.state = {
+      phKnot: true,
       showKnot1: false,
       showKnot2: false,
       show1: false,
@@ -21,8 +22,11 @@ export default class Program extends React.Component {
   toggleKnot1(){
     this.setState({
       ...this.state,
-      showKnot1: !this.state.showKnot1,
-      showKnot2: false
+      showKnot1: this.state.showKnot1?false
+      :true,
+      showKnot2: false,
+      phKnot: this.state.showKnot1?true
+      :false
     })
   }
 
@@ -30,7 +34,12 @@ export default class Program extends React.Component {
     this.setState({
       ...this.state,
       showKnot1: false,
-      showKnot2: !this.state.showKnot2
+      showKnot2: this.state.showKnot2?false
+      :true,
+      phKnot: this.state.showKnot2?true
+      :false
+
+
     })
   }
 
@@ -97,6 +106,17 @@ export default class Program extends React.Component {
             <p>Knot 4 Resource library</p>
           </div>
         </div>
+
+        {
+          this.state.phKnot?
+          <div style={knotQ}>
+            <p style = {phStyle}>
+            Click on a knot to begin/continue
+            </p>
+          </div>
+          :null
+        }
+
         {
           this.state.showKnot1?
 
@@ -335,7 +355,7 @@ export default class Program extends React.Component {
                   <h3>Outcomes</h3>
                   <ul>
                     <li>Sample outcome: 85% of applicants will increase their knowledge after completing the training</li>
-                    <li>Click here to create an outcome</li>
+                    <button>Click here to create an outcome</button>
                   </ul>
                 </div>
               </div>
@@ -453,4 +473,15 @@ const titleStyle = {
 
 const headStyle = {
   fontSize: "22px",
+}
+
+const phStyle = {
+  margin: "auto",
+  marginTop: "220px",
+  backgroundColor:  "#1F2E87",
+  width: "80%",
+  color: "#eeeeee",
+  borderRadius: "20px",
+  fontSize: "32px"
+
 }
