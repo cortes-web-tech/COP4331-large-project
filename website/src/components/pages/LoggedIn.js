@@ -85,7 +85,7 @@ backgroundColor: "#4D5CA2",
 borderRadius: "15px",
 height: "100px",
 margin: "10px",
-color: "grey",
+color: "#bbbbbb",
 display: "flex",
 textAlign: "center"
 }
