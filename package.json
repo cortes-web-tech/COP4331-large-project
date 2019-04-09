@@ -31,7 +31,7 @@
     "eject": "react-scripts eject",
     "start_server": "env-cmd ./config/dev.env node server.js",
     "dev": "env-cmd ./config/dev.env nodemon src/server.js",
-    "start2": " concurrently \"npm run build\" \"npm run start_server\"",
+    "start2": " concurrently \"npm run start\" \"npm run start1\"",
     "client1": "cd website",
     "start": "env-cmd ./config/dev.env node server.js",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
