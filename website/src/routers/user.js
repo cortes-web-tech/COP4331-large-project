@@ -8,7 +8,7 @@ const cors = require('cors');
 router.use(cors());
 router.use(express.json());
 
-router.post('/users', async (req, res) => {
+router.post('/api/users', async (req, res) => {
   const user = new User(req.body);
 
   try {
@@ -20,7 +20,7 @@ router.post('/users', async (req, res) => {
 
 });
 
-router.post('/users/login', async (req, res) => {
+router.post('/api/users/login', async (req, res) => {
   try {
     const user = await User.findByCredentials(req.body.email, req.body.password);
     res.send(user);
@@ -30,7 +30,7 @@ router.post('/users/login', async (req, res) => {
 });
 
 
-router.get('/users', async (req, res) => {
+router.get('/api/users', async (req, res) => {
   try {
     const users = await User.find({});
     res.send(users);
@@ -39,7 +39,7 @@ router.get('/users', async (req, res) => {
   }
 });
 
-router.get('/users/:id', async (req, res) => {
+router.get('/api/users/:id', async (req, res) => {
   const _id = req.params.id;
 
   try {
@@ -56,7 +56,7 @@ router.get('/users/:id', async (req, res) => {
 });
 
 
-router.patch('/users/:id', async (req, res) => {
+router.patch('/api/users/:id', async (req, res) => {
   const updates = Object.keys(req.body);
   const allowedUpdates = ['password', 'tier'];
   const isValidOperation = updates.every((update) => allowedUpdates.includes(update));

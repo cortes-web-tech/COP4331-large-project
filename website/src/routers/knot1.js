@@ -8,7 +8,7 @@ router.use(cors());
 
 router.use(express.json());
 
-router.post('/knot1', async (req, res) => {
+router.post('/api/knot1', async (req, res) => {
   const knot1 = new Knot1(req.body);
 
   try {
@@ -19,7 +19,7 @@ router.post('/knot1', async (req, res) => {
   };
 });
 
-router.get('/knot1', async (req, res) => {
+router.get('/api/knot1', async (req, res) => {
   try {
     const knot1 = await Knot1.find({});
     res.send(knot1);
@@ -28,7 +28,7 @@ router.get('/knot1', async (req, res) => {
   };
 });
 
-router.get('/knot1/:id', async (req, res) => {
+router.get('/api/knot1/:id', async (req, res) => {
   const _id = req.params.id;
 
   try {
@@ -39,11 +39,12 @@ router.get('/knot1/:id', async (req, res) => {
     }
     res.send(knot1);
   } catch(e) {
+    console.log('error!')
     res.status(500).send();
   };
 });
 
-router.patch('/knot1/:id', async (req, res) => {
+router.patch('/api/knot1/:id', async (req, res) => {
   const updates = Object.keys(req.body);
   const allowedUpdates = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10', 'q11', 'q12', 'q13', 'q14', 'owner'];
   const isValidOperation = updates.every((update) => allowedUpdates.includes(update));

@@ -53,7 +53,7 @@ class Knot1p2 extends Component{
       owner: window.id
     }
 
-    var url = 'http://localhost:3001/knot1/';
+    var url = 'https://keepu.azurewebsites.net/api/knot1/';
     //axios.get(url).then(res => console.log(res.data[0]._id));
 
     axios.get(url + window.id
