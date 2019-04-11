@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import DashNav from './../layout/DashNav';
-import Knot1 from './../knots/Knot1';
+import html2canvas from 'html2canvas'
 
 export default class Program extends React.Component {
   constructor(){
@@ -11,6 +11,9 @@ export default class Program extends React.Component {
       phKnot: true,
       showKnot1: false,
       showKnot2: false,
+      knot2Landing: true,
+      showOutput: false,
+      showOutcome: true,
       show1: false,
       show2: false,
       show3: false,
@@ -38,6 +41,19 @@ export default class Program extends React.Component {
       :true,
       phKnot: this.state.showKnot2?true
       :false
+
+
+    })
+  }
+
+  toggleOutput(){
+    this.setState({
+      ...this.state,
+      knot2Landing: this.state.knot2Landing?false:
+      true,
+      showOutput: this.state.showOutput?false
+      :true,
+
 
 
     })
@@ -343,25 +359,85 @@ export default class Program extends React.Component {
               <p>Based on what your program would do, now is the time to narrow it down by<br/>
                 defining your oututs and outcomes!</p>
             </div>
+           {/*Knot 2 landing */}
+
+            {
+              this.state.showOutput?
+              <div>
+                <div style = {outputStyle}>
+                  How many people will you need? <input type="text"/>
+                </div>
+                <div style = {outputStyle}>
+                  Target <br/>
+                  <select>
+                    <option>Law enforcement</option>
+                    <option>Services provided</option>
+                    <option>Victims of human trafficking</option>
+                  </select>
+                </div>
+                <div style = {outputStyle}>
+                  Verb <br/>
+                  <select>
+                    <option>Receive</option>
+                    <option>Participate</option>
+                    <option>Achieve</option>
+                    <option>Complete</option>
+                    <option>Obtain</option>
+                    <option>Perform</option>
+                  </select>
+                </div>
+                <div style = {outputStyle}>
+                  Topic <br/>
+                  <select>
+                    <option>A training on how to identify human trafficking warning signs</option>
+                    <option>Human trafficking in rural communities</option>
+                    <option>Human trafficking and domestic violence</option>
+                    <option>Temporary visa programs</option>
+                    <option>Working with foreign nationals’ adult victims of human trafficking</option>
+                    <option>Working with domestic violence adult victims of human trafficking</option>
+                    <option>Training on how to identify human trafficking warning signs</option>
+                    <option>😳?</option>
+                  </select>
+                </div>
+                <div style = {outputStyle}>
+                  Frequency <br/>
+                  <select>
+                    <option>once</option>
+                    <option>twice</option>
+                    <option>a few times</option>
+                    <option>multiple times</option>
+                  </select>
+                  <select>
+                    <option>a day</option>
+                    <option>a week</option>
+                    <option>a month</option>
+                    <option>a year</option>
+                  </select>
+                </div>
+                <button onClick={()=>this.toggleOutput()}>Generate output</button>
+              </div>
+              :
               <div style={programStyle}>
                 <div>
                   <h3>Outputs</h3>
                   <ul>
                     <li>Sample output: 25 community outreach events will be provided to Latina women twice a month.</li>
-                    <button>Click here to create an output</button>
+                    <button style={knot2ButtonStyle} onClick={()=>this.toggleOutput()}>+ Click here to create an output</button>
                   </ul>
                 </div>
                 <div>
                   <h3>Outcomes</h3>
                   <ul>
                     <li>Sample outcome: 85% of applicants will increase their knowledge after completing the training</li>
-                    <button>Click here to create an outcome</button>
+                    <button style={knot2ButtonStyle}>+ Click here to create an outcome</button>
                   </ul>
                 </div>
               </div>
+            }
           </div>
           :null
         }
+
         </React.Fragment>
       </div>
     );
@@ -484,4 +560,16 @@ const phStyle = {
   borderRadius: "20px",
   fontSize: "32px"
 
+}
+
+const knot2ButtonStyle = {
+  color: "#EDA85F",
+  backgroundColor: "#ffffff",
+  border: "none"
+}
+
+const outputStyle = {
+  backgroundColor: "#aaaaaa",
+  padding: "2px",
+  margin: "5px"
 }
