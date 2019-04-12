@@ -14,7 +14,8 @@ router.post('/api/users', async (req, res) => {
     await user.save();
     res.status(201).send(user);
   } catch (e) {
-    res.status(400).send(e);
+    const nullUser = new User({'email': '', 'password': ''});
+    res.status(400).send(nullUser);
   }
 
 });
@@ -24,7 +25,8 @@ router.post('/api/users/login', async (req, res) => {
     const user = await User.findByCredentials(req.body.email, req.body.password);
     res.send(user);
   } catch (e) {
-    res.status(400).send();
+    const nullUser = new User({'email': '', 'password': ''});
+    res.status(400).send(nullUser);
   }
 });
 
@@ -34,7 +36,8 @@ router.get('/api/users', async (req, res) => {
     const users = await User.find({});
     res.send(users);
   } catch (e) {
-    res.status(500).send();
+    const nullUser = new User({'email': '', 'password': ''});
+    res.status(500).send(nullUser);
   }
 });
 
@@ -50,7 +53,8 @@ router.get('/api/users/:id', async (req, res) => {
     }
     res.send(user);
   } catch {
-    res.status(500).send();
+    const nullUser = new User({'email': '', 'password': ''});
+    res.status(500).send(nullUsers);
   }
 });
 
@@ -72,11 +76,13 @@ router.patch('/api/users/:id', async (req, res) => {
     //const user = await User.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true});
 
     if(!user) {
-      return res.status(404).send();
+      const nullUser = new User({'email': '', 'password': ''});
+      return res.status(404).send(nullUser);
     }
     res.send(user);
   } catch (e) {
-    res.status(400).send(e);
+    const nullUser = new User({'email': '', 'password': ''});
+    res.status(400).send(nullUser);
   }
 });
 
