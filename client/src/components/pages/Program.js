@@ -564,7 +564,7 @@ export default class Program extends React.Component {
               this.state.showOutput?
               <div>
                 <div style = {outputStyle}>
-                  How many people will you need? <input type="text"/>
+                  How many people will you need? <input type="text" id="k2q1"/>
                 </div>
                 <div style = {outputStyle}>
                   Target <br/>
