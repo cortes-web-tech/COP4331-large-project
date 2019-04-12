@@ -3,7 +3,7 @@ import './../../App.css';
 import { Container, Row, Col, Button,  InputGroup, Input,} from 'reactstrap';
 
 
-function Footer(){
+export default function Footer(){
   const col1 = ["About Us", "Contact", "Terms & Conditions"];
 
   const col2 = ["Facebook", "Twitter", "Instagram"];
@@ -19,42 +19,36 @@ function Footer(){
       // {/*
 
       <div style ={footerStyle} className="footerContainer">
-        <div className="box1">
-        < br/>
-        < br/>
+          <div className="box1">
+            < br/>< br/>
+              <div className="pageLinks">
+                <ul style={linkStyle}>{listItems}</ul>
+                <ul style={linkStyle}>{listItems2}</ul>
+              </div>
+              <p>©️ 2019 Covian Consulting, Inc. All Rights Reserved.</p>
+            </div>
+            <div className="box2">
+              < br/>< br/>
+              <p>Subscribe to our newsletter</p>
+              <form>
+                <label>
+                  <InputGroup>
+                    <Input id="emailInputStyle" style={emailInputStyle} placeholder="Email Address"/>
+                    <Button style={buttonStyle}>OK</Button>
+                  </InputGroup>
+                </label>
 
-          <div className="pageLinks">
-          <ul style={linkStyle}>{listItems}</ul>
-          <ul style={linkStyle}>{listItems2}</ul>
-          </div>
-          <p>©️ 2019 Covian Consulting, Inc. All Rights Reserved.</p>
+              </form>
+            </div>
+            <div className="box3">
+              < br/>< br/>
+              <ul style={addressStyle}>
+                <li>3259 Progress Drive</li>
+                <li>Orlando, FL 32824</li>
+                </ul>
+
+            </div>
         </div>
-        <div className="box2">
-        < br/>
-        < br/>
-
-          <p>Subscribe to our newsletter</p>
-          <form>
-            <label>
-              <InputGroup>
-                <Input id="emailInputStyle" style={emailInputStyle} placeholder="Email Address"/>
-                <Button style={buttonStyle}>OK</Button>
-              </InputGroup>
-            </label>
-
-          </form>
-        </div>
-        <div className="box3">
-        < br/>
-        < br/>
-          <ul style={addressStyle}>
-          <li>3259 Progress Drive</li>
-          <li>Orlando, FL 32824</li>
-          </ul>
-
-        </div>
-        </div>
-
       // */}
   )
 
@@ -87,6 +81,3 @@ const footerStyle = {
   fontSize:'10pt',
 
 }
-
-
-export default Footer

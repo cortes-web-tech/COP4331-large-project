@@ -77,7 +77,7 @@ class Knot1 extends Component{
           	<input type="checkbox" checked={this.state.q1check4} onChange={this.onCheck} id="q1check4"/> Create awareness about human traffic<br/>
           	<input type="checkbox" checked={this.state.q1check5} onChange={this.onCheck} id="q1check5"/> Provide trainings on human trafficking victims topics<br/>
 
-            <input type="button" value="Save" onClick = {this.test}/>
+            {/*<input type="button" value="Save" onClick = {this.test}/>*/}
             <Link to="/knot1p2">
             <input type="button" value="Next" />
             </Link>
@@ -109,8 +109,4 @@ const knotStyle = {
 
 const formStyle = {
   justifyContent: 'left'
-}
-
-const buttonStyle = {
-
 }

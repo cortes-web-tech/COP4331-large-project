@@ -55,7 +55,7 @@ class Start extends Component {
     axios.post('https://keepuapp.herokuapp.com/api/users/login',
       userLogin
     ).then(res => {
-      if(res.status === 200) {
+      if(res.data['email'] !== '') {
         this.setState({
           authenticated: true,
           userID: res.data._id
