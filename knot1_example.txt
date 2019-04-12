@@ -1,0 +1,21 @@
+
+
+Knot1
+  1. Within the field of human trafficking my program would (checkboxes, array of true/false)
+  2. Is your program funded yet? (true/false)
+  3. By who? (string)
+  4. Tech (checkboxes, array of true/false)
+  5. Space (checkboxes, array of true/false)
+  6. Materials (checkboxes, array of true/false)
+  7. Staff (checkboxes, array of true/false)
+  8. Computers (number)
+  9. Tablets (number)
+  10. Phones (number)
+  11. office space (number)
+  12. event space (number)
+  13. training space (number)
+  14. managers (number)
+  15. training Specialist (number)
+  16. case workers (number)
+  17. community Educator (number)
+  18. activities (checkboxes, array of true/false)

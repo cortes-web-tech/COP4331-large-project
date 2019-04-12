@@ -90,7 +90,7 @@ export default class Program extends React.Component {
       }
       console.log(knot1p1);
 
-      var url = 'https://keepuapp.herokuapp.com/api/knot1/';
+      var url = 'localhost:3000/api/knot1/';
       //axios.get(url).then(res => console.log(res.data[0]._id));
 
       axios.get(url + window.id
@@ -125,7 +125,7 @@ export default class Program extends React.Component {
       }
       console.log(knot1p2);
 
-      var url = 'https://keepuapp.herokuapp.com/api/knot1/';
+      var url = 'localhost:3000/api/knot1/';
       //axios.get(url).then(res => console.log(res.data[0]._id));
 
       axios.get(url + window.id
@@ -166,7 +166,7 @@ export default class Program extends React.Component {
       }
       console.log(knot1p3);
 
-      var url = 'https://keepuapp.herokuapp.com/api/knot1/';
+      var url = 'localhost:3000/api/knot1/';
       //axios.get(url).then(res => console.log(res.data[0]._id));
 
       axios.get(url + window.id
@@ -198,7 +198,7 @@ export default class Program extends React.Component {
       }
       console.log(knot1p4);
 
-      var url = 'https://keepuapp.herokuapp.com/api/knot1/';
+      var url = 'localhost:3000/api/knot1/';
       //axios.get(url).then(res => console.log(res.data[0]._id));
 
       axios.get(url + window.id
@@ -400,28 +400,28 @@ export default class Program extends React.Component {
                 <div style = {needBox}>
                   <h3>Technology</h3>
                   <form>
-                    How many Computers will you need?  <input type="text" disabled={!this.state.q4c1} onChange={this.onTyped} id="q8"/><br/>
-                    How many Tablets will you need?  <input type="text" disabled={!this.state.q4c2} onChange={this.onTyped} id="q9"/>
-                    How many Office Phones will you need?  <input type="text" disabled={!this.state.q4c3} onChange={this.onTyped} id="q10"/><br/>
+                    How many Computers will you need?  <input type="text" disabled={!this.state.q4c1} id="q8" onChange={this.onTyped} /><br/>
+                    How many Tablets will you need?  <input type="text" disabled={!this.state.q4c2} id="q9" onChange={this.onTyped} />
+                    How many Office Phones will you need?  <input type="text" disabled={!this.state.q4c3} id="q10" onChange={this.onTyped} /><br/>
                   </form>
                 </div>
 
                 <div style = {needBox}>
                   <h3>Space</h3>
                   <form>
-                    How much Office Space will you need (square feet)?  <input type="text" disabled={!this.state.q5c1} onChange={this.onTyped} id="q11"/><br/>
-                    How much Event Space will you need (square feet)?  <input type="text" disabled={!this.state.q5c2} onChange={this.onTyped} id="q12"/><br/>
-                    How much Training Space will you need (square feet)?  <input type="text" disabled={!this.state.q5c3} onChange={this.onTyped} id="q13"/><br/>
+                    How much Office Space will you need (square feet)?  <input type="text" disabled={!this.state.q5c1} id="q11" onChange={this.onTyped} /><br/>
+                    How much Event Space will you need (square feet)?  <input type="text" disabled={!this.state.q5c2} id="q12" onChange={this.onTyped} /><br/>
+                    How much Training Space will you need (square feet)?  <input type="text" disabled={!this.state.q5c3} id="q13" onChange={this.onTyped} /><br/>
                   </form>
                 </div>
 
                 <div style = {needBox}>
                   <h3>Staff</h3>
                   <form>
-                    How many Managers will you need?  <input type="text" disabled={!this.state.q7c1} onChange={this.onTyped} id="q14"/><br/>
-                    How many Training Specialists will you need?  <input type="text" disabled={!this.state.q7c2} onChange={this.onTyped} id="q15"/><br/>
-                    How many Case Workers will you need?  <input type="text" disabled={!this.state.q7c3} onChange={this.onTyped} id="q16"/><br/>
-                    How many Community Educators will you need?  <input type="text" disabled={!this.state.q7c4} onChange={this.onTyped} id="q17"/><br/>
+                    How many Managers will you need?  <input type="text" disabled={!this.state.q7c1} id="q14" onChange={this.onTyped} /><br/>
+                    How many Training Specialists will you need?  <input type="text" disabled={!this.state.q7c2} id="q15" onChange={this.onTyped} /><br/>
+                    How many Case Workers will you need?  <input type="text" disabled={!this.state.q7c3} id="q16" onChange={this.onTyped} /><br/>
+                    How many Community Educators will you need?  <input type="text" disabled={!this.state.q7c4} id="q17" onChange={this.onTyped} /><br/>
                     <input type="button" value="Save" onClick = {this.onSaveKnot1Part3}/>
                   </form>
                 </div>
