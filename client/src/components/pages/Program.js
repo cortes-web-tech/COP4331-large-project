@@ -90,7 +90,7 @@ export default class Program extends React.Component {
       }
       console.log(knot1p1);
 
-      var url = 'localhost:3000/api/knot1/';
+      var url = 'https://keepuapp.herokuapp.com/api/knot1/';
       //axios.get(url).then(res => console.log(res.data[0]._id));
 
       axios.get(url + window.id
@@ -125,7 +125,7 @@ export default class Program extends React.Component {
       }
       console.log(knot1p2);
 
-      var url = 'localhost:3000/api/knot1/';
+      var url = 'https://keepuapp.herokuapp.com/api/knot1/';
       //axios.get(url).then(res => console.log(res.data[0]._id));
 
       axios.get(url + window.id
@@ -166,7 +166,7 @@ export default class Program extends React.Component {
       }
       console.log(knot1p3);
 
-      var url = 'localhost:3000/api/knot1/';
+      var url = 'https://keepuapp.herokuapp.com/api/knot1/';
       //axios.get(url).then(res => console.log(res.data[0]._id));
 
       axios.get(url + window.id
@@ -198,7 +198,7 @@ export default class Program extends React.Component {
       }
       console.log(knot1p4);
 
-      var url = 'localhost:3000/api/knot1/';
+      var url = 'https://keepuapp.herokuapp.com/api/knot1/';
       //axios.get(url).then(res => console.log(res.data[0]._id));
 
       axios.get(url + window.id
