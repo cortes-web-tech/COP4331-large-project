@@ -15,7 +15,7 @@ router.post('/api/knot1', async (req, res) => {
     res.status(201).send(knot1);
   } catch(e) {
     const nullKnot1 = new Knot1({'_id': '0'});
-    res.status(500).send(nullKnot1);
+    res.status(200).send(nullKnot1);
   };
 });
 
@@ -25,7 +25,7 @@ router.get('/api/knot1', async (req, res) => {
     res.send(knot1);
   } catch(e) {
     const nullKnot1 = new Knot1({'_id': '0'});
-    res.status(500).send(nullKnot1);
+    res.status(200).send(nullKnot1);
   };
 });
 
@@ -36,12 +36,12 @@ router.get('/api/knot1/:id', async (req, res) => {
     const knot1 = await Knot1.find({'owner': _id});
     if(!knot1) {
       const nullKnot1 = new Knot1({'_id': '0'});
-      return res.status(404).send(nullKnot1);
+      return res.status(200).send(nullKnot1);
     }
     res.send(knot1);
   } catch(e) {
     const nullKnot1 = new Knot1({'_id': '0'});
-    res.status(500).send(nullKnot1);
+    res.status(200).send(nullKnot1);
   };
 });
 
@@ -52,7 +52,7 @@ router.patch('/api/knot1/:id', async (req, res) => {
 
 
   if(!isValidOperation) {
-    return res.status(400).send({ error : 'invalid updates'});
+    return res.status(200).send({ error : 'invalid updates'});
   }
 
   try {
@@ -63,12 +63,12 @@ router.patch('/api/knot1/:id', async (req, res) => {
 
     if(!knot1) {
       const nullKnot1 = new Knot1({'_id': '0'});
-      return res.status(404).send(nullKnot1);
+      return res.status(200).send(nullKnot1);
     }
     res.send(knot1);
   } catch (e) {
     const nullKnot1 = new Knot1({'q1': 'null'});
-    res.status(400).send(nullKnot1);
+    res.status(200).send(nullKnot1);
   }
 });
 

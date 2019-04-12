@@ -15,7 +15,7 @@ router.post('/api/users', async (req, res) => {
     res.status(201).send(user);
   } catch (e) {
     const nullUser = new User({'email': '', 'password': ''});
-    res.status(400).send(nullUser);
+    res.send(nullUser);
   }
 
 });
@@ -26,7 +26,7 @@ router.post('/api/users/login', async (req, res) => {
     res.send(user);
   } catch (e) {
     const nullUser = new User({'email': '', 'password': ''});
-    res.status(400).send(nullUser);
+    res.send(nullUser);
   }
 });
 
@@ -37,7 +37,7 @@ router.get('/api/users', async (req, res) => {
     res.send(users);
   } catch (e) {
     const nullUser = new User({'email': '', 'password': ''});
-    res.status(500).send(nullUser);
+    res.send(nullUser);
   }
 });
 
@@ -49,12 +49,13 @@ router.get('/api/users/:id', async (req, res) => {
     User.find
 
     if(!user) {
-      return res.status(404).send();
+      const nullUser = new User({'email': '', 'password': ''});
+      return res.send(nullUser);
     }
     res.send(user);
   } catch {
     const nullUser = new User({'email': '', 'password': ''});
-    res.status(500).send(nullUsers);
+    res.send(nullUser);
   }
 });
 
@@ -65,7 +66,7 @@ router.patch('/api/users/:id', async (req, res) => {
   const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
 
   if (!isValidOperation) {
-    return res.status(400).send({ error : 'invalid updates'});
+    return res.send({ error : 'invalid updates'});
   }
 
   try {
@@ -77,12 +78,12 @@ router.patch('/api/users/:id', async (req, res) => {
 
     if(!user) {
       const nullUser = new User({'email': '', 'password': ''});
-      return res.status(404).send(nullUser);
+      return res.send(nullUser);
     }
     res.send(user);
   } catch (e) {
     const nullUser = new User({'email': '', 'password': ''});
-    res.status(400).send(nullUser);
+    res.send(nullUser);
   }
 });
 
