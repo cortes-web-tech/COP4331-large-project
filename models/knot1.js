@@ -26,7 +26,8 @@ const Knot1 = mongoose.model('Knot1', {
     type: Array
   },
   q8: {
-    type: Array
+    type: Number,
+    default: null
   },
   q9: {
     type: Number,
@@ -49,6 +50,22 @@ const Knot1 = mongoose.model('Knot1', {
     default: null
   },
   q14: {
+    type: Number,
+    default: null
+  },
+  q15: {
+    type: Number,
+    default: null
+  },
+  q16: {
+    type: Number,
+    default: null
+  },
+  q17: {
+    type: Number,
+    default: null
+  },
+  q18: {
     type: Array
   },
   owner: {

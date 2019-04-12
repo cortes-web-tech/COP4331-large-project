@@ -12,6 +12,7 @@
     "dotenv": "^7.0.0",
     "env-cmd": "^8.0.2",
     "express": "^4.16.4",
+    "html2canvas": "^1.0.0-rc.1",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.1.10",
     "mongoose": "^5.4.20",
