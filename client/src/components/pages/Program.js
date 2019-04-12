@@ -400,28 +400,28 @@ export default class Program extends React.Component {
                 <div style = {needBox}>
                   <h3>Technology</h3>
                   <form>
-                    How many Computers will you need?  <input type="text" disabled={!this.state.q4c1} onTyped={this.onTyped} id="q8"/><br/>
-                    How many Tablets will you need?  <input type="text" disabled={!this.state.q4c2} onTyped={this.onTyped} id="q9"/>
-                    How many Office Phones will you need?  <input type="text" disabled={!this.state.q4c3} onTyped={this.onTyped} id="q10"/><br/>
+                    How many Computers will you need?  <input type="text" disabled={!this.state.q4c1} onChange={this.onTyped} id="q8"/><br/>
+                    How many Tablets will you need?  <input type="text" disabled={!this.state.q4c2} onChange={this.onTyped} id="q9"/>
+                    How many Office Phones will you need?  <input type="text" disabled={!this.state.q4c3} onChange={this.onTyped} id="q10"/><br/>
                   </form>
                 </div>
 
                 <div style = {needBox}>
                   <h3>Space</h3>
                   <form>
-                    How much Office Space will you need (square feet)?  <input type="text" disabled={!this.state.q5c1} onTyped={this.onTyped} id="q11"/><br/>
-                    How much Event Space will you need (square feet)?  <input type="text" disabled={!this.state.q5c2} onTyped={this.onTyped} id="q12"/><br/>
-                    How much Training Space will you need (square feet)?  <input type="text" disabled={!this.state.q5c3} onTyped={this.onTyped} id="q13"/><br/>
+                    How much Office Space will you need (square feet)?  <input type="text" disabled={!this.state.q5c1} onChange={this.onTyped} id="q11"/><br/>
+                    How much Event Space will you need (square feet)?  <input type="text" disabled={!this.state.q5c2} onChange={this.onTyped} id="q12"/><br/>
+                    How much Training Space will you need (square feet)?  <input type="text" disabled={!this.state.q5c3} onChange={this.onTyped} id="q13"/><br/>
                   </form>
                 </div>
 
                 <div style = {needBox}>
                   <h3>Staff</h3>
                   <form>
-                    How many Managers will you need?  <input type="text" disabled={!this.state.q7c1} onTyped={this.onTyped} id="q14"/><br/>
-                    How many Training Specialists will you need?  <input type="text" disabled={!this.state.q7c2} onTyped={this.onTyped} id="q15"/><br/>
-                    How many Case Workers will you need?  <input type="text" disabled={!this.state.q7c3} onTyped={this.onTyped} id="q16"/><br/>
-                    How many Community Educators will you need?  <input type="text" disabled={!this.state.q7c4} onTyped={this.onTyped} id="q17"/><br/>
+                    How many Managers will you need?  <input type="text" disabled={!this.state.q7c1} onChange={this.onTyped} id="q14"/><br/>
+                    How many Training Specialists will you need?  <input type="text" disabled={!this.state.q7c2} onChange={this.onTyped} id="q15"/><br/>
+                    How many Case Workers will you need?  <input type="text" disabled={!this.state.q7c3} onChange={this.onTyped} id="q16"/><br/>
+                    How many Community Educators will you need?  <input type="text" disabled={!this.state.q7c4} onChange={this.onTyped} id="q17"/><br/>
                     <input type="button" value="Save" onClick = {this.onSaveKnot1Part3}/>
                   </form>
                 </div>
@@ -474,6 +474,9 @@ export default class Program extends React.Component {
                     <div>
                       Tablets
                     </div>
+                    <div>
+                      Office Phones
+                    </div>
                   </div>
 
                   <div style = {reportBox}>
@@ -483,17 +486,29 @@ export default class Program extends React.Component {
                     <div>
                       Office Space
                     </div>
+                    <div>
+                      Event Space
+                    </div>
+                    <div>
+                      Training Space
+                    </div>
                   </div>
 
                   <div style = {reportBox}>
+                  <div>
+                    Staff
+                  </div>
                     <div>
-                      Staff
+                      Managers
                     </div>
                     <div>
-                      Case Worker
+                      Training Specialists
                     </div>
                     <div>
-                      Community Educator
+                      Case Workers
+                    </div>
+                    <div>
+                      Community Educators
                     </div>
                   </div>
                 </div>
@@ -503,34 +518,50 @@ export default class Program extends React.Component {
                     How many would you need? (#)
                   </div>
                   <div style = {reportBox}>
+                  <div>
+                    &nbsp;
+                  </div>
                     <div>
-                      &nbsp;
+                      {this.state.q8}
                     </div>
                     <div>
-                      5
+                      {this.state.q9}
                     </div>
                     <div>
-                      3
+                      {this.state.q10}
                     </div>
                   </div>
 
                   <div style = {reportBox}>
+                  <div>
+                    &nbsp;
+                  </div>
                     <div>
-                      &nbsp;
+                      {this.state.q11}
                     </div>
                     <div>
-                      2400 SqFt.
+                      {this.state.q12}
+                    </div>
+                    <div>
+                      {this.state.q13}
                     </div>
                   </div>
                   <div style = {reportBox}>
+                  <div>
+                    &nbsp;
+                  </div>
                     <div>
-                      &nbsp;
+                      {this.state.q14}
                     </div>
                     <div>
-                      10
+                      {this.state.q15}
                     </div>
                     <div>
-                      2
+                      {this.state.q16}
+                    </div>
+
+                    <div>
+                      {this.state.q17}
                     </div>
                   </div>
                 </div>
@@ -710,6 +741,7 @@ const plusButton = {
   color: "white",
   backgroundColor: "#F7921C",
   borderRadius: "20px",
+  border: '0'
 }
 
 const formStyle = {
