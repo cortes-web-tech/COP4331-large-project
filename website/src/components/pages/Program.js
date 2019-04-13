@@ -12,20 +12,25 @@ export default class Program extends React.Component {
       showKnot1: false,
       showKnot2: false,
       showKnot3: false,
-      knot2Landing: true,
+      knot2Landing: false,
       showOutput: false,
       showOutcome: false,
       show1: false,
       show2: false,
       show3: false,
       show4: false,
-      show5: false
+      show5: false,
     }
   }
 
   toggleKnot1(){
     this.setState({
       ...this.state,
+      show1: false,
+      show2: false,
+      show3: false,
+      show4: false,
+      show5: false,
       showKnot1: this.state.showKnot1?false
       :true,
       showKnot2: false,
@@ -61,17 +66,36 @@ export default class Program extends React.Component {
     })
   }
 
+  hideExtras(){
+    this.setState({
+      show1: false,
+      show2: false,
+      show3: false,
+      show4: false,
+      show5: false,
+    })
+
+  }
+
   toggle1(){
     this.setState({
       ...this.state,
       show1: !this.state.show1,
+      show2: false,
+      show3: false,
+      show4: false,
+      show5: false,
     })
   }
 
   toggle2(){
     this.setState({
       ...this.state,
+      show1: false,
       show2: !this.state.show2,
+      show3: false,
+      show4: false,
+      show5: false,
     })
   }
 
@@ -105,20 +129,34 @@ export default class Program extends React.Component {
   toggle3(){
     this.setState({
       ...this.state,
+      show1: false,
+      show2: false,
       show3: !this.state.show3,
+      show4: false,
+      show5: false,
+
     })
   }
 
   toggle4(){
     this.setState({
       ...this.state,
+      show1: false,
+      show2: false,
+      show3: false,
       show4: !this.state.show4,
+      show5: false
+
     })
   }
 
   toggle5(){
     this.setState({
       ...this.state,
+      show1: false,
+      show2: false,
+      show3: false,
+      show4: false,
       show5: !this.state.show5,
     })
   }
@@ -190,12 +228,52 @@ export default class Program extends React.Component {
             {
               this.state.show1?
               <form style={formStyle}>
-                <input type="checkbox" /> Provide comprehensive short term services to victims of human trafficking <br/>
-              	<input type="checkbox" /> Promote collaboration and coordination of services<br/>
-              	<input type="checkbox" /> Provide trainings on human trafficking victims topics<br/>
-              	<input type="checkbox" /> Create awareness about human traffic<br/>
-              	<input type="checkbox" /> Provide trainings on human trafficking victims topics<br/>
-                <input type="submit" value="Next"/>
+                <div style = {checkBox}>
+                  <div style = {checkStyle}>
+                    <input type="checkbox" />
+                  </div>
+                  <div style = {checkText}>
+                    Provide comprehensive short term services to victims of human trafficking
+                  </div>
+                </div>
+
+                <div style = {checkBox}>
+                  <div style = {checkStyle}>
+                    <input type="checkbox" />
+                  </div>
+                  <div style = {checkText}>
+                    Promote collaboration and coordination of services
+                  </div>
+                </div>
+
+                <div style = {checkBox}>
+                  <div style = {checkStyle}>
+                    <input type="checkbox" />
+                  </div>
+                  <div style = {checkText}>
+                    Provide trainings on human trafficking victims topics
+                  </div>
+                </div>
+
+                <div style = {checkBox}>
+                  <div style = {checkStyle}>
+                    <input type="checkbox" />
+                  </div>
+                  <div style = {checkText}>
+                    Create awareness about human traffic
+                  </div>
+                </div>
+
+                <div style = {checkBox}>
+                  <div style = {checkStyle}>
+                    <input type="checkbox" />
+                  </div>
+                  <div style = {checkText}>
+                    Provide trainings on human trafficking victims topics
+                  </div>
+                </div>
+
+                <input type="submit" style = {nextStyle} value="Next"/>
               </form>
               :null
             }
@@ -211,26 +289,58 @@ export default class Program extends React.Component {
             {
               this.state.show2?
               <form style={formStyle}>
-                Technology <br/>
-                <input type="checkbox" /> Computers <input type="checkbox" /> Tablets <input type="checkbox" /> Office phones<br/>
-                <input type="checkbox" /> Website <input type="checkbox" /> Database <input type="checkbox" /> Other<br/>
+                <h3>Technology </h3>
+                <div style = {threeByTwo}>
+                  <div style = {split6}>
+                    <div style ={split3}>
+                      <input style = {checkStyle} type="checkbox" />
+                      <p>Computers</p>
+                    </div>
+                    <div style ={split3}>
+                      <input style = {checkStyle}  type="checkbox" />
+                      <p >Website</p>
+                    </div>
+                    <div style ={split3}>
+                      <input style = {checkStyle}  type="checkbox" />
+                      <p >Database</p>
+                    </div>
+                  </div>
 
-                Space <br/>
+                  <div style = {split6}>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle}  type="checkbox" /></div>
+                      <div>Tablets</div>
+                      </div>
+                      <div style ={split3}>
+                        <input style = {checkStyle} type="checkbox" />
+                        <p>Canopies</p>
+                      </div>
+                      <div style ={split3}>
+                        <input style = {checkStyle} type="checkbox" />
+                        <p>Other</p>
+                      </div>
+                    </div>
+                  </div>
+
+                <h3> Space </h3>
+                <div style = {threeByTwo}>
+
+                </div>
                 <input type="checkbox" /> Office Space <input type="checkbox" /> Temporary space <input type="checkbox" /> Canopies<br/>
                 <input type="checkbox" /> Training Space <input type="checkbox" /> Option 5 <input type="checkbox" /> Other<br/>
 
-                Materials <br/>
+                <h3> Materials </h3>
                 <input type="checkbox" /> Training <input type="checkbox" /> Outreach <input type="checkbox" /> Office Supplies <br/>
                 <input type="checkbox" /> Service Delivery <input type="checkbox" /> Option 5 <input type="checkbox" /> Other<br/>
 
-                Staff <br/>
+                <h3> Staff </h3>
                 <input type="checkbox" /> Program Manager <input type="checkbox" /> Training Specialist <input type="checkbox" /> Option 3 <br/>
                 <input type="checkbox" /> Case Wroker <input type="checkbox" /> Community Education <input type="checkbox" /> Other <br/>
 
-                Other <br/>
+                <h3> Other </h3>
                 <input type="text"/> <br/>
 
-                <input type="submit" value="Next"/>
+                <input type="submit" style = {nextStyle} value="Next"/>
               </form>
               :null
             }
@@ -244,7 +354,7 @@ export default class Program extends React.Component {
             <div style={catArea}>
             How much will you need?
             {
-              this.state.showKnot2?
+              this.state.show3?
               <div style={formStyle}>
                 <div style = {needBox}>
                   <h3>Technology</h3>
@@ -267,6 +377,7 @@ export default class Program extends React.Component {
                     How many Case Workers will you need?  <input type="text"/><br/>
                     How many Community Educators will you need?  <input type="text"/>
                   </form>
+                  <input type="submit" style = {nextStyle} value="Next"/>
                 </div>
               </div>
               :null
@@ -289,6 +400,7 @@ export default class Program extends React.Component {
                   Identify potential trainers on human trafficking warning signs<input type="checkbox"/><br/>
                   Other <input type="checkbox"/><br/>
                 </form>
+                <input type="submit" style = {nextStyle} value="Next"/>
               </div>
               :null
             }
@@ -407,30 +519,39 @@ export default class Program extends React.Component {
               this.state.showOutput?
               <div>
                 <div style = {outputStyle}>
-                  How many people will you need? <input type="text"/>
+                  <div style={split2}>
+                    How many people will you need?
+                  </div>
+                  <div style={split2}>
+                     <input type="text"/>
+                  </div>
                 </div>
                 <div style = {outputStyle}>
-                  Target <br/>
-                  <select>
-                    <option>Law enforcement</option>
-                    <option>Services provided</option>
-                    <option>Victims of human trafficking</option>
-                  </select>
+                  <div>Target</div>
+                  <div>
+                    <select style ={selectStyle}>
+                      <option>Law enforcement</option>
+                      <option>Services provided</option>
+                      <option>Victims of human trafficking</option>
+                    </select>
+                  </div>
                 </div>
                 <div style = {outputStyle}>
-                  Verb <br/>
-                  <select>
-                    <option>Receive</option>
-                    <option>Participate</option>
-                    <option>Achieve</option>
-                    <option>Complete</option>
-                    <option>Obtain</option>
-                    <option>Perform</option>
-                  </select>
+                  <div>Verb</div>
+                  <div>
+                    <select style = {selectStyle}>
+                      <option>Receive</option>
+                      <option>Participate</option>
+                      <option>Achieve</option>
+                      <option>Complete</option>
+                      <option>Obtain</option>
+                      <option>Perform</option>
+                    </select>
+                  </div>
                 </div>
                 <div style = {outputStyle}>
                   Topic <br/>
-                  <select>
+                  <select style ={selectStyle}>
                     <option>A training on how to identify human trafficking warning signs</option>
                     <option>Human trafficking in rural communities</option>
                     <option>Human trafficking and domestic violence</option>
@@ -443,18 +564,20 @@ export default class Program extends React.Component {
                 </div>
                 <div style = {outputStyle}>
                   Frequency <br/>
-                  <select>
-                    <option>once</option>
-                    <option>twice</option>
-                    <option>a few times</option>
-                    <option>multiple times</option>
-                  </select>
-                  <select>
-                    <option>a day</option>
-                    <option>a week</option>
-                    <option>a month</option>
-                    <option>a year</option>
-                  </select>
+                  <div style = {split2}>
+                    <select style = {select2}>
+                      <option>once</option>
+                      <option>twice</option>
+                      <option>a few times</option>
+                      <option>multiple times</option>
+                    </select>
+                    <select style = {select2}>
+                      <option>a day</option>
+                      <option>a week</option>
+                      <option>a month</option>
+                      <option>a year</option>
+                    </select>
+                  </div>
                 </div>
                 <button onClick={()=>this.toggleOutput()}>Generate output</button>
               </div>
@@ -668,7 +791,56 @@ const knot2ButtonStyle = {
 }
 
 const outputStyle = {
+  textAlign: "left",
   backgroundColor: "#aaaaaa",
-  padding: "2px",
+  padding: "5px",
   margin: "5px"
+}
+
+const selectStyle = {
+  width: "100%"
+}
+
+const select2 = {
+  width: "49.5%",
+
+}
+
+const split2 = {
+  display: "flex",
+  justifyContent: "space-around"
+}
+
+const checkStyle = {
+  flex: 1
+}
+
+const checkBox = {
+  display: "flex",
+  flexDirection: "row"
+}
+
+const checkText = {
+  flex: 4
+}
+
+const nextStyle = {
+  width: "60%",
+  backgroundColor: "#A3ADDB"
+}
+
+const threeByTwo = {
+  display: "flex",
+  flexDirection: "column",
+}
+
+const split6 = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-around"
+}
+
+const split3 = {
+
+  flex: 1
 }
