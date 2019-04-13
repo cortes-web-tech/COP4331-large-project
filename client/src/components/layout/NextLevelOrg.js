@@ -7,15 +7,20 @@ function NextLevelOrg(){
   return(
     <header style={nextLevelStyle}>
       <div style={boxStyle}>
-        <h1 style={h1Style}>Take your <br/>oganization to <br/>the next level</h1>
-        <p style={pStyle}>We are dedicated to help organizations like <br/>yours streamline all evaluation needs <br/>through one simple application for your <br/>program evaluation plans, logic model, data <br/>collection, and more.</p>
+        <h1 style={h1Style}><b>Take your <br/>organization to <br/>the next level</b></h1>
+        <p style={pStyle}><br/><br/>We are dedicated to help organizations like <br/>yours streamline all evaluation needs <br/>through one simple application for your <br/>program evaluation plans, logic model, data <br/>collection, and more.<br/><br/></p>
         <button type="button" style={buttonStyle}>Get Started</button>
       </div>
       <div style={boxStyle}>
-        <img src={StayFocused} height="400" widt="400"/>
+        <img src={StayFocused} height="400" widt="400" style={pic}/>
       </div>
     </header>
   )
+}
+
+const pic = {
+  height: 'auto',
+  width: '100%'
 }
 
 const nextLevelStyle = {
@@ -26,13 +31,22 @@ const nextLevelStyle = {
 const boxStyle = {
   flex:1,
   paddingTop:10,
-  paddingBottom: 10
+  paddingBottom: 10,
+  minHeight: '900px',
+  textAlign: 'left',
+      fontSize: '1.4vw',
+      overflow: 'hidden',
+      marginLeft: '2em',
+      marginRight: '2em',
+      paddingLeft: '2em',
+      paddingRight: '2em',
+      marginTop: '4em',
 }
 
 const h1Style = {
   color: '#F7921C',
   textAling: 'justify',
-
+  fontSize: '3vw'
 }
 
 const pStyle = {
@@ -44,6 +58,7 @@ const buttonStyle = {
   color: '#ffffff',
   width:' 200px',
   height:'50px',
-  borderRadius: '25px'
+  borderRadius: '25px',
+  border: '0'
 }
 export default NextLevelOrg

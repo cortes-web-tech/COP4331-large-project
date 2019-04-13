@@ -26,7 +26,7 @@ class Authors extends Component {
                evaluator for local non-profits, serving Latino/a immigrants. Her other
                areas of interest are service partnerships and evaluating projects that
                serve at risk populations such as victims of human trafficking, refugees,
-               and low income minitories.</p>
+               and low income minorities.</p>
             </div>
           </div>
 

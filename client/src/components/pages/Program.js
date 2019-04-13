@@ -58,7 +58,9 @@ export default class Program extends React.Component {
       k2q3: 'Receive',
       k2q4: 'A training on how to identify human trafficking warning signs',
       k2q5: 'once',
-      k2q6: 'a day'
+      k2q6: 'a day',
+      output: ' + Click here to create an output',
+      outcome: ' + Click here to create an outcome'
     }
 
     this.onCheck = this.onCheck.bind(this);
@@ -69,6 +71,7 @@ export default class Program extends React.Component {
     this.onSaveKnot2Part1 = this.onSaveKnot2Part1.bind(this);
     this.onTyped = this.onTyped.bind(this);
     this.onSelect = this.onSelect.bind(this);
+    this.generateOutput = this.generateOutput.bind(this);
   }
 
   onCheck(e) {
@@ -83,6 +86,23 @@ export default class Program extends React.Component {
     this.setState({
       [e.currentTarget.id]: e.target.value
     });
+  }
+
+  generateOutput(e) {
+    var string = '';
+    if(this.state.k2q2 === "Law enforcement") {
+      string = this.state.k2q1 + " " + this.state.k2q2 + " staff will " + this.state.k2q3 + " in " + this.state.k2q4 + " " + this.state.k2q5 + " " + this.state.k2q6 + ".";
+    } else if(this.state.k2q2 === "Victims of human trafficking") {
+      string = this.state.k2q1 + " staffers will assist " + this.state.k2q2 + " to " + this.state.k2q3 + " " + this.state.k2q4 + " " + this.state.k2q5 + " " + this.state.k2q6 + ".";
+    } else if(this.state.k2q2 === "Services provided") {
+      string = this.state.k2q1 + " staffers will " + this.state.k2q3 + " in " + this.state.k2q4 + " " + this.state.k2q5 + " " + this.state.k2q6 + ".";
+    }
+    console.log(string);
+
+    this.setState({
+      output: string
+    });
+
   }
 
   onSelect(e) {
@@ -297,7 +317,7 @@ export default class Program extends React.Component {
     })
   }
 
-  toggleOutput(){
+  toggleOutput(e){
     this.setState({
       ...this.state,
       knot2Landing: this.state.knot2Landing?false:
@@ -306,6 +326,8 @@ export default class Program extends React.Component {
       :true,
     });
 
+
+    this.generateOutput();
 
   }
 
@@ -651,7 +673,7 @@ export default class Program extends React.Component {
               this.state.showOutput?
               <div>
                 <div style = {outputStyle}>
-                  How many people will you need? <input type="text" id="k2q1"/>
+                  How many people will you need? <input type="text" id="k2q1" onChange={this.onTyped}/>
                 </div>
                 <div style = {outputStyle}>
                   Target <br/>
@@ -709,7 +731,7 @@ export default class Program extends React.Component {
                   <h3>Outputs</h3>
                   <ul>
                     <li>Sample output: 25 community outreach events will be provided to Latina women twice a month.</li>
-                    <button style={knot2ButtonStyle} onClick={()=>this.toggleOutput()}>+ Click here to create an output</button>
+                    <button style={knot2ButtonStyle} onClick={()=>this.toggleOutput()}>{this.state.output}</button>
                   </ul>
                 </div>
                 <div>

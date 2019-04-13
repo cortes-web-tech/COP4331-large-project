@@ -12,6 +12,7 @@ import Knots from './../layout/Knots';
 import Services from './../layout/Services';
 
 import LoggedIn from './LoggedIn'
+import Login from './Login'
 
 
 import Modal from 'react-bootstrap/Modal';
@@ -44,7 +45,7 @@ render() {
 
         <div style = {rightBox}>
 
-          <Link to="/loggedIn">
+          <Link to="/login">
           <button type="button" style={buttonStyle}>Get Started</button>
 
           </Link>
@@ -83,7 +84,9 @@ const keepuContainer = {
   // backgroundSize: 'cover',
   fontSize: '42px',
   textAlign: 'left',
-
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
   // opacity: '0.8',
   // background: 'black'
 }

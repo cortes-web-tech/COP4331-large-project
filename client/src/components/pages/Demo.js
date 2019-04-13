@@ -4,6 +4,7 @@ import { Button } from 'reactstrap';
 import './Demo.css';
 import Header from './../../components/layout/Header';
 import Footer from './../../components/layout/Footer';
+import Background from './../../demo.png';
 
 class Demo extends Component {
   render() {
@@ -41,6 +42,7 @@ export default Demo;
 const demo = {
   // opacity: '0.8',
    background: '#807bbd',
+   backgroundImage: "url(" + Background + ")",
    height: '100%'
 }
 

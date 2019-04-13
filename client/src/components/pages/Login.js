@@ -1,5 +1,4 @@
 import React , { Component } from 'react';
-import Background from '../../background.png';
 import './Login.css';
 import axios from 'axios';
 import LoggedIn from './LoggedIn';
@@ -7,6 +6,8 @@ import {Link} from 'react-router-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import Knot1 from './../knots/Knot1';
+import Background from './../../login.png';
+
 
 
 const UserContext = React.createContext('');
@@ -129,7 +130,8 @@ const login = {
   marginRight: "auto",
    height: "100%",
 
-  backgroundSize: "cover"
+  backgroundSize: "cover",
+    backgroundImage: "url(" + Background + ")",
 }
 
 const loginBtn = {
@@ -140,5 +142,6 @@ const loginBtn = {
       borderRadius: '50px',
       fontSize: '100%',
       border: 'none',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      padding: '0'
 }

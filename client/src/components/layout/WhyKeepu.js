@@ -7,12 +7,12 @@ function WhyKeepu(){
   return(
     <div style={whyKeepuStyle}>
       <div style={boxStyle}>
-        <img src={ArtBW} height="400" widt="400"/>
+        <img src={ArtBW} height="400" widt="400" style={pic1}/>
       </div>
       <div style={boxStyle}>
         <div style={formatText}>
-        <h1 style={h1Style}>Why the name <br/>Keepu?</h1>
-        <p style={pStyle}>Keepu, which is also referred to as Quipu,
+        <h1 style={h1Style}><b>Why the name <br/>Keepu?</b></h1>
+        <p style={pStyle}><br/><br/>Keepu, which is also referred to as Quipu,
         <br/>is a communication device used by the
         <br/>Incas civilization to document records
         <br/>related to the way Incas used to live. Now,
@@ -28,7 +28,17 @@ function WhyKeepu(){
 
 const whyKeepuStyle = {
   backgroundColor: '#FFDBB5',
-  display: 'flex'
+  display: 'flex',
+  minHeight: '900px',
+  paddingTop:'4em',
+  paddingBottom: '4em',
+  textAlign: 'left',
+      fontSize: '1.4vw',
+      overflow: 'hidden',
+
+      paddingLeft: '2em',
+      paddingRight: '2em',
+
 }
 
 const boxStyle = {
@@ -43,14 +53,20 @@ const formatText = {
   // textAlign: 'start'
 }
 const h1Style = {
-  color: '#F7921C',
-  textAling: 'left',
+    color: '#F7921C',
+    textAling: 'justify',
+    fontSize: '3vw'
 
 }
 
 const pStyle = {
   color: '#4D5CA2',
 
+}
+
+const pic1 = {
+  height: 'auto',
+  width: '80%'
 }
 
 export default WhyKeepu

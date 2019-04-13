@@ -5,8 +5,8 @@ import './../../App.css';
 function Services(){
   return(
     <div style={servicesContainer}>
-      <h1 style={h1Style}>Choose the serices that best fits your needs</h1>
-      <p style = {pStyle}>With Keepu, evaluate your prgoram on a wide range of topics to increase efficiency and
+      <h1 style={h1Style}>Choose the services that best fits your needs</h1>
+      <p style = {pStyle}>With Keepu, evaluate your program on a wide range of topics to increase efficiency and
       <br/>accountability by choosing a plan that best fits your organization and budget.</p>
       <div style={serviceStyle}>
         <div style={boxStyle}>
@@ -72,7 +72,8 @@ const pStyle = {
 const btnStyle = {
   background: '#717EBD',
   color: '#FFFFFF',
-  marginBottom: 10
+  marginBottom: 10,
+  border: '0'
 }
 
 export default Services

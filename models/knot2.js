@@ -31,23 +31,28 @@ const Knot2 = mongoose.model('Knot2', {
     default: null
   },
   q7: {
-    type: Number,
+    type: String,
+    trim: true,
     default: null
   },
   q8: {
-    type: Boolean,
+    type: String,
+    trim: true,
     default: null
   },
   q9: {
-    type: Boolean,
+    type: String,
+    trim: true,
     default: null
   },
   q10: {
-    type: Boolean,
+    type: String,
+    trim: true,
     default: null
   },
   q11: {
-    type: Boolean,
+    type: String,
+    trim: true,
     default: null
   },
   owner: {
