@@ -31,8 +31,7 @@ const Knot2 = mongoose.model('Knot2', {
     default: null
   },
   q7: {
-    type: String,
-    trim: true,
+    type: Number,
     default: null
   },
   q8: {

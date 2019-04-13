@@ -1,25 +1,44 @@
 
 
-Knot1
-  1. Within the field of human trafficking my program would (checkboxes, array of true/false)
-  2. Is your program funded yet? (true/false)
-  3. By who? (string)
-  4. Tech (checkboxes, array of true/false)
-  5. Space (checkboxes, array of true/false)
-  6. Materials (checkboxes, array of true/false)
-  7. Staff (checkboxes, array of true/false)
-  8. Computers (number)
-  9. Tablets (number)
-  10. Phones (number)
-  11. office space (number)
-  12. event space (number)
-  13. training space (number)
-  14. managers (number)
-  15. training Specialist (number)
-  16. case workers (number)
-  17. community Educator (number)
-  18. activities (checkboxes, array of true/false)
+Knot1 - some fields can be left null if user doesnt check them
+  q1. Within the field of human trafficking my program would (checkboxes, array of true/false)
+  q2. Is your program funded yet? (true/false)
+  q3. By who? (string)
+  q4. Tech (checkboxes, array of true/false)
+  q5. Space (checkboxes, array of true/false)
+  q6. Materials (checkboxes, array of true/false)
+  q7. Staff (checkboxes, array of true/false)
+  q8. Computers (number)
+  q9. Tablets (number)
+  q10. Phones (number)
+  q11. office space (number)
+  q12. event space (number)
+  q13. training space (number)
+  q14. managers (number)
+  q15. training Specialist (number)
+  q16. case workers (number)
+  q17. community Educator (number)
+  q18. activities (checkboxes, array of true/false)
 
 Knot2
-  1. How many people? (number)
-  2. 
+Output
+  q1. How many people? (number)
+  q2. Target (string)
+  q3. Verb (string)
+  q4. Topic (string)
+  q5. Frequency (String)
+  q6. Frequency (string)
+Outcome
+  q7. Percentage (number)
+  q8. Target (string)
+  q9. verb (string)
+  q10. noun (string)
+  q11. Frequency (string)
+
+  knot2 example outputs
+  5 Law enforcement staff will Participate in A training on how to identify human trafficking warning signs once a month.
+  10 staffers will assist Victims of human trafficking to Obtain Temporary visa programs a few times a week.
+  8 staffers will Achieve in Working with domestic violence adult victims of human trafficking multiple times a week.
+
+  knot2 example outcomes
+  80% of law enforcement staff will increase their knowledge on how to identify human trafficking warning signs 2 months after completing the program.
