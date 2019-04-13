@@ -43,7 +43,7 @@ const demo = {
   // opacity: '0.8',
    background: '#807bbd',
    backgroundImage: "url(" + Background + ")",
-   height: '100%'
+   minHeight: '80vh'
 }
 
 const demoBtn = {

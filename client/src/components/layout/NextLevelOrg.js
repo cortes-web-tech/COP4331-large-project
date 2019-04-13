@@ -25,14 +25,14 @@ const pic = {
 
 const nextLevelStyle = {
   backgroundColor: 'white',
-  display: 'flex'
+  display: 'flex',
+    minHeight: '100vh'
 }
 
 const boxStyle = {
   flex:1,
   paddingTop:10,
   paddingBottom: 10,
-  minHeight: '900px',
   textAlign: 'left',
       fontSize: '1.4vw',
       overflow: 'hidden',

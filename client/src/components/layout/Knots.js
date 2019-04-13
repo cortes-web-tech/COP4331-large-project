@@ -56,7 +56,7 @@ const knotStyle = {
   backgroundColor: 'white',
   display: 'flex',
   flexDirection: 'column',
-  minHeight: '900px',
+  minHeight: '100vh',
   margin: '4em 3em 4em 3em',
 
 }

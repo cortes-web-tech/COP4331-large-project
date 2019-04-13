@@ -1,12 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './../../App.css';
+import Logo from './../../logo.png';
 
 export default function Header(){
   return(
     <header style={headerStyle}>
       <div style={logoStyle}>
-        <Link style={h1Style} to="/">Keepu</Link>
+      <img src={Logo} style={pic}/>
+        <Link style={h1Style} to="/">KEEPU</Link>
       </div>
       <div style={linksStyle}>
         <div><Link style={linkStyle} to="/login">Get Started </Link></div>
@@ -22,7 +24,7 @@ const headerStyle = {
   display: 'flex',
   flexDirection: 'row',
   color: '#ffffff',
-  paddingTop: '2px'
+  paddingTop: '0.5em'
 }
 
 const logoStyle = {
@@ -30,12 +32,16 @@ const logoStyle = {
   paddingLeft: '20px',
 }
 
+const pic = {
+
+}
 const linksStyle = {
   display: 'flex',
   flexDirection: 'row',
   flex: 2,
   justifyContent: 'space-around',
-  paddingRight: '20px'
+  paddingRight: '20px',
+  fontWeight: 'bold'
 }
 
 const linkStyle = {
@@ -46,8 +52,10 @@ const linkStyle = {
 }
 
 const h1Style = {
-  fontSize: "20px",
+  fontSize: "1em",
   color: 'white',
   // textDecoration: 'none',
-  color: "white"
+  color: "white",
+  paddingLeft: '0.5em',
+  fontWeight: 'bold'
 }

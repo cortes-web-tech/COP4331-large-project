@@ -23,13 +23,14 @@ function WhyKeepu(){
         </div>
       </div>
     </div>
+
   )
 }
 
 const whyKeepuStyle = {
   backgroundColor: '#FFDBB5',
   display: 'flex',
-  minHeight: '900px',
+  minHeight: '100vh',
   paddingTop:'4em',
   paddingBottom: '4em',
   textAlign: 'left',

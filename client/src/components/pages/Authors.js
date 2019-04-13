@@ -60,11 +60,12 @@ export default Authors;
 
 const authorsPage = {
   background: "#f8dabc",
+  minHeight: '100vh'
 }
 
 const authors = {
     background: "#f8dabc",
-    height: '100%'
+    minHeight: '80vh'
 }
 
 

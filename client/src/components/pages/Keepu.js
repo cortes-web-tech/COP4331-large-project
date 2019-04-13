@@ -21,6 +21,7 @@ import ModalHeader from 'react-bootstrap/ModalHeader';
 import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
 import ModalFooter from 'react-bootstrap/ModalFooter';
+import Footer from './../../components/layout/Footer';
 
 
 class Keepu extends React.Component {
@@ -66,6 +67,7 @@ render() {
         </div>
       </div>
     </React.Fragment>
+    <Footer/>
   </div>
   )
 }
@@ -87,6 +89,7 @@ const keepuContainer = {
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
+  minHeight: '100vh'
   // opacity: '0.8',
   // background: 'black'
 }
@@ -94,39 +97,44 @@ const keepuContainer = {
 const boxLayout = {
   display: 'flex',
   flexDirection: 'column',
-  color: 'white'
+  color: 'white',
+  minHeight: '100vh'
 }
 const upperBox = {
-  paddingTop: '50px',
-  paddingBottom: '100px',
+
   display: 'flex',
-  flexDirection: 'row'
+  flexDirection: 'row',
+  paddingTop: '5%',
+  paddingBottom: '5%'
 }
 
 const lowerBox = {
   display: 'flex',
   flexDirection: 'row',
-  paddingBottom: '50px'
+
 }
 
 const leftBox = {
-  marginLeft: '30px',
-  flex: 2
+
+  flex: 2,
+  fontSize: '1.2em',
+  marginLeft: '5%'
 }
 
 const rightBox = {
   flex: 1,
-  fontSize: '150%'
+  fontSize: '1.4em',
+
 }
 
 const buttonStyle = {
   background: '#ffffff',
-  width:' 270px',
-  height: '50px',
-  fontSize: '50%',
+  width:' 200px',
+  height: '60px',
+  fontSize: '40%',
   borderRadius: '50px',
   border: 'none',
-  color: '#707CB4'
+  color: '#707CB4',
 }
 
 const demoBtn1 = {
@@ -137,7 +145,8 @@ const demoBtn1 = {
       borderRadius: '50px',
       fontSize: '100%',
       border: 'none',
-      cursor: 'pointer'
+      cursor: 'pointer',
+
 }
 
 var pageStyle = {
