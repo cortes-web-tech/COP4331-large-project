@@ -15,6 +15,7 @@ router.post('/api/users', async (req, res) => {
     res.status(201).send(user);
   } catch (e) {
     const nullUser = new User({'email': '', 'password': ''});
+    console.log('uh uh');
     res.send(nullUser);
   }
 

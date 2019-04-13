@@ -52,7 +52,13 @@ export default class Program extends React.Component {
       q17: 0,
       q18c1: false,
       q18c2: false,
-      q18c3: false
+      q18c3: false,
+      k2q1: 0,
+      k2q2: 'Law enforcement',
+      k2q3: 'Receive',
+      k2q4: 'A training on how to identify human trafficking warning signs',
+      k2q5: 'once',
+      k2q6: 'a day'
     }
 
     this.onCheck = this.onCheck.bind(this);
@@ -60,7 +66,9 @@ export default class Program extends React.Component {
     this.onSaveKnot1Part2 = this.onSaveKnot1Part2.bind(this);
     this.onSaveKnot1Part3 = this.onSaveKnot1Part3.bind(this);
     this.onSaveKnot1Part4 = this.onSaveKnot1Part4.bind(this);
+    this.onSaveKnot2Part1 = this.onSaveKnot2Part1.bind(this);
     this.onTyped = this.onTyped.bind(this);
+    this.onSelect = this.onSelect.bind(this);
   }
 
   onCheck(e) {
@@ -77,6 +85,15 @@ export default class Program extends React.Component {
     });
   }
 
+  onSelect(e) {
+    console.log(e.currentTarget.id);
+    var string = e.currentTarget.id;
+    string = string.substring(0, string.length -2);
+    this.setState({
+      [string]: e.target.value
+    });
+  }
+
     onSaveKnot1Part1(e) {
     //  console.log(this.state);
 
@@ -90,7 +107,7 @@ export default class Program extends React.Component {
       }
       console.log(knot1p1);
 
-      var url = 'https://keepuapp.herokuapp.com/api/knot1/';
+      var url = 'http://keepuapp.herokuapp.com/api/knot1/';
       //axios.get(url).then(res => console.log(res.data[0]._id));
 
       axios.get(url + window.id
@@ -125,7 +142,7 @@ export default class Program extends React.Component {
       }
       console.log(knot1p2);
 
-      var url = 'https://keepuapp.herokuapp.com/api/knot1/';
+      var url = 'http://keepuapp.herokuapp.com/api/knot1/';
       //axios.get(url).then(res => console.log(res.data[0]._id));
 
       axios.get(url + window.id
@@ -166,7 +183,7 @@ export default class Program extends React.Component {
       }
       console.log(knot1p3);
 
-      var url = 'https://keepuapp.herokuapp.com/api/knot1/';
+      var url = 'http://keepuapp.herokuapp.com/api/knot1/';
       //axios.get(url).then(res => console.log(res.data[0]._id));
 
       axios.get(url + window.id
@@ -198,7 +215,7 @@ export default class Program extends React.Component {
       }
       console.log(knot1p4);
 
-      var url = 'https://keepuapp.herokuapp.com/api/knot1/';
+      var url = 'http://keepuapp.herokuapp.com/api/knot1/';
       //axios.get(url).then(res => console.log(res.data[0]._id));
 
       axios.get(url + window.id
@@ -214,6 +231,43 @@ export default class Program extends React.Component {
           var knotId = res.data[0]._id;
           axios.patch(url + knotId,
             knot1p4
+          ).then(res => console.log('there are knots'));
+        }
+      });
+    }
+
+    onSaveKnot2Part1(e) {
+    //  console.log(this.state);
+
+      e.preventDefault();
+
+      const knot2p1 = {
+        q1: this.state.k2q1,
+        q2: this.state.k2q2,
+        q3: this.state.k2q3,
+        q4: this.state.k2q4,
+        q5: this.state.k2q5,
+        q6: this.state.k2q6,
+        owner: window.id
+      }
+      console.log(knot2p1);
+
+      var url = 'http://keepuapp.herokuapp.com/api/knot2/';
+      //axios.get(url).then(res => console.log(res.data[0]._id));
+
+      axios.get(url + window.id
+      ).then(res => {
+        // if the user does not have a knot1 make one, else update existing
+        if(res.data[0] === undefined) {
+          // create knot1
+          axios.post(url,
+            knot2p1
+          ).then(res => console.log('no knots'));
+        } else {
+          // update knot1
+          var knotId = res.data[0]._id;
+          axios.patch(url + knotId,
+            knot2p1
           ).then(res => console.log('there are knots'));
         }
       });
@@ -250,7 +304,9 @@ export default class Program extends React.Component {
       true,
       showOutput: this.state.showOutput?false
       :true,
-    })
+    });
+
+
   }
 
   toggle1(){
@@ -600,50 +656,51 @@ export default class Program extends React.Component {
                 <div style = {outputStyle}>
                   Target <br/>
                   <select>
-                    <option>Law enforcement</option>
-                    <option>Services provided</option>
-                    <option>Victims of human trafficking</option>
+                    <option id="k2q2o1" onClick={this.onSelect}>Law enforcement</option>
+                    <option id="k2q2o2" onClick={this.onSelect}>Services provided</option>
+                    <option id="k2q2o3" onClick={this.onSelect}>Victims of human trafficking</option>
                   </select>
                 </div>
                 <div style = {outputStyle}>
                   Verb <br/>
                   <select>
-                    <option>Receive</option>
-                    <option>Participate</option>
-                    <option>Achieve</option>
-                    <option>Complete</option>
-                    <option>Obtain</option>
-                    <option>Perform</option>
+                    <option id="k2q3o1" onClick={this.onSelect}>Receive</option>
+                    <option id="k2q3o2" onClick={this.onSelect}>Participate</option>
+                    <option id="k2q3o3" onClick={this.onSelect}>Achieve</option>
+                    <option id="k2q3o4" onClick={this.onSelect}>Complete</option>
+                    <option id="k2q3o5" onClick={this.onSelect}>Obtain</option>
+                    <option id="k2q3o6" onClick={this.onSelect}>Perform</option>
                   </select>
                 </div>
                 <div style = {outputStyle}>
                   Topic <br/>
                   <select>
-                    <option>A training on how to identify human trafficking warning signs</option>
-                    <option>Human trafficking in rural communities</option>
-                    <option>Human trafficking and domestic violence</option>
-                    <option>Temporary visa programs</option>
-                    <option>Working with foreign nationals’ adult victims of human trafficking</option>
-                    <option>Working with domestic violence adult victims of human trafficking</option>
-                    <option>Training on how to identify human trafficking warning signs</option>
+                    <option id="k2q4o1" onClick={this.onSelect}>A training on how to identify human trafficking warning signs</option>
+                    <option id="k2q4o2" onClick={this.onSelect}>Human trafficking in rural communities</option>
+                    <option id="k2q4o3" onClick={this.onSelect}>Human trafficking and domestic violence</option>
+                    <option id="k2q4o3" onClick={this.onSelect}>Temporary visa programs</option>
+                    <option id="k2q4o4" onClick={this.onSelect}>Working with foreign nationals’ adult victims of human trafficking</option>
+                    <option id="k2q4o5" onClick={this.onSelect}>Working with domestic violence adult victims of human trafficking</option>
+                    <option id="k2q4o6" onClick={this.onSelect}>Training on how to identify human trafficking warning signs</option>
                     <option>😳?</option>
                   </select>
                 </div>
                 <div style = {outputStyle}>
                   Frequency <br/>
                   <select>
-                    <option>once</option>
-                    <option>twice</option>
-                    <option>a few times</option>
-                    <option>multiple times</option>
+                    <option id="k2q5o1" onClick={this.onSelect}>once</option>
+                    <option id="k2q5o2" onClick={this.onSelect}>twice</option>
+                    <option id="k2q5o3" onClick={this.onSelect}>a few times</option>
+                    <option id="k2q5o4" onClick={this.onSelect}>multiple times</option>
                   </select>
                   <select>
-                    <option>a day</option>
-                    <option>a week</option>
-                    <option>a month</option>
-                    <option>a year</option>
+                    <option id="k2q6o1" onClick={this.onSelect}>a day</option>
+                    <option id="k2q6o2" onClick={this.onSelect}>a week</option>
+                    <option id="k2q6o3" onClick={this.onSelect}>a month</option>
+                    <option id="k2q6o4" onClick={this.onSelect}>a year</option>
                   </select>
                 </div>
+                <input type="button" value="Save" onClick = {this.onSaveKnot2Part1}/>
                 <button onClick={()=>this.toggleOutput()}>Generate output</button>
               </div>
               :

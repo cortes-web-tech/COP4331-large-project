@@ -5,6 +5,7 @@ const path = require('path');
 
 const userRouter = require('./routers/user');
 const knot1Router = require('./routers/knot1');
+const knot2Router = require('./routers/knot2');
 
 const app = express();
 const port = process.env.PORT || 8000;
@@ -18,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'client', 'build')));
 app.use(express.json());
 app.use(userRouter);
 app.use(knot1Router);
+app.use(knot2Router);
 app.use(cors({credentials: true, origin: true}));
 
 app.get('*', (req, res) => {

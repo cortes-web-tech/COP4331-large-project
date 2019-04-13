@@ -3,6 +3,7 @@ const validator = require('validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const Knot1 = require('./knot1');
+const Knot2 = require('./knot2');
 
 const userSchema = new mongoose.Schema({
     email: {
@@ -44,6 +45,12 @@ const userSchema = new mongoose.Schema({
 
 userSchema.virtual('knot1', {
   ref: 'Knot1',
+  localField: '_id',
+  foreignField: 'owner'
+});
+
+userSchema.virtual('knot2', {
+  ref: 'Knot2',
   localField: '_id',
   foreignField: 'owner'
 });

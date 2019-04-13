@@ -6,23 +6,28 @@ const Knot2 = mongoose.model('Knot2', {
     default: null
   },
   q2: {
-    type: Boolean,
+    type: String,
+    trim: true,
     default: null
   },
   q3: {
-    type: Boolean,
+    type: String,
+    trim: true,
     default: null
   },
   q4: {
-    type: Boolean,
+    type: String,
+    trim: true,
     default: null
   },
   q5: {
-    type: Boolean,
+    type: String,
+    trim: true,
     default: null
   },
   q6: {
-    type: Boolean,
+    type: String,
+    trim: true,
     default: null
   },
   q7: {

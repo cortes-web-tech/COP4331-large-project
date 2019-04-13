@@ -1,5 +1,5 @@
 const express = require('express');
-const Knot1 = require('../models/knot2');
+const Knot2 = require('../models/knot2');
 const router = new express.Router();
 const cors = require('cors');
 
@@ -58,7 +58,7 @@ router.patch('/api/knot2/:id', async (req, res) => {
   try {
     const knot2 = await Knot2.findById(req.params.id);
 
-    updates.forEach((update) => knot1[update] = req.body[update]);
+    updates.forEach((update) => knot2[update] = req.body[update]);
     await knot2.save();
 
     if(!knot2) {
