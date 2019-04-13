@@ -52,7 +52,7 @@ class Start extends Component {
     //axios.post('http://localhost:3001/users', newUser).then(res => console.log(res.data));
     //axios.post('http://localhost:3001/users/login', userLogin).then(res => console.log(res.data));
 
-    axios.post('http://keepuapp.herokuapp.com/api/users/login',
+    axios.post('https://keepuapp.herokuapp.com/api/users/login',
       userLogin
     ).then(res => {
       if(res.data['email'] !== '') {
