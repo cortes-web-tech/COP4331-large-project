@@ -11,9 +11,10 @@ export default class Program extends React.Component {
       phKnot: true,
       showKnot1: false,
       showKnot2: false,
+      showKnot3: false,
       knot2Landing: true,
       showOutput: false,
-      showOutcome: true,
+      showOutcome: false,
       show1: false,
       show2: false,
       show3: false,
@@ -46,14 +47,15 @@ export default class Program extends React.Component {
     })
   }
 
-  toggleOutput(){
+  toggleKnot3(){
     this.setState({
       ...this.state,
-      knot2Landing: this.state.knot2Landing?false:
-      true,
-      showOutput: this.state.showOutput?false
+      showKnot1: false,
+      showKnot2: false,
+      showKnot3: this.state.showKnot3?false
       :true,
-
+      phKnot: this.state.showKnot3?true
+      :false
 
 
     })
@@ -72,6 +74,33 @@ export default class Program extends React.Component {
       show2: !this.state.show2,
     })
   }
+
+  toggleOutput(){
+    this.setState({
+      ...this.state,
+      knot2Landing: this.state.knot2Landing?false:
+      true,
+      showOutput: this.state.showOutput?false
+      :true,
+      showOutcome: false
+
+
+    })
+  }
+
+  toggleOutcome(){
+    this.setState({
+      ...this.state,
+      knot2Landing: this.state.knot2Landing?false:
+      true,
+      showOutcome: this.state.showOutcome?false
+      :true,
+      showOutput: false
+
+
+    })
+  }
+
 
   toggle3(){
     this.setState({
@@ -107,19 +136,32 @@ export default class Program extends React.Component {
             </div>
 
           <div style={eBox}>
-            <button style = {enabled} onClick={()=>this.toggleKnot1()}>Knot 1 Understand your program </button>
+            <button style = {enabled} onClick={()=>this.toggleKnot1()}>
+                <p>Knot 1</p>
+                Understand your program
+              </button>
           </div>
 
           <div style={eBox}>
-            <button style = {enabled} onClick={()=>this.toggleKnot2()}>Knot 2 Identify what to measure </button>
+
+            <button style = {enabled} onClick={()=>this.toggleKnot2()}>
+              <p>Knot 2 </p>
+              Identify what to measure
+            </button>
           </div>
 
           <div style={dBox}>
-            <p>Knot 3 Track performance</p>
+            <button style = {disabled} onClick={()=>this.toggleKnot3()}>
+              <p>Knot 3</p>
+              Track performance
+            </button>
           </div>
 
           <div style={dBox}>
-            <p>Knot 4 Resource library</p>
+
+              <p>Knot 4 </p>
+              Resource library
+
           </div>
         </div>
 
@@ -202,7 +244,7 @@ export default class Program extends React.Component {
             <div style={catArea}>
             How much will you need?
             {
-              this.state.show3?
+              this.state.showKnot2?
               <div style={formStyle}>
                 <div style = {needBox}>
                   <h3>Technology</h3>
@@ -416,28 +458,67 @@ export default class Program extends React.Component {
                 </div>
                 <button onClick={()=>this.toggleOutput()}>Generate output</button>
               </div>
-              :
-              <div style={programStyle}>
-                <div>
-                  <h3>Outputs</h3>
-                  <ul>
-                    <li>Sample output: 25 community outreach events will be provided to Latina women twice a month.</li>
-                    <button style={knot2ButtonStyle} onClick={()=>this.toggleOutput()}>+ Click here to create an output</button>
-                  </ul>
+              :  this.state.showOutcome?
+
+                <div style={knotQ}>
+                  Outcome placeholder
+                  <div style={outputStyle}>
+                    Set up a percentage criteria <input type="text"/>
+                  </div>
+                  <div style={outputStyle}>
+                    Target <br/>
+                    <select>
+                      <option>Target op 1 </option>
+                      <option>Target op 2</option>
+                    </select>
+                  </div>
+                  <div style={outputStyle}>
+                    Verb <br/>
+                    <select>
+                      <option> Verb op 1</option>
+                      <option> Verb op 2</option>
+                    </select>
+                  </div>
+                    <div style={outputStyle}>
+                      Noun <br/>
+                      <select>
+                        <option>Noun op 1</option>
+                        <option>Noun op 2</option>
+                      </select>
+                  </div>
+
+                  <div style={outputStyle}>
+                    Frequency <br/>
+                    <select>
+                      <option>Frquency op 1</option>
+                      <option>Frequency op 2</option>
+                    </select>
                 </div>
-                <div>
-                  <h3>Outcomes</h3>
-                  <ul>
-                    <li>Sample outcome: 85% of applicants will increase their knowledge after completing the training</li>
-                    <button style={knot2ButtonStyle}>+ Click here to create an outcome</button>
-                  </ul>
+                <button onClick={()=>this.toggleOutcome()}>Generate outcome</button>
                 </div>
+                :
+
+                <div style={programStyle}>
+                  <div>
+                    <h3>Outputs</h3>
+                    <ul>
+                      <li>Sample output: 25 community outreach events will be provided to Latina women twice a month.</li>
+                      <button style={knot2ButtonStyle} onClick={()=>this.toggleOutput()}>+ Click here to create an output</button>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3>Outcomes</h3>
+                    <ul>
+                      <li>Sample outcome: 85% of applicants will increase their knowledge after completing the training</li>
+                      <button style={knot2ButtonStyle} onClick={()=>this.toggleOutcome()}>+ Click here to create an outcome</button>
+                    </ul>
+                  </div>
               </div>
             }
-          </div>
-          :null
-        }
 
+          </div>
+            :null
+        }
         </React.Fragment>
       </div>
     );
@@ -461,7 +542,7 @@ const knotStyle = {
   flex: 3,
   display: "flex",
   flexDirection: "column",
-  backgroundColor: "#D6D6D6"
+  backgroundColor: "#aaaaaa"
 }
 
 const knotQ = {
@@ -475,7 +556,15 @@ const enabled = {
   color: "#EDA85F",
   backgroundColor: "#eeeeee",
   border: "none",
-  fontSize: "36px"
+  fontSize: "26px"
+
+}
+
+const disabled = {
+  color: "#EDA85F",
+  backgroundColor: "#eeeeee",
+  border: "none",
+  fontSize: "26px"
 
 }
 
@@ -483,11 +572,21 @@ const eBox = {
   flex: 1,
   backgroundColor: "#eeeeee",
   border: "1px #eeeeee solid",
+  paddingTop: "5%",
+  paddingBottom: "5%",
+  margin:"10px",
+  borderRadius: "50px"
 }
 
 const dBox = {
   flex: 1,
-  border: "1px #eeeeee solid",
+  paddingTop:"5%",
+  paddingBottom: "5%",
+  margin:"10px",
+  backgroundColor: "#eeeeee",
+  color: "#1F2E87",
+  size: "26px",
+  borderRadius: "50px"
 }
 
 const formArea = {
