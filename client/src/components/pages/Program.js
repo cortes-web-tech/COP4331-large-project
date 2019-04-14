@@ -5,6 +5,7 @@ import DashNav from './../layout/DashNav';
 import html2canvas from 'html2canvas';
 import axios from 'axios';
 
+
 export default class Program extends React.Component {
   constructor(){
     super()
@@ -72,7 +73,79 @@ export default class Program extends React.Component {
     this.onTyped = this.onTyped.bind(this);
     this.onSelect = this.onSelect.bind(this);
     this.generateOutput = this.generateOutput.bind(this);
+    this.viewChart = this.viewChart.bind(this);
   }
+
+  viewChart(e) {
+    e.preventDefault();
+    var userKnot1 = {};
+    var userKnot2 = {};
+
+    var url1 = 'https://keepuapp.herokuapp.com/api/knot1/';
+    var url2 = 'https://keepuapp.herokuapp.com/api/knot2/';
+
+    axios.get(url1 + window.id
+    ).then(res => {
+      userKnot1 = res.data[0];
+      console.log('INPUTS:');
+      if(userKnot1['q4'][0]) {
+        console.log('computers')
+      }
+      if(userKnot1['q4'][1]) {
+        console.log('tablets')
+      }
+      if(userKnot1['q4'][2]) {
+        console.log('office phones')
+      }
+      if(userKnot1['q5'][0]) {
+        console.log('office space');
+      }
+      if(userKnot1['q5'][1]) {
+        console.log('event space');
+      }
+      if(userKnot1['q5'][2]) {
+        console.log('training space');
+      }
+      if(userKnot1['q7'][0]) {
+        console.log('managers');
+      }
+      if(userKnot1['q7'][1]) {
+        console.log('training Specialists')
+      }
+      if(userKnot1['q7'][2]) {
+        console.log('case workers');
+      }
+      if(userKnot1['q4'][3]) {
+        console.log('community Educators')
+      }
+      console.log('ACTIVITIES');
+      if(userKnot1['q18'][0]) {
+        console.log('identify law enforcement agencies');
+      }
+      if(userKnot1['q18'][1]) {
+        console.log('Identify human trafficking prevention service providers')
+      }
+      if(userKnot1['q18'][2]) {
+        console.log('Identify potential trainers on human trafficking warning signs')
+      }
+    });
+
+    axios.get(url2 + window.id
+    ).then(res => {
+      userKnot2 = res.data[0];
+      var string = '';
+      if(userKnot2['q2'] === "Law enforcement") {
+        string = userKnot2['q1'] + " " + userKnot2['q2'] + " staff will " + userKnot2['q3'] + " in " + userKnot2['q4'] + " " + userKnot2['q5'] + " " + userKnot2['q6'] + ".";
+      } else if(userKnot2['q2'] === "Victims of human trafficking") {
+        string = userKnot2['q1'] + " staffers will assist " + userKnot2['q2'] + " to " + userKnot2['q3'] + " " + userKnot2['q4'] + " " + userKnot2['q5'] + " " + userKnot2['q6'] + ".";
+      } else if(userKnot2['q2'] === "Services provided") {
+        string = userKnot2['q1'] + " staffers will " + userKnot2['q3']+ " in " + userKnot2['q4'] + " " + userKnot2['q5'] + " " + userKnot2['q6'] + ".";
+      }
+      console.log('OUTPUTS');
+      console.log(string);
+    });
+  }
+
 
   onCheck(e) {
     console.log(e.currentTarget.id)
@@ -723,6 +796,7 @@ export default class Program extends React.Component {
                   </select>
                 </div>
                 <input type="button" value="Save" onClick = {this.onSaveKnot2Part1}/>
+                <input type="button" value="View chart" onClick = {this.viewChart}/>
                 <button onClick={()=>this.toggleOutput()}>Generate output</button>
               </div>
               :

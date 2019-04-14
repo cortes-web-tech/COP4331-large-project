@@ -41,10 +41,6 @@ class Start extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    console.log(`Submitted`);
-    console.log(`Email: ${this.state.emailInput}`);
-    console.log(`Password: ${this.state.passwordInput}`);
-
     const userLogin = {
       email: this.state.emailInput,
       password: this.state.passwordInput
@@ -61,7 +57,7 @@ class Start extends Component {
           authenticated: true,
           userID: res.data._id
         });
-
+        console.log(res.data);
         window.id = res.data._id;
       } else {
         console.log('not so nice :(');
