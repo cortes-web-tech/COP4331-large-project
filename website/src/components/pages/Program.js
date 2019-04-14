@@ -231,47 +231,49 @@ export default class Program extends React.Component {
               this.state.show1?
               <form style={formStyle}>
                 <div style = {checkBox}>
-                  <div style = {checkStyle}>
-                    <input type="checkbox" />
-                  </div>
                   <div style = {checkText}>
                     Provide comprehensive short term services to victims of human trafficking
                   </div>
-                </div>
-
-                <div style = {checkBox}>
                   <div style = {checkStyle}>
                     <input type="checkbox" />
                   </div>
+                </div>
+
+                <div style = {checkBox}>
+
                   <div style = {checkText}>
                     Promote collaboration and coordination of services
                   </div>
-                </div>
-
-                <div style = {checkBox}>
                   <div style = {checkStyle}>
                     <input type="checkbox" />
                   </div>
+                </div>
+
+                <div style = {checkBox}>
+
                   <div style = {checkText}>
                     Provide trainings on human trafficking victims topics
                   </div>
-                </div>
-
-                <div style = {checkBox}>
                   <div style = {checkStyle}>
                     <input type="checkbox" />
                   </div>
+                </div>
+
+                <div style = {checkBox}>
                   <div style = {checkText}>
                     Create awareness about human traffic
                   </div>
-                </div>
-
-                <div style = {checkBox}>
                   <div style = {checkStyle}>
                     <input type="checkbox" />
                   </div>
+                </div>
+
+                <div style = {checkBox}>
                   <div style = {checkText}>
                     Provide trainings on human trafficking victims topics
+                  </div>
+                  <div style = {checkStyle}>
+                    <input type="checkbox" />
                   </div>
                 </div>
 
@@ -295,52 +297,132 @@ export default class Program extends React.Component {
                 <div style = {threeByTwo}>
                   <div style = {split6}>
                     <div style ={split3}>
-                      <input style = {checkStyle} type="checkbox" />
-                      <p>Computers</p>
+                      <div><input style = {checkStyle} type="checkbox" /></div>
+                      <div><p>&nbsp;Computers</p></div>
                     </div>
                     <div style ={split3}>
-                      <input style = {checkStyle}  type="checkbox" />
-                      <p >Website</p>
+                      <div><input style = {checkStyle}  type="checkbox" /></div>
+                      <div><p>&nbsp;Website</p></div>
                     </div>
                     <div style ={split3}>
-                      <input style = {checkStyle}  type="checkbox" />
-                      <p >Database</p>
+                      <div><input style = {checkStyle}  type="checkbox" /></div>
+                      <div><p>&nbsp;Database</p></div>
                     </div>
                   </div>
 
                   <div style = {split6}>
                     <div style ={split3}>
                       <div><input style = {checkStyle}  type="checkbox" /></div>
-                      <div>Tablets</div>
+                      <div>&nbsp;Tablets</div>
                       </div>
                       <div style ={split3}>
-                        <input style = {checkStyle} type="checkbox" />
-                        <p>Canopies</p>
+                        <div><input style = {checkStyle} type="checkbox" /></div>
+                        <div><p>&nbsp;Canopies</p></div>
                       </div>
                       <div style ={split3}>
-                        <input style = {checkStyle} type="checkbox" />
-                        <p>Other</p>
+                        <div><input style = {checkStyle} type="checkbox" /></div>
+                        <div><p>&nbsp;Other</p></div>
                       </div>
                     </div>
                   </div>
 
                 <h3> Space </h3>
                 <div style = {threeByTwo}>
-
+                  <div style = {split6}>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle}  type="checkbox" /></div>
+                      <div>&nbsp;Office Space</div>
+                    </div>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle} type="checkbox" /></div>
+                      <div><p>&nbsp;Temporary space</p></div>
+                    </div>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle} type="checkbox" /></div>
+                      <div><p>&nbsp;Canopies</p></div>
+                    </div>
+                  </div>
+                  <div style = {split6}>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle}  type="checkbox" /></div>
+                      <div>&nbsp;Training Space</div>
+                    </div>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle} type="checkbox" /></div>
+                      <div><p>&nbsp;Option 5</p></div>
+                    </div>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle} type="checkbox" /></div>
+                      <div><p>&nbsp;Other</p></div>
+                    </div>
+                  </div>
                 </div>
-                <input type="checkbox" /> Office Space <input type="checkbox" /> Temporary space <input type="checkbox" /> Canopies<br/>
-                <input type="checkbox" /> Training Space <input type="checkbox" /> Option 5 <input type="checkbox" /> Other<br/>
-
                 <h3> Materials </h3>
-                <input type="checkbox" /> Training <input type="checkbox" /> Outreach <input type="checkbox" /> Office Supplies <br/>
-                <input type="checkbox" /> Service Delivery <input type="checkbox" /> Option 5 <input type="checkbox" /> Other<br/>
+                <div style = {threeByTwo}>
+                  <div style = {split6}>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle}  type="checkbox" /></div>
+                      <div>&nbsp;Training</div>
+                    </div>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle} type="checkbox" /></div>
+                      <div><p>&nbsp;Outreach</p></div>
+                    </div>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle} type="checkbox" /></div>
+                      <div><p>&nbsp;Office supplies</p></div>
+                    </div>
+                  </div>
+                  <div style = {split6}>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle}  type="checkbox" /></div>
+                      <div>&nbsp;Service delivery</div>
+                    </div>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle} type="checkbox" /></div>
+                      <div><p>&nbsp;Option 5</p></div>
+                    </div>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle} type="checkbox" /></div>
+                      <div><p>&nbsp;Other</p></div>
+                    </div>
+                  </div>
+                </div>
 
                 <h3> Staff </h3>
-                <input type="checkbox" /> Program Manager <input type="checkbox" /> Training Specialist <input type="checkbox" /> Option 3 <br/>
-                <input type="checkbox" /> Case Wroker <input type="checkbox" /> Community Education <input type="checkbox" /> Other <br/>
+                <div style = {threeByTwo}>
+                  <div style = {split6}>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle}  type="checkbox" /></div>
+                      <div>&nbsp;Program Manager</div>
+                    </div>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle} type="checkbox" /></div>
+                      <div><p>&nbsp;Training specialist</p></div>
+                    </div>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle} type="checkbox" /></div>
+                      <div><p>&nbsp;Option 3</p></div>
+                    </div>
+                  </div>
+                  <div style = {split6}>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle}  type="checkbox" /></div>
+                      <div>&nbsp;Case worker</div>
+                    </div>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle} type="checkbox" /></div>
+                      <div><p>&nbsp;Community education</p></div>
+                    </div>
+                    <div style ={split3}>
+                      <div><input style = {checkStyle} type="checkbox" /></div>
+                      <div><p>&nbsp;Other</p></div>
+                    </div>
+                  </div>
+                </div>
 
                 <h3> Other </h3>
-                <input type="text"/> <br/>
+                <textarea style = {other2Style}></textarea> <br/>
 
                 <input type="submit" style = {nextStyle} value="Next"/>
               </form>
@@ -397,10 +479,38 @@ export default class Program extends React.Component {
               <div style={formStyle}>
                 <p>Click the activites your program will do (Mark all that apply)</p>
                 <form>
-                  Identify Law enforcement agencies <input type="checkbox"/><br/>
-                  Identify human trafficking prevention service providers <input type="checkbox"/><br/>
-                  Identify potential trainers on human trafficking warning signs<input type="checkbox"/><br/>
-                  Other <input type="checkbox"/><br/>
+                  <div style = {checkBox}>
+                    <div style = {checkText}>
+                      Identify Law enforcement agencies
+                    </div>
+                    <div style = {checkStyle}>
+                      <input type="checkbox" />
+                    </div>
+                  </div>
+                  <div style = {checkBox}>
+                    <div style = {checkText}>
+                      Identify human trafficking prevention service providers
+                    </div>
+                    <div style = {checkStyle}>
+                      <input type="checkbox" />
+                    </div>
+                  </div>
+                  <div style = {checkBox}>
+                    <div style = {checkText}>
+                      Identify potential trainers on human trafficking warning signs
+                    </div>
+                    <div style = {checkStyle}>
+                      <input type="checkbox" />
+                    </div>
+                  </div>
+                  <div style = {checkBox}>
+                    <div style = {checkText}>
+                      Other
+                    </div>
+                    <div style = {checkStyle}>
+                      <input type="checkbox" />
+                    </div>
+                  </div>
                 </form>
                 <input type="submit" style = {nextStyle} value="Next"/>
               </div>
@@ -873,7 +983,9 @@ const split6 = {
 
 const split3 = {
 
-  flex: 1
+  flex: 1,
+  display: "flex",
+  flexDirection: "row"
 }
 
 const knot3Style = {
@@ -905,4 +1017,10 @@ const factsBox = {
   border: "2px black solid",
   width: "95%",
   margin: "auto"
+}
+
+const other2Style = {
+  width: "400px",
+  height: "150px",
+  wordWrap: "initial"
 }
