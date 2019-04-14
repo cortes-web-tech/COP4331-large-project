@@ -2,6 +2,7 @@ import React , { Component } from 'react';
 import './Login.css';
 import axios from 'axios';
 import LoggedIn from './LoggedIn';
+import Signup from './Signup';
 import {Link} from 'react-router-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Redirect } from 'react-router';
@@ -96,10 +97,10 @@ class Start extends Component {
                   <span class="field"><b>Password</b></span>
                   <input type="password" name="password" class="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" maxlength="30" value={this.state.passwordInput} onChange={this.onChangePassword}/>
 
-                  <a href="#" class="loginLinks"><br />Forgot password?<br /></a>
+                  {/*<a href="#" class="loginLinks"><br />Forgot password?<br /></a>*/}
                   <input type="submit" style={loginBtn} value="Sign In" />
 
-                  <a href="#" class="loginLinks"><br />New to our Service?<br />Sign up!<br /></a>
+                  <Link class="loginLinks" to="/signup" component={Signup}><br />New to our Service?<br />Sign up!<br /></Link>
                 </div>
 
               </form>
@@ -139,5 +140,6 @@ const loginBtn = {
       fontSize: '100%',
       border: 'none',
       cursor: 'pointer',
-      padding: '0'
+      padding: '0',
+      marginTop: '20%'
 }

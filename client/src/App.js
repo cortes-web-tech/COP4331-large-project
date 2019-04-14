@@ -16,6 +16,7 @@ import Contact from './components/pages/Contact';
 import Start from './components/pages/Start';
 import Keepu from './components/pages/Keepu';
 import Login from './components/pages/Login';
+import Signup from './components/pages/Signup';
 
 import LoggedIn from './components/pages/LoggedIn';
 import Program from './components/pages/Program';
@@ -41,7 +42,7 @@ class App extends Component {
                 <Route exact path="/demo" component={Demo}/>
                 <Route exact path="/contact" component={Contact}/>
                 <Route exact path="/login" component={Login}/>
-
+                <Route exact path="/signup" component={Signup}/>
                 <Route exact path="/loggedIn" component={LoggedIn}/>
                 <Route exact path="/program" component={Program}/>
                 <Route exact path="/knot1" component={Knot1}/>
