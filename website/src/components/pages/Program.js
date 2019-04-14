@@ -34,6 +34,7 @@ export default class Program extends React.Component {
       showKnot1: this.state.showKnot1?false
       :true,
       showKnot2: false,
+      showKnot3: false,
       phKnot: this.state.showKnot1?true
       :false
     })
@@ -43,6 +44,7 @@ export default class Program extends React.Component {
     this.setState({
       ...this.state,
       showKnot1: false,
+      showKnot3: false,
       showKnot2: this.state.showKnot2?false
       :true,
       phKnot: this.state.showKnot2?true
@@ -642,6 +644,35 @@ export default class Program extends React.Component {
           </div>
             :null
         }
+        {
+          this.state.showKnot3?
+          <div style={knotQ}>
+            <div>Logic model for Human Trafficking</div>
+            <div style={missionBox}>Mission: Please describe the mission of your organization here</div>
+            <div style={knot3Style}>
+              <div style={knot3Box}>
+                Inputs
+              </div>
+
+              <div style={arrowStyle}>➡</div>
+              <div style={knot3Box}>
+                Activities
+              </div>
+              <div style={arrowStyle}>➡</div>
+              <div style={knot3Box}>
+                Outputs
+              </div>
+              <div style={arrowStyle}>➡</div>
+              <div style={knot3Box}>
+                Effects (Outcomes)
+              </div>
+            </div>
+            <div style={factsBox}>
+              External factors: Please write any external facotrs that may  affect the implementation of your program
+            </div>
+          </div>
+          :null
+        }
         </React.Fragment>
       </div>
     );
@@ -662,7 +693,7 @@ const navStyle = {
 }
 
 const knotStyle = {
-  flex: 3,
+  flex: 2,
   display: "flex",
   flexDirection: "column",
   backgroundColor: "#aaaaaa"
@@ -843,4 +874,35 @@ const split6 = {
 const split3 = {
 
   flex: 1
+}
+
+const knot3Style = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-around",
+
+}
+
+const knot3Box = {
+  flex: 1,
+  border: "2px black solid",
+  padding: "10px",
+  height: "200px",
+  margin: "20px"
+}
+
+const arrowStyle = {
+  marginTop:"15%"
+}
+
+const missionBox = {
+  border: "2px black solid",
+  width: "95%",
+  margin: "auto"
+}
+
+const factsBox = {
+  border: "2px black solid",
+  width: "95%",
+  margin: "auto"
 }
