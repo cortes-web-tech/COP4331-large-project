@@ -289,7 +289,8 @@ export default class Program extends React.Component {
           </div>
           <div style={formArea}>
             <div style={catArea}>
-            Program Resources
+            <h2 style ={headStyle}>Program Resources</h2>
+
             {
               this.state.show2?
               <form style={formStyle}>
@@ -436,30 +437,52 @@ export default class Program extends React.Component {
           </div>
           <div style={formArea}>
             <div style={catArea}>
-            How much will you need?
+            <h2 style ={headStyle}>How much will you need?</h2>
+
             {
               this.state.show3?
               <div style={formStyle}>
                 <div style = {needBox}>
                   <h3>Technology</h3>
                   <form>
-                    How many Computers will you need?  <input type="text"/><br/>
-                    How many Tablets will you need?  <input type="text"/>
+                    <div>
+                      <div style={other3Style}>
+                        <div style={techTextBox}>How many Computers will you need?</div>
+                        <div style={techInputBox}><input type="text"/></div>
+                      </div>
+                      <div style={other3Style}>
+                        <div style={techTextBox}>How many Tablets will you need?</div>
+                        <div style={techInputBox}><input type="text"/></div>
+                      </div>
+                    </div>
                   </form>
                 </div>
 
                 <div style = {needBox}>
                   <h3>Space</h3>
                   <form>
-                    How much Office Space will you need?  <input type="text"/>
+                    <div>
+                      <div style={other3Style}>
+                        <div style={techTextBox}>How much Office Space will you need?</div>
+                        <div style={techInputBox}><input type="text"/></div>
+                      </div>
+                    </div>
                   </form>
                 </div>
 
                 <div style = {needBox}>
                   <h3>Staff</h3>
                   <form>
-                    How many Case Workers will you need?  <input type="text"/><br/>
-                    How many Community Educators will you need?  <input type="text"/>
+                    <div>
+                      <div style={other3Style}>
+                        <div style={techTextBox}>How many Case Workers will you need?</div>
+                        <div style={techInputBox}><input type="text"/></div>
+                      </div>
+                      <div style={other3Style}>
+                        <div style={techTextBox}>How many Community Educators will you need? </div>
+                        <div style={techInputBox}><input type="text"/></div>
+                      </div>
+                    </div>
                   </form>
                   <input type="submit" style = {nextStyle} value="Next"/>
                 </div>
@@ -473,7 +496,8 @@ export default class Program extends React.Component {
           </div>
           <div style={formArea}>
             <div style={catArea}>
-            Activities
+            <h2 style ={headStyle}>Activities</h2>
+
             {
               this.state.show4?
               <div style={formStyle}>
@@ -523,7 +547,7 @@ export default class Program extends React.Component {
           </div>
           <div style={formArea}>
             <div style={catArea}>
-            Report
+            <h2 style ={headStyle}>Report</h2>
             {
               this.state.show5?
               <div style = {reportStyle}>
@@ -702,21 +726,21 @@ export default class Program extends React.Component {
                   </div>
                   <div style={outputStyle}>
                     Target <br/>
-                    <select>
+                    <select style={selectStyle}>
                       <option>Target op 1 </option>
                       <option>Target op 2</option>
                     </select>
                   </div>
                   <div style={outputStyle}>
                     Verb <br/>
-                    <select>
+                    <select style={selectStyle}>
                       <option> Verb op 1</option>
                       <option> Verb op 2</option>
                     </select>
                   </div>
                     <div style={outputStyle}>
                       Noun <br/>
-                      <select>
+                      <select style={selectStyle}>
                         <option>Noun op 1</option>
                         <option>Noun op 2</option>
                       </select>
@@ -724,7 +748,7 @@ export default class Program extends React.Component {
 
                   <div style={outputStyle}>
                     Frequency <br/>
-                    <select>
+                    <select style={selectStyle}>
                       <option>Frquency op 1</option>
                       <option>Frequency op 2</option>
                     </select>
@@ -1023,4 +1047,19 @@ const other2Style = {
   width: "400px",
   height: "150px",
   wordWrap: "initial"
+}
+
+const other3Style = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  marginBottom: "5px"
+}
+
+const techTextBox = {
+  flex: 3
+}
+
+const techInputBox = {
+  flex: 1
 }
