@@ -17,7 +17,7 @@ class Demo extends Component {
 
             <div class = "demoBox1">
               <div class="ratio">
-                <iframe class = "frame" width="640" height="390" src="https://www.youtube.com/embed/0Ssjp43a528" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class = "frame" width="640" height="390" src="https://youtu.be/1MAy4mbgxwk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
 

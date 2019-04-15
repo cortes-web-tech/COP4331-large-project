@@ -938,7 +938,6 @@ this.onSaveKnot1Part4();
                     <option id="k2q4o4" onClick={this.onSelect}>Working with foreign nationals’ adult victims of human trafficking</option>
                     <option id="k2q4o5" onClick={this.onSelect}>Working with domestic violence adult victims of human trafficking</option>
                     <option id="k2q4o6" onClick={this.onSelect}>Training on how to identify human trafficking warning signs</option>
-                    <option>😳?</option>
                   </select>
                 </div>
                 <div style = {outputStyle}>
