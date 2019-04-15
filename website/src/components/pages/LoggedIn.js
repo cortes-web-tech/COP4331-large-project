@@ -9,24 +9,26 @@ class Logged extends React.Component{
     return(
 
 
-      <div className="dashboard" style={loggedInStyle}>
+      <div style={loggedInStyle}>
+        <div style = {dashStyle}>
         <DashNav />
+        </div>
         <React.Fragment>
-            <div>
+            <div style = {dashLayout}>
               <div>
                 <h1>Overview</h1>
               </div>
-              <div style = {boxLaout}>
+              <div style = {boxLayout}>
                 <div style={col}>
                   <div style={disabled}> Refugees </div>
-                  <div style={enabled}> Parenting </div>
+                  <div style={disabled}> Parenting </div>
                   <div style={disabled}> Domestic Violence/Sexual Assault </div>
                 </div>
 
                 <div style={col}>
                   <div style={disabled}> Early Child Development </div>
                   <div style={disabled}> Environmental Education </div>
-                  <div style={disabled}> Abortion Support </div>
+                  <div style={disabled}>Abortion Support</div>
                 </div>
 
                 <div style={col}>
@@ -55,11 +57,19 @@ const loggedInStyle = {
   justifyContent: "space-between",
 }
 
-const boxLaout = {
+const dashStyle = {
+  flex: 1
+}
+
+const dashLayout = {
+  flex: 5
+}
+
+const boxLayout = {
   display: "flex",
   flexDirection: "row",
-  justifyContent: "space-between",
-  flex: 3
+  justifyContent: "space-around",
+  flex: 5
 }
 
 const col = {
@@ -87,7 +97,7 @@ height: "100px",
 margin: "10px",
 color: "#bbbbbb",
 display: "flex",
-textAlign: "center"
+justifyContent: "center"
 }
 
 export default Logged;
