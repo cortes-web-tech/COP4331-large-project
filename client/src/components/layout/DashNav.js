@@ -13,7 +13,7 @@ export default function DashNav(){
           <Link to="/start" style={bub}> Home</Link><br/>
           <Link to="/loggedIn" style={bub}> Dashboard</Link><br/>
           <Link to="/program" style={bub}> Program</Link><br/>
-          <Link to="/start" style={bub} onClick={window.id = ''}> Logout</Link>
+          <Link to="/start" style={bub}> Logout</Link>
         </ul>
       </div>
     </div>

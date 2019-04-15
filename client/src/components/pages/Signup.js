@@ -95,10 +95,10 @@ class Signup extends Component {
                 authenticated: true,
                 userID: res.data._id
               });
-              console.log(res.data);
               window.id = res.data._id;
+              console.log(window.id);
             } else {
-              console.log('not so nice :(');
+              alert('Could not create account');
             }
           });
 

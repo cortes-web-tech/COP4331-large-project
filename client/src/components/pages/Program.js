@@ -99,7 +99,7 @@ export default class Program extends React.Component {
     axios.get(url1 + window.id
     ).then(res => {
       userKnot1 = res.data[0];
-
+      console.log('INPUTS:');
       if(userKnot1['q4'][0]) {
         this.setState({inputs: [...this.state.inputs, '‣computers']})
       }
@@ -131,7 +131,7 @@ export default class Program extends React.Component {
         this.setState({inputs: [...this.state.inputs, '‣community educators']})
       }
 
-
+      console.log('ACTIVITIES');
       if(userKnot1['q18'][0]) {
         this.setState({activites: [...this.state.activites, '‣identify law enforcement agencies']})
       }
@@ -167,20 +167,23 @@ export default class Program extends React.Component {
       } else if(userKnot2['q8'] === "Service Providers") {
         string2 = "‣" + userKnot2['q7'] + "% of " + userKnot2['q8'] + " who participate will " + userKnot2['q9'] + " in their" + userKnot2['q10'] + " of " + userKnot2['q4'] + " " + userKnot2['q11'] + ".";
       }
-
+      console.log('OUTPUTS');
+      console.log(string1);
+      console.log('OUTPUTS');
+      console.log(string2);
     });
   }
 
 
   onCheck(e) {
-
+    console.log(e.currentTarget.id)
     this.setState({
       [e.currentTarget.id]: e.target.checked
     });
   }
 
   onTyped(e) {
-
+    console.log(e.currentTarget.id);
     this.setState({
       [e.currentTarget.id]: e.target.value
     });
@@ -195,7 +198,7 @@ export default class Program extends React.Component {
     } else if(this.state.k2q2 === "Services provided") {
       string = "‣" + this.state.k2q1 + " staffers will " + this.state.k2q3 + " in " + this.state.k2q4 + " " + this.state.k2q5 + " " + this.state.k2q6 + ".";
     }
-
+    console.log(string);
 
     this.setState({
       output: string
@@ -213,7 +216,7 @@ export default class Program extends React.Component {
     } else if(this.state.k2q8 === "Service Providers") {
       string = "‣" + this.state.k2q7 + "% of " + this.state.k2q8 + " who participate will " + this.state.k2q9 + " in their" + this.state.k2q10 + " of " + this.state.k2q4 + " " + this.state.k2q11 + ".";
     }
-
+    console.log(string);
 
     this.setState({
       outcome: string
@@ -221,7 +224,7 @@ export default class Program extends React.Component {
   }
 
   onSelect(e) {
-
+    console.log(e.currentTarget.id);
     var string = e.currentTarget.id;
     string = string.substring(0, string.length -2);
     this.setState({
@@ -240,7 +243,7 @@ export default class Program extends React.Component {
         q3: this.state.q3,
         owner: window.id
       }
-
+      console.log(knot1p1);
 
       var url = 'https://keepuapp.herokuapp.com/api/knot1/';
       //axios.get(url).then(res => console.log(res.data[0]._id));
@@ -252,13 +255,13 @@ export default class Program extends React.Component {
           // create knot1
           axios.post(url,
             knot1p1
-          ).then(res => console.log('no knot exists'));
+          ).then(res => console.log('no knots'));
         } else {
           // update knot1
           var knotId = res.data[0]._id;
           axios.patch(url + knotId,
             knot1p1
-          ).then(res => console.log('knot exists'));
+          ).then(res => console.log('there are knots'));
         }
       });
     }
@@ -287,13 +290,13 @@ export default class Program extends React.Component {
           // create knot1
           axios.post(url,
             knot1p2
-          ).then(res => console.log('no knot exists'));
+          ).then(res => console.log('no knots'));
         } else {
           // update knot1
           var knotId = res.data[0]._id;
           axios.patch(url + knotId,
             knot1p2
-          ).then(res => console.log('knot exists'));
+          ).then(res => console.log('there are knots'));
         }
       });
     }
@@ -328,13 +331,13 @@ export default class Program extends React.Component {
           // create knot1
           axios.post(url,
             knot1p3
-          ).then(res => console.log('no knot exists'));
+          ).then(res => console.log('no knots'));
         } else {
           // update knot1
           var knotId = res.data[0]._id;
           axios.patch(url + knotId,
             knot1p3
-          ).then(res => console.log('knot exists'));
+          ).then(res => console.log('there are knots'));
         }
       });
     }
@@ -360,13 +363,13 @@ export default class Program extends React.Component {
           // create knot1
           axios.post(url,
             knot1p4
-          ).then(res => console.log('no knot exists'));
+          ).then(res => console.log('no knots'));
         } else {
           // update knot1
           var knotId = res.data[0]._id;
           axios.patch(url + knotId,
             knot1p4
-          ).then(res => console.log('knot exists'));
+          ).then(res => console.log('there are knots'));
         }
       });
     }
@@ -397,13 +400,13 @@ export default class Program extends React.Component {
           // create knot2
           axios.post(url,
             knot2p1
-          ).then(res => console.log('no knot exists'));
+          ).then(res => console.log('no knots'));
         } else {
           // update knot2
           var knotId = res.data[0]._id;
           axios.patch(url + knotId,
             knot2p1
-          ).then(res => console.log('knots exist'));
+          ).then(res => console.log('there are knots'));
         }
       });
     }
@@ -433,13 +436,13 @@ export default class Program extends React.Component {
           // create knot2
           axios.post(url,
             knot2p2
-          ).then(res => console.log('no knot exists'));
+          ).then(res => console.log('no knots'));
         } else {
           // update knot2
           var knotId = res.data[0]._id;
           axios.patch(url + knotId,
             knot2p2
-          ).then(res => console.log('knots exist'));
+          ).then(res => console.log('there are knots'));
         }
       });
     }
