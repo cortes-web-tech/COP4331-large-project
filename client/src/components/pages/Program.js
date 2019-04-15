@@ -89,7 +89,7 @@ export default class Program extends React.Component {
   }
 
   viewChart(e) {
-    e.preventDefault();
+
     var userKnot1 = {};
     var userKnot2 = {};
 
@@ -99,7 +99,7 @@ export default class Program extends React.Component {
     axios.get(url1 + window.id
     ).then(res => {
       userKnot1 = res.data[0];
-      console.log('INPUTS:');
+
       if(userKnot1['q4'][0]) {
         this.setState({inputs: [...this.state.inputs, '‣computers']})
       }
@@ -131,7 +131,7 @@ export default class Program extends React.Component {
         this.setState({inputs: [...this.state.inputs, '‣community educators']})
       }
 
-      console.log('ACTIVITIES');
+
       if(userKnot1['q18'][0]) {
         this.setState({activites: [...this.state.activites, '‣identify law enforcement agencies']})
       }
@@ -167,23 +167,20 @@ export default class Program extends React.Component {
       } else if(userKnot2['q8'] === "Service Providers") {
         string2 = "‣" + userKnot2['q7'] + "% of " + userKnot2['q8'] + " who participate will " + userKnot2['q9'] + " in their" + userKnot2['q10'] + " of " + userKnot2['q4'] + " " + userKnot2['q11'] + ".";
       }
-      console.log('OUTPUTS');
-      console.log(string1);
-      console.log('OUTPUTS');
-      console.log(string2);
+
     });
   }
 
 
   onCheck(e) {
-    console.log(e.currentTarget.id)
+
     this.setState({
       [e.currentTarget.id]: e.target.checked
     });
   }
 
   onTyped(e) {
-    console.log(e.currentTarget.id);
+
     this.setState({
       [e.currentTarget.id]: e.target.value
     });
@@ -198,7 +195,7 @@ export default class Program extends React.Component {
     } else if(this.state.k2q2 === "Services provided") {
       string = "‣" + this.state.k2q1 + " staffers will " + this.state.k2q3 + " in " + this.state.k2q4 + " " + this.state.k2q5 + " " + this.state.k2q6 + ".";
     }
-    console.log(string);
+
 
     this.setState({
       output: string
@@ -216,7 +213,7 @@ export default class Program extends React.Component {
     } else if(this.state.k2q8 === "Service Providers") {
       string = "‣" + this.state.k2q7 + "% of " + this.state.k2q8 + " who participate will " + this.state.k2q9 + " in their" + this.state.k2q10 + " of " + this.state.k2q4 + " " + this.state.k2q11 + ".";
     }
-    console.log(string);
+
 
     this.setState({
       outcome: string
@@ -224,7 +221,7 @@ export default class Program extends React.Component {
   }
 
   onSelect(e) {
-    console.log(e.currentTarget.id);
+
     var string = e.currentTarget.id;
     string = string.substring(0, string.length -2);
     this.setState({
@@ -235,7 +232,7 @@ export default class Program extends React.Component {
     onSaveKnot1Part1(e) {
     //  console.log(this.state);
 
-      e.preventDefault();
+
 
       const knot1p1 = {
         q1: [this.state.q1c1, this.state.q1c2, this.state.q1c3, this.state.q1c4],
@@ -243,7 +240,7 @@ export default class Program extends React.Component {
         q3: this.state.q3,
         owner: window.id
       }
-      console.log(knot1p1);
+
 
       var url = 'https://keepuapp.herokuapp.com/api/knot1/';
       //axios.get(url).then(res => console.log(res.data[0]._id));
@@ -255,13 +252,13 @@ export default class Program extends React.Component {
           // create knot1
           axios.post(url,
             knot1p1
-          ).then(res => console.log('no knots'));
+          ).then(res => console.log('no knot exists'));
         } else {
           // update knot1
           var knotId = res.data[0]._id;
           axios.patch(url + knotId,
             knot1p1
-          ).then(res => console.log('there are knots'));
+          ).then(res => console.log('knot exists'));
         }
       });
     }
@@ -269,7 +266,7 @@ export default class Program extends React.Component {
     onSaveKnot1Part2(e) {
     //  console.log(this.state);
 
-      e.preventDefault();
+
 
       const knot1p2 = {
         q4: [this.state.q4c1, this.state.q4c2, this.state.q4c3],
@@ -290,13 +287,13 @@ export default class Program extends React.Component {
           // create knot1
           axios.post(url,
             knot1p2
-          ).then(res => console.log('no knots'));
+          ).then(res => console.log('no knot exists'));
         } else {
           // update knot1
           var knotId = res.data[0]._id;
           axios.patch(url + knotId,
             knot1p2
-          ).then(res => console.log('there are knots'));
+          ).then(res => console.log('knot exists'));
         }
       });
     }
@@ -304,7 +301,7 @@ export default class Program extends React.Component {
     onSaveKnot1Part3(e) {
     //  console.log(this.state);
 
-      e.preventDefault();
+
 
       const knot1p3 = {
         q8: this.state.q8,
@@ -331,13 +328,13 @@ export default class Program extends React.Component {
           // create knot1
           axios.post(url,
             knot1p3
-          ).then(res => console.log('no knots'));
+          ).then(res => console.log('no knot exists'));
         } else {
           // update knot1
           var knotId = res.data[0]._id;
           axios.patch(url + knotId,
             knot1p3
-          ).then(res => console.log('there are knots'));
+          ).then(res => console.log('knot exists'));
         }
       });
     }
@@ -345,7 +342,7 @@ export default class Program extends React.Component {
     onSaveKnot1Part4(e) {
     //  console.log(this.state);
 
-      e.preventDefault();
+
 
       const knot1p4 = {
         q18: [this.state.q18c1, this.state.q18c2, this.state.q18c3],
@@ -363,13 +360,13 @@ export default class Program extends React.Component {
           // create knot1
           axios.post(url,
             knot1p4
-          ).then(res => console.log('no knots'));
+          ).then(res => console.log('no knot exists'));
         } else {
           // update knot1
           var knotId = res.data[0]._id;
           axios.patch(url + knotId,
             knot1p4
-          ).then(res => console.log('there are knots'));
+          ).then(res => console.log('knot exists'));
         }
       });
     }
@@ -377,7 +374,7 @@ export default class Program extends React.Component {
     onSaveKnot2Part1(e) {
     //  console.log(this.state);
 
-      e.preventDefault();
+
 
       const knot2p1 = {
         q1: this.state.k2q1,
@@ -400,13 +397,13 @@ export default class Program extends React.Component {
           // create knot2
           axios.post(url,
             knot2p1
-          ).then(res => console.log('no knots'));
+          ).then(res => console.log('no knot exists'));
         } else {
           // update knot2
           var knotId = res.data[0]._id;
           axios.patch(url + knotId,
             knot2p1
-          ).then(res => console.log('there are knots'));
+          ).then(res => console.log('knots exist'));
         }
       });
     }
@@ -414,10 +411,10 @@ export default class Program extends React.Component {
     onSaveKnot2Part2(e) {
     //  console.log(this.state);
 
-      e.preventDefault();
+
 
       const knot2p2 = {
-        q7: this.state.k2q8,
+        q7: this.state.k2q7,
         q8: this.state.k2q8,
         q9: this.state.k2q9,
         q10: this.state.k2q10,
@@ -436,13 +433,13 @@ export default class Program extends React.Component {
           // create knot2
           axios.post(url,
             knot2p2
-          ).then(res => console.log('no knots'));
+          ).then(res => console.log('no knot exists'));
         } else {
           // update knot2
           var knotId = res.data[0]._id;
           axios.patch(url + knotId,
             knot2p2
-          ).then(res => console.log('there are knots'));
+          ).then(res => console.log('knots exist'));
         }
       });
     }
@@ -489,6 +486,8 @@ export default class Program extends React.Component {
 
 
   })
+
+  this.viewChart();
 }
 
 hideExtras(){
@@ -515,6 +514,7 @@ hideExtras(){
      })
 
      this.generateOutput();
+     this.onSaveKnot2Part1();
  }
 
   toggleOutcome(){
@@ -530,6 +530,7 @@ hideExtras(){
   })
 
   this.generateOutcome();
+  this.onSaveKnot2Part2();
 }
 
   toggle1(){
@@ -541,6 +542,7 @@ hideExtras(){
       show4: false,
       show5: false,
 })
+
   }
 
   toggle2(){
@@ -552,6 +554,7 @@ hideExtras(){
        show4: false,
        show5: false,
  })
+ this.onSaveKnot1Part1();
   }
 
   toggle3(){
@@ -564,6 +567,7 @@ hideExtras(){
        show5: false,
 
  })
+ this.onSaveKnot1Part2();
   }
 
   toggle4(){
@@ -576,6 +580,7 @@ hideExtras(){
       show5: false
 
 })
+this.onSaveKnot1Part3();
   }
 
   toggle5(){
@@ -587,6 +592,7 @@ hideExtras(){
       show4: false,
       show5: !this.state.show5,
 })
+this.onSaveKnot1Part4();
   }
 
   render() {
@@ -651,10 +657,10 @@ hideExtras(){
               	<input type="checkbox" id="q1c2" checked={this.state.q1c2} onChange={this.onCheck}/> Promote collaboration and coordination of services<br/>
               	<input type="checkbox" id="q1c3" checked={this.state.q1c3} onChange={this.onCheck}/> Provide trainings on human trafficking victims topics<br/>
               	<input type="checkbox" id="q1c4" checked={this.state.q1c4} onChange={this.onCheck}/> Create awareness about human traffic<br/>
-              <h6>Funding</h6>
+              <h6><br/>Funding</h6>
                 <input type="checkbox" id="q2" checked={this.state.q2} onChange={this.onCheck}/> Is your program funded yet?<br/>
                 <input type="text" id="q3" onChange={this.onTyped}/> By who?<br/>
-                <input type="button" value="Save" onClick = {this.onSaveKnot1Part1}/>
+
               </form>
               :null
             }
@@ -674,18 +680,17 @@ hideExtras(){
               Technology <br/>
               <input type="checkbox" id="q4c1" checked={this.state.q4c1} onChange={this.onCheck}/> Computers <input type="checkbox" id="q4c2" checked={this.state.q4c2} onChange={this.onCheck}/> Tablets <input type="checkbox" id="q4c3" checked={this.state.q4c3} onChange={this.onCheck}/> Office phones<br/>
 
-              Space <br/>
+              <br/>Space <br/>
               <input type="checkbox" id="q5c1" checked={this.state.q5c1} onChange={this.onCheck}/> Office Space <input type="checkbox" id="q5c2" checked={this.state.q5c2} onChange={this.onCheck}/> Event space <input type="checkbox" id="q5c3" checked={this.state.q5c3} onChange={this.onCheck}/> Training Space<br/>
 
-              Materials <br/>
-              <input type="checkbox" id="q6c1" checked={this.state.q6c1} onChange={this.onCheck}/> Training <input type="checkbox" id="q6c2" checked={this.state.q6c2} onChange={this.onCheck}/> Outreach <input type="checkbox" id="q6c3" checked={this.state.q6c3} onChange={this.onCheck}/> Office Supplies <br/>
+              <br/>Materials <br/>
+              <input type="checkbox" id="q6c1" checked={this.state.q6c1} onChange={this.onCheck}/> Training <input type="checkbox" id="q6c2" checked={this.state.q6c2} onChange={this.onCheck}/> Outreach <input type="checkbox" id="q6c3" checked={this.state.q6c3} onChange={this.onCheck}/> Office Supplies
               <input type="checkbox" id="q6c4" checked={this.state.q6c4} onChange={this.onCheck}/> Service Delivery<br/>
 
-              Staff <br/>
+              <br/>Staff <br/>
               <input type="checkbox" id="q7c1" checked={this.state.q7c1} onChange={this.onCheck}/> Program Manager <input type="checkbox" id="q7c2" checked={this.state.q7c2} onChange={this.onCheck}/> Training Specialist <input type="checkbox" id="q7c3" checked={this.state.q7c3} onChange={this.onCheck}/> Case Worker
               <input type="checkbox" id="q7c4" checked={this.state.q7c4} onChange={this.onCheck}/> Community Educator
 
-              <input type="button" value="Save" onClick = {this.onSaveKnot1Part2}/>
               </form>
               :null
             }
@@ -705,7 +710,7 @@ hideExtras(){
                   <h3>Technology</h3>
                   <form>
                     How many Computers will you need?  <input type="text" disabled={!this.state.q4c1} id="q8" onChange={this.onTyped} /><br/>
-                    How many Tablets will you need?  <input type="text" disabled={!this.state.q4c2} id="q9" onChange={this.onTyped} />
+                    How many Tablets will you need?  <input type="text" disabled={!this.state.q4c2} id="q9" onChange={this.onTyped} /><br/>
                     How many Office Phones will you need?  <input type="text" disabled={!this.state.q4c3} id="q10" onChange={this.onTyped} /><br/>
                   </form>
                 </div>
@@ -726,7 +731,7 @@ hideExtras(){
                     How many Training Specialists will you need?  <input type="text" disabled={!this.state.q7c2} id="q15" onChange={this.onTyped} /><br/>
                     How many Case Workers will you need?  <input type="text" disabled={!this.state.q7c3} id="q16" onChange={this.onTyped} /><br/>
                     How many Community Educators will you need?  <input type="text" disabled={!this.state.q7c4} id="q17" onChange={this.onTyped} /><br/>
-                    <input type="button" value="Save" onClick = {this.onSaveKnot1Part3}/>
+
                   </form>
                 </div>
               </div>
@@ -748,7 +753,7 @@ hideExtras(){
                   Identify Law enforcement agencies <input type="checkbox" id="q18c1" checked={this.state.q18c1} onChange={this.onCheck}/><br/>
                   Identify human trafficking prevention service providers <input type="checkbox" id="q18c2" checked={this.state.q18c2} onChange={this.onCheck}/><br/>
                   Identify potential trainers on human trafficking warning signs<input type="checkbox" id="q18c3" checked={this.state.q18c3} onChange={this.onCheck}/><br/>
-                  <input type="button" value="Save" onClick = {this.onSaveKnot1Part4}/>
+
                 </form>
               </div>
               :null
@@ -948,9 +953,9 @@ hideExtras(){
                     <option id="k2q6o4" onClick={this.onSelect}>a year</option>
                   </select>
                 </div>
-                <input type="button" value="Save" onClick = {this.onSaveKnot2Part1}/>
-                <input type="button" value="View chart" onClick = {this.viewChart}/>
-                <button onClick={()=>this.toggleOutput()}>Generate output</button>
+
+
+                <button onClick={()=>this.toggleOutput() } style={gen}>Generate output</button>
               </div>
 
               :  this.state.showOutcome?
@@ -996,8 +1001,8 @@ hideExtras(){
                        <option id="k2q11o3" onClick={this.onSelect}>6 months after completing the program</option>
                      </select>
                  </div>
-                 <input type="button" value="Save" onClick = {this.onSaveKnot2Part2}/>
-                 <button onClick={()=>this.toggleOutcome()}>Generate outcome</button>
+
+                 <button onClick={()=>this.toggleOutcome()} style={gen}>Generate outcome</button>
                  </div>
                  :
 
@@ -1151,7 +1156,8 @@ const plusButton = {
 }
 
 const formStyle = {
-  borderTop: "1px black solid"
+  borderTop: "1px black solid",
+  textAlign :"left"
 }
 
 const needBox = {
@@ -1202,7 +1208,7 @@ const phStyle = {
 const knot2ButtonStyle = {
   color: "#EDA85F",
   backgroundColor: "#ffffff",
-  border: "none"
+  border: "0"
 }
 
 const outputStyle = {
@@ -1289,4 +1295,12 @@ const factsBox = {
   border: "2px black solid",
   width: "95%",
   margin: "auto"
+}
+
+const gen = {
+  border: '0',
+  color: '#EDA85F',
+  backgroundColor: '#4D5CA2',
+  borderRadius: '30px',
+  height: '40px'
 }

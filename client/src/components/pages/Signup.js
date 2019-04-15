@@ -1,7 +1,12 @@
 import React , { Component } from 'react';
-import axios from 'axios';
-import Background from './../../login.png';
+import blackRope from './../../login.png';
 import './Signup.css';
+import axios from 'axios';
+import {Link} from 'react-router-dom';
+import Login from './Login';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Redirect } from 'react-router';
+import LoggedIn from './LoggedIn';
 
 class Signup extends Component {
   constructor(props) {
@@ -11,6 +16,7 @@ class Signup extends Component {
       passwordInput: '',
       passwordRepeatInput: '',
       termsPolicy: false,
+      authenticated: false
     };
 
     this.onChangeEmail = this.onChangeEmail.bind(this);
@@ -81,12 +87,22 @@ class Signup extends Component {
             password: this.state.passwordInput
           };
 
-          axios.post('http://localhost:3001/users', newUser).then(res => console.log(res.data));
-          //axios.post('http://localhost:3001/users/login', userLogin).then(res => console.log(res.data));
+          axios.post('https://keepuapp.herokuapp.com/api/users/',
+            newUser
+          ).then(res => {
+            if(res.data['email'] !== '') {
+              this.setState({
+                authenticated: true,
+                userID: res.data._id
+              });
+              console.log(res.data);
+              window.id = res.data._id;
+            } else {
+              console.log('not so nice :(');
+            }
+          });
 
-          console.log(`Submitted`);
-          console.log(`Email: ${this.state.emailInput}`);
-          console.log(`Password: ${this.state.passwordInput}`);
+
 
     }
 
@@ -100,6 +116,9 @@ class Signup extends Component {
   }
 
   render() {
+    if(this.state.authenticated) {
+      return  <Redirect to ='/loggedIn' component={LoggedIn} />
+    }
     return (
       <React.Fragment>
             <div style={signup}>
@@ -113,7 +132,7 @@ class Signup extends Component {
                     </div>
                     <br />
 
-                    <form name="signup" action="" onSubmit={this.onSubmit}>
+                    <form name="sigup" action="" onSubmit={this.onSubmit}>
 
                         <div className="conainer1">
                             <label className="emaiLabel" style={labels}>Email address</label>
@@ -135,6 +154,10 @@ class Signup extends Component {
                         <div className="conainer3">
                             <input type="checkbox" name="acceptPolicy" value={this.state.termsPolicy} onChange={this.onCheckBox}/>
                             <label>I have read the Privacy Policy and agree to the Terms of Service.</label>
+                        </div>
+                        <div>
+                          <input type="submit" style={signinBtn} value="Sign Up"/>
+                          <Link class="logoLink" to="/login" component={Login}><br />Already a member? Log in!<br /></Link>
                         </div>
 
                         <div className="bottomBox">
@@ -163,7 +186,7 @@ const signup = {
   marginRight: "auto",
   height: "100%",
   backgroundSize: "cover",
-   backgroundImage: "url(" + Background + ")",
+    backgroundImage: "url(" + blackRope + ")",
 }
 
 const labels = {
@@ -198,7 +221,5 @@ const signinBtn = {
     fontSize: '40%',
     border: 'none',
     cursor: 'pointer',
-    position: "relative",
-    left: "280px",
-    top: "40px"
+    marginRight: '55%'
 }

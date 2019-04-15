@@ -1,39 +1,109 @@
-body {
+.picContainer {
+    flex: 1.5;
 
-  background-color: #eee;
 
 }
-.form-signin {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
+
+.picContainer img {
+    opacity: 0.5;
 }
-.form-signin .form-signin-heading,
-.form-signin .checkbox {
-  margin-bottom: 10px;
+
+.formBox {
+    background-color: #EEEEEE, 100%;
+    flex: 1;
+    height: 900px;
+    width: 864px;
+    padding-right: 20%;
 }
-.form-signin .checkbox {
-  font-weight: normal;
+
+.topBox {
+    display: flex;
+    justify-content: center;
 }
-.form-signin .form-control {
-  position: relative;
-  height: auto;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 10px;
-  font-size: 16px;
+
+#message {
+    color: #888888;
+    font-size: 44px;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+    height: 161px;
+    width: 599px;
 }
-.form-signin .form-control:focus {
-  z-index: 2;
+
+.conainer1 {
+    padding: 10px;
+    position: relative;
+    left: 128px;
+    width: 620px;
+
 }
-.form-signin input[type="text"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+
+.formBox form .conainer1 input {
+    display:block;
+    margin-bottom:10px;
+    width:540px;
+    color: #888888;
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .formBox form .conainer1 input {
+    border:1px solid #CCC;
+    padding:10px;
+    font-size: 30%;
+  }
+
+  .conainer2 {
+    padding: 10px;
+    position: relative;
+    left: 128px;
+    width: 620px;
+    display: flex;
+    flex-direction: row;
+
 }
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+
+.formBox form .conainer2 input {
+  border:1px solid #CCC;
+  padding:10px;
+  font-size: 70%;
+}
+.conainer3 {
+    font-size: 15px;
+    font-family: Arial;
+}
+
+.formBox form .conainer3 label {
+    color: #aaaaaa;
+    padding: 20px;
+
+}
+
+
+  .bottomBox {
+    background-color: #FFFFFF;
+    height: 125px;
+    width: 864px;
+    position: relative;
+    top: 187px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+}
+
+.logoLink {
+    font-family: Arial;
+    font-size: 24px;
+    text-decoration: underline;
+    color: #aaaaaa;
+    position: left;
+    text-align: left;
+    padding-right: 35%;
+
+}
+
+
+.logoLink:hover {
+  color: #888888;
 }
